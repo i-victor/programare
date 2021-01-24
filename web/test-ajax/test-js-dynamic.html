@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Dynamic Elements by Javascript </title>
+</head>
+<body>
+<div id="div1">This is a test &lt;a&gt;</div>
+<div id="abc" style="background:#FFCC00; position:fixed; top:300px;">Victor</div>
+<script>
+
+var elem = document.createElement('span'); // create a HTML Tag
+elem.style = "color:#FF3300;";
+var theText = '<u>Salut</u>';
+elem.innerText = theText; // adauga continut ca si text unde se escapeaza: < = &lt; , > = &gt; , " = &quot;
+//elem.innerHTML = theText; // adauga continut ca si cod HTML
+
+//var container = document.body; // append tag to the body
+var container = document.getElementById('div1'); // append tag to the div with ID = div1
+container.appendChild(elem);
+</script>
+
+</body>
