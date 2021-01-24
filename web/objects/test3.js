@@ -1,4 +1,7 @@
 
+
+// obiect javascript
+
 var MyClass = new function() {
 
 	var zecimale = 2;
@@ -41,16 +44,22 @@ var MyClass = new function() {
 
 var test;
 
-MyClass.setZecimale(-1);
+MyClass.setZecimale(2);
+
+document.write('<pre>');
 
 test =  MyClass.adunare('3.2', 0);
-console.log(test);
+document.write(test + "\n");
 
 test = MyClass.scadere('3.2', 0);
-console.log(test);
+document.write(test + "\n");
 
-test = MyClass.inmultire('3.2', 0);
-console.log(test);
+test = MyClass.inmultire('3.2', 1);
+document.write(test + "\n");
 
-test = MyClass.impartire('6.4', 0);
-console.log(test);
+test = MyClass.impartire('6.4', 2);
+document.write(test + "\n");
+
+document.write('</pre>');
+
+// #end
