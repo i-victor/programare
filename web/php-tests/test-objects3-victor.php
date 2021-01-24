@@ -26,14 +26,9 @@ class medie {
 
 	}
 
-}//END CLASS==============
-
-
-
+} //END CLASS
 
 $obj = new medie();
 echo $obj->calculate();
 
-
-
-
+// #end php

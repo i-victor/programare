@@ -25,4 +25,4 @@ $cerc2 = new cerc();
 $cerc2->raza = 25;
 echo '<p>Aria Cerc2 este: '.$cerc2->area().'</p>';
 
-// end php code
+// #end

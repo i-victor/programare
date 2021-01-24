@@ -15,3 +15,4 @@ class myClass {
 
 echo myClass::myTest();
 
+// #END

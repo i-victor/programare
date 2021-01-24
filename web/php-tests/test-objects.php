@@ -27,3 +27,4 @@ $object2 = new myClass();
 $object2->text = 'Titlu 2';
 echo $object2->myTest();
 
+// #end

@@ -16,6 +16,7 @@ function myTest() {
 
 } // END FUNCTION
 
- echo myTest();
+echo myTest();
 
+// #END
 

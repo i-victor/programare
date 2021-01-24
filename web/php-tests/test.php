@@ -2,3 +2,4 @@
 
 phpinfo();
 
+// #end php code

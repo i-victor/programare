@@ -28,4 +28,4 @@ $dreptunghi2->lungime = 100;
 $dreptunghi2->latime = 25;
 echo '<p>Aria Dreptunghi2 este: '.$dreptunghi2->area().'</p>';
 
-// end php code
+// # end php code

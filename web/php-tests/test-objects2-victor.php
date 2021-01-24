@@ -18,11 +18,7 @@ class copii {
 } //END CLASS
 
 
-
-
 $obj = new copii();
 echo htmlspecialchars($obj->afisare());
 
-
-
-
+// #end

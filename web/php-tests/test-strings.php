@@ -18,4 +18,4 @@ function myTest() {
 
 echo myTest();
 
-
+// #end
