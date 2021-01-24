@@ -1,6 +1,6 @@
 
 
-// obiect javascript
+// obiect static javascript
 
 var MyClass = new function() {
 

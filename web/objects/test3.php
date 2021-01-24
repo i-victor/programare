@@ -1,6 +1,6 @@
 <?php
 
-// obiect php
+// obiect static php
 
 class MyClass {
 
