@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Victor site</title>
+	<link rel="stylesheet" href="css/w3.css">
+	<script src="js/medie.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; background: #A3F8CE; }
+  </style>
+  <style>
+    .toggler { width: 500px; height: 200px; position: relative; bottom:168px; left:200px; }
+    #button { padding: .5em 1em; text-decoration: none; position: relative; bottom:168px; left:200px; }
+    #effect { width: 240px; height: 170px; padding: 0.4em; position: relative; background: #fff; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+  </style>
+
+<style>
+#button1{
+width: 200px;
+height: 41px;
+}
+#button2{
+width: 200px;
+height: 40px;
+position: relative;
+bottom: 61px;
+left: 250px;
+}
+
+#button3{
+width: 200px;
+height: 40px;
+position: relative;
+bottom: 119px;
+left: 500px;
+}
+
+#button4{
+width: 200px;
+height: 40px;
+position: relative;
+bottom: 177px;
+left: 750px;
+}
+
+#button5{
+width: 200px;
+height: 40px;
+position: relative;
+bottom: 236px;
+left: 1000px;
+}
+
+#button6{
+width: 200px;
+height: 40px;
+position: relative;
+bottom: 200px;
+}
+
+#button7{
+width: 200px;
+height: 40px;
+position: relative;
+bottom: 259px;
+left: 250px;
+}
+
+#button8{
+width: 200px;
+height: 40px;
+position: relative;
+bottom: 316px;
+left: 500px;
+}
+
+#button9{
+width: 200px;
+height: 40px;
+position: relative;
+bottom: 374px;
+left: 750px;
+}
+
+</style>
+
+  <style>
+  #feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: #FECA40; }
+  #selectable .ui-selected { background: #F39814; color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+	$( "#accordion" ).accordion();
+	$('.button').button();
+	$('#selecteaza-data').datepicker({ dateFormat: 'dd.mm.yy' });
+	$( "#draggable" ).draggable();
+	$( "#tabs" ).tabs();
+  } );
+  </script>
+
+  <script>
+  $( function() {
+    var state = true;
+    $( "#button" ).on( "click", function() {
+      if ( state ) {
+        $( "#effect" ).animate({
+          backgroundColor: "#aa0000",
+          color: "#fff",
+          width: 500
+        }, 1000 );
+      } else {
+        $( "#effect" ).animate({
+          backgroundColor: "#fff",
+          color: "#000",
+          width: 240
+        }, 1000 );
+      }
+      state = !state;
+    });
+  } );
+  </script>
+
+  <script>
+  $( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Go",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Pascal",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme",
+      "Swift"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+
+<script>
+ $(function() {
+  $("#selectable").selectable();
+  } );
+</script>
+
+</head>
+<body>
+
+<div id="tabs">
+  <ul>
+	<li><a href="#tabs-1"><span class="ui-icon ui-icon-gear"></span>Core</a></li>
+	<li><a href="#tabs-2"><span class="ui-icon ui-icon-info"></span>Documentation</a></li>
+	<li><a href="#tabs-3"><span class="ui-icon ui-icon-calendar"></span>Calendar</a></li>
+	<li><a href="#tabs-4"><span class="ui-icon ui-icon-wrench"></span>Demo and Tests</a></li>
+	<li><a href="#tabs-5"><span class="ui-icon ui-icon-script"></span>UI Components</a></li>
+	<li><a href="#tabs-6"><span class="ui-icon ui-icon-grip-diagonal-se"></span>Barcodes</a></li>
+	<li><a href="#tabs-7">Tab nr. 7</a></li>
+	<li><a href="#tabs-8">Tab nr. 8</a></li>
+	<li><a href="#tabs-9">Tab nr. 9</a></li>
+	<li><a href="#tabs-10">Tab nr. 10</a></li>
+  </ul>
+
+<div id="tabs-1">
+
+<h3>Victor site project</h3>
+<h3>It's just a simple jquery concept</h3>
+
+<img src="https://www.freelogodesign.org/file/app/client/thumb/2e053e76-ea92-413e-8504-3a6c35c991bd_200x200.png?1613743319668"
+width=170px height=170px>
+
+<a href="https://www.linux.org/">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/1200px-Tux.svg.png"
+width = 100px hieght=100px>
+</a>
+
+<a href="https://www.debian.org/">
+<img src="https://www.debian.org/Pics/debian-logo-1024x576.png"
+width = 150px hieght=150px>
+</a>
+
+<a href="https://httpd.apache.org/">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Apache_Feather_Logo.svg/1200px-Apache_Feather_Logo.svg.png"
+width = 70px hieght=70px>
+</a>
+<br>
+<a href="https://www.php.net/manual/en/book.com.php">
+<img src="https://www.freepnglogos.com/uploads/logo-php-png/php-learn-new-skills-courses-learn-computer-programming-and-6.png"
+width = 150px hieght=150px>
+</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsJw9V0CjaTIVdVb9gBNwr2zFONxIYPDdwyg&usqp=CAU"
+width = 150px hieght=150px>
+</a>
+
+<a href="https://jqueryui.com/">
+<img src="data:image/png;base64,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"
+width = 150px hieght=150px>
+</a>
+
+<a href="https://www.w3schools.com/html/">
+<img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png"
+width = 110px hieght=110px>
+</a>
+
+<a href="https://www.w3schools.com/css/">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI8r27qaBsTFfeTisaCHy-7TPlYu-R-scgPg&usqp=CAU"
+width = 100px hieght=100px>
+</a>
+
+</div>
+
+<div id="tabs-2" style="#FFFFFF">
+<h3>Wellcome to the documentation part</h3>
+<button class="button" onClick="buttonOnclick1();"><span class="ui-icon ui-icon-help"></span> HTML button </button>
+
+<a class="button" href="https://www.w3schools.com/css/"><span class="ui-icon ui-icon-help"></span> CSS button</a>
+
+<a class="button" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><span class="ui-icon ui-icon-help"></span> JavaScript button</a>
+
+<a class="button" href="https://jqueryui.com/"><span class="ui-icon ui-icon-help"></span> JQuery button</a>
+
+<a class="button" href="https://www.php.net/manual/en/book.com.php"><span class="ui-icon ui-icon-help"></span> PHP button</a>
+
+<div id="accordion">
+
+  <h3>HTML</h3>
+  <div>
+    <p>Is the interface program that display all the interface part of the site and is a frontEnd </p>
+  </div>
+
+  <h3>CSS</h3>
+  <div>
+    <p>Is a programming language that you can apply styles</p>
+  </div>
+
+  <h3>JavaScript</h3>
+  <div>
+    <p>Is a frontEnd language thats make the logical part of the site work</p>
+  </div>
+
+  <h3>JQuery</h3>
+  <div>
+    <p>It's a library for javascript</p>
+  </div>
+
+  <h3>PHP</h3>
+  <div>
+    <p>Is a backEnd language that makes the site work but you can display it single necessarily with html</p>
+  </div>
+
+</div>
+
+</div>
+
+<div id="tabs-3">
+
+<script>
+
+var d = new Date();
+
+dayofweek = d.getDay();
+
+switch(dayofweek) {
+
+	case 1:
+		document.write('back to work');
+	break;
+
+	case 2:
+	case 3:
+	case 4:
+		document.write('waiting for the weekend');
+	break;
+
+	case 5:
+		document.write('end of work');
+	break;
+
+	case 6:
+	case 0:
+		document.write('relax time');
+	break;
+
+	default:
+		document.write('waiting for the weekend');
+
+}
+
+
+</script>
+
+<form style="border: 1px solid #68B8D2;">
+<p>Selecteaza Data: <input type="text" id="selecteaza-data" readonly></p>
+<br>
+<input class="button" type="submit" value="A submit button">
+</form>
+
+</div>
+
+<div id="tabs-4" style="#FFFFFF">
+
+<h3>Wellcome to the Demo and Tests area</h3>
+
+<form style="border: 1px solid #68B8D2;">
+<ol id="selectable">
+  <li class="ui-widget-content">Item 1</li>
+  <li class="ui-widget-content">Item 2</li>
+  <li class="ui-widget-content">Item 3</li>
+  <li class="ui-widget-content">Item 4</li>
+  <li class="ui-widget-content">Item 5</li>
+  <li class="ui-widget-content">Item 6</li>
+  <li class="ui-widget-content">Item 7</li>
+</ol>
+<br>
+<input class="button" type="submit" value="A submit button">
+</form>
+
+<div id="draggable" class="ui-widget-content" style="#AFF8E3">
+  <p>Drag me around</p>
+</div>
+
+<div class="toggler">
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h3 class="ui-widget-header ui-corner-all">Animate</h3>
+    <p>Simple toggle animate</p>
+  </div>
+</div>
+
+<button id="button" class="ui-state-default ui-corner-all">Toggle Effect</button>
+
+<form>
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+</div>
+<br>
+<input class="button" type="submit" value="A submit button">
+</form>
+</div>
+
+<div id="tabs-5">
+
+<div class="widget">
+  <button class="button" id="button1" onClick="buttonOnclick2();" style="#4E9A06"><span class='ui-icon ui-icon-calculator'></span>Medie aritmetica</button>
+</div>
+<br>
+<div class="widget">
+  <button class="button" id="button2" onClick="buttonOnclick3();" style="#4E9A06"><span class='ui-icon ui-icon-volume-on'></span>Songs album</button>
+</div>
+<br>
+<div class="widget">
+  <button class="button" id="button3" onClick="buttonOnclick4();" style="#4E9A06"><span class='ui-icon ui-icon-calculator'></span>Arie cerc</button>
+</div>
+<br>
+<div class="widget">
+  <button class="button" id="button4" onClick="buttonOnclick5();" style="#4E9A06"><span class='ui-icon ui-icon-calculator'></span>Calculator</button>
+</div>
+<br>
+<div class="widget">
+  <button class="button" id="button5" onClick="buttonOnclick6();" style="#4E9A06"><span class='ui-icon ui-icon-calculator'></span>Calculator geometrie</button>
+</div>
+<br>
+<div class="widget">
+  <button class="button" id="button6" onClick="buttonOnclick7();" style="#4E9A06"><span class='ui-icon ui-icon-lightbulb'></span>The periodic table</button>
+</div>
+<br>
+<div class="widget">
+  <button class="widget" id="button7" onClick="buttonOnclick8();" style="#4E9A06"><span class='ui-icon ui-icon-clipboard'></span>Numbers</button>
+</div>
+<br>
+<div class="widget">
+  <button class="widget" id="button8" onClick="buttonOnclick9();" style="#4E9A06"><span class='ui-icon ui-icon-calculator'></span>Arie dreptunghi</button>
+</div>
+<br>
+<div class="widget">
+  <button class="button" id="button9" onClick="buttonOnclick10();" style="#4E9A06"><span class='ui-icon ui-icon-calculator'></span>Age calculator</button>
+</div>
+
+	</div>
+
+<div id="tabs-6">
+
+<h3>Barcodes 2D</h3>
+
+<img src="https://blog.hubspot.com/hs-fs/hub/53/file-2457427390-jpg/00-Blog_Thinkstock_Images/qr-code.jpg?width=381&name=qr-code.jpg"
+width = 150px hieght=150px>
+
+<img src="data:image/png;base64,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"
+width = 150px hieght=150px>
+
+<img src="https://miro.medium.com/max/990/1*PNniLVIC_Hc7gNIxjvWPWg.png"
+width = 150px hieght=150px>
+
+<img src="https://yemenbarcodes.com/wp-content/uploads/sites/123/2019/05/qr_code_5cdd30e269752.jpg"
+width = 150px hieght=150px>
+
+<img src="https://fpeme3022zp1scl6q238xy71-wpengine.netdna-ssl.com/wp-content/uploads/2012/02/qr.png"
+width = 150px hieght=150px>
+
+	</div>
+
+		</div>
+
+<script>
+function buttonOnclick1() {
+	alert('Bine ai venit in lumea informaticii');
+	self.location='https://www.w3schools.com/html/';
+	return false;
+}
+</script>
+
+<script>
+function buttonOnclick2() {
+	self.location='http://127.0.0.1/proiecte-victor/math/medie-aritmetica/medie.html';
+	return false;
+}
+</script>
+
+<script>
+function buttonOnclick3() {
+	self.location='http://127.0.0.1/proiecte-victor/programare/web/songs/songs.php';
+	return false;
+}
+</script>
+
+<script>
+function buttonOnclick4() {
+	self.location='http://127.0.0.1/proiecte-victor/programare/web/php-tests/test-objects-cerc.php';
+	return false;
+}
+</script>
+
+<script>
+function buttonOnclick5() {
+	self.location='http://127.0.0.1/proiecte-victor/programare/web/sci-widgets/calculator.html';
+	return false
+}
+</script>
+
+<script>
+function buttonOnclick6() {
+	self.location='http://127.0.0.1/proiecte-victor/programare/web/sci-widgets/area-calculator.html';
+	return false
+}
+</script>
+
+<script>
+function buttonOnclick7() {
+	self.location='http://127.0.0.1/proiecte-victor/programare/web/sci-widgets/periodic-table-of-elements.html';
+	return false
+}
+</script>
+
+<script>
+function buttonOnclick8() {
+	self.location='http://127.0.0.1/proiecte-victor/programare/web/php-tests/test-program-afisare-numere.php';
+	return false;
+}
+</script>
+
+<script>
+function buttonOnclick9() {
+	self.location='http://127.0.0.1/proiecte-victor/programare/web/php-tests/test-objects-dreptunghi.php';
+	return false;
+}
+</script>
+
+<script>
+function buttonOnclick10() {
+	self.location='http://127.0.0.1/proiecte-victor/programare/web/php-tests/php-date-of-birth.php';
+	return false;
+}
+</script>
+
+</body>
+</html>
