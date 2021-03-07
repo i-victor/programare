@@ -1,8 +1,20 @@
 <?php
 
+<<<<<<< HEAD
 if(isset($_REQUEST['dtime'])) {
 
 $dob = (string) $_REQUEST['dtime'];
+=======
+if(isset($_REQUEST['sub']))
+
+{
+
+$mm= (int) $_REQUEST['mm'];
+
+$dd= (int) $_REQUEST['dd'];
+
+$yy= (int) $_REQUEST['yy'];
+>>>>>>> ac4d244840a9c091e3225bbfd93cc3f1207168ef
 
 $dob=$mm."/".$dd."/".$yy;
 
@@ -12,7 +24,11 @@ $dateTs=strtotime($dob);
 
 $now=strtotime('today');
 
+<<<<<<< HEAD
 if(count($arr) != 3) die('ERROR:please enter a valid date');
+=======
+if(sizeof($arr)!=3) die('ERROR:please enter a valid date');
+>>>>>>> ac4d244840a9c091e3225bbfd93cc3f1207168ef
 
 if(!checkdate($arr[0],$arr[1],$arr[2])) die('PLEASE: enter a valid date of birth');
 
