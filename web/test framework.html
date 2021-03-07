@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Smart.Framework">
+<title>Smart.Framework Test and Demo Suite  / NetServerID: 1 (01)</title>
+
+<link rel="stylesheet" type="text/css" href="lib/core/plugins/fonts/typo/sans/ibm-plex-sans.css?hkqf8k" media="all">
+<style type="text/css">* { font-family: 'IBM Plex Sans',arial,sans-serif; }</style>
+
+<link rel="stylesheet" type="text/css" href="etc/templates/default/app.css?hkqf8k">
+
+<link rel="stylesheet" type="text/css" href="etc/templates/default/styles.css?hkqf8k">
+
+<script type="text/javascript" src="lib/js/jquery/jquery.js?hkqf8k"></script><script type="text/javascript">jQuery.ajaxSetup({ timeout: 0, cache: false });</script><script type="text/javascript" src="lib/js/jquery/jquery.smart.compat.js?hkqf8k"></script>
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/growl/jquery.gritter.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/growl/jquery.gritter.js?hkqf8k"></script><link rel="stylesheet" type="text/css" href="lib/js/jquery/jquery.alertable.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/jquery.alertable.js?hkqf8k"></script>
+<script type="text/javascript" src="lib/js/framework/smart-framework.pak.js?hkqf8k"></script>
+<script type="text/javascript" src="lib/js/jquery/jquery.easing.js?hkqf8k"></script><link rel="stylesheet" type="text/css" href="lib/js/jquery/slimbox/css/slimbox.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/slimbox/slimbox.js?hkqf8k"></script><script type="text/javascript" src="lib/js/jquery/slimbox/slimbox_scanner.js?hkqf8k"></script>
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/dialog/simple-dialog.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/dialog/simple-dialog.js?hkqf8k"></script>
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/autosuggest/smart-suggest.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/autosuggest/smart-suggest.js?hkqf8k"></script>
+<link rel="stylesheet" href="lib/js/jquery/tabs/jquery.tabs.css?hkqf8k" type="text/css"><script src="lib/js/jquery/tabs/jquery.tabs.js?hkqf8k" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/datepicker/css/datepicker.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/datepicker/datepicker.js?hkqf8k"></script>
+<link rel="stylesheet" href="lib/js/jquery/timepicker/css/jquery.timepicker.css?hkqf8k" type="text/css"><script type="text/javascript" src="lib/js/jquery/timepicker/jquery.timepicker.js?hkqf8k"></script>
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/listselect/css/chosen.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/listselect/chosen.jquery.js?hkqf8k"></script>
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/datatables/datatables-responsive.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/datatables/datatables-responsive.js?hkqf8k"></script>
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/jquery.tiptop.css?hkqf8k"><script type="text/javascript" src="lib/js/jquery/jquery.tiptop.js?hkqf8k"></script>
+<script type="text/javascript" src="lib/js/jquery/jquery.smartframework.ui.js?hkqf8k"></script>
+
+<script type="text/javascript">
+	SmartJS_BrowserUtils.param_LanguageId = 'en';
+	SmartJS_BrowserUtils.param_CookieName = 'SmartFramework__UID';
+	SmartJS_BrowserUtils.param_CookieDomain = '';
+	SmartJS_BrowserUtils.param_TemplatePath = 'modules\/mod-samples\/templates\/';
+	if(Test_Browser_Compliance.checkIsMobileDevice()) { SmartJS_BrowserUtils.param_Use_iFModalBox_Active = 0; } else { SmartJS_BrowserUtils.param_Use_iFModalBox_Active = 1; SmartJS_BrowserUtils.Control_ModalCascading(); } // force popup instead of modal for mobile devices ; for desktop keep modal with cascading control
+	SmartJS_BrowserUtils.param_Use_iFModalBox_Protection = 0; // use no modal protection for index area
+</script>
+
+</head>
+<body>
+
+<div id="page-loader"></div>
+<script type="text/javascript">
+jQuery('#page-loader').css({
+	position: 'fixed',
+	left: '0px',
+	top: '0px',
+	width: '100%',
+	height: '100%',
+	background: "url('lib/framework/img/loading-spokes.svg') 50% 50% no-repeat rgb(249,249,249)",
+	'z-index': 2147483001,
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	setTimeout(function(){ $('#page-loader').fadeOut('slow') }, 250);
+});
+</script>
+<!-- #END# partial-template-loader -->
+
+<div id="app-container" class="app-box">
+<!-- Partial Template: TestUnit.Main -->
+<script src="lib/js/jquery/jquery.unveil.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	setTimeout(function(){ jQuery('img.unveil').unveil(); }, 250);
+});
+</script>
+<script type="text/javascript">
+	var TESTUNIT_BASE_URL = '?\/page\/samples.testunit\/op\/';
+	var TESTUNIT_AREA_PFX = 'idx';
+</script>
+<div align="left" style="width: 100%;">
+	<div style="background-color: #ECECEC; padding: 10px;"><b>Smart.Framework</b> :: PHP/Javascript web framework :: Test and Demo Suite @ [ Index ]</div>
+	<!-- start tabs -->
+	<div id="tabs_draw">
+		<div id="tabs_nav">
+			<ul>
+				<li><a href="#tabs_tests_core"><i class="sfi sfi-cog"></i> &nbsp; Core</a></li>
+				<li><a href="#tabs_tests_templating"><i class="sfi sfi-lab"></i> &nbsp; Templating</a></li>
+				<li><a href="#tabs_tests_forms"><i class="sfi sfi-insert-template"></i> &nbsp; Forms</a></li>
+				<li><a href="#tabs_tests_interractions"><i class="sfi sfi-new-tab"></i> &nbsp; Interract</a></li>
+				<li><a href="modules/mod-samples/libs/templates/testunit/test-unit-tabext-smartgrid-test.inc.htm"><i class="sfi sfi-table2"></i> &nbsp; Smart Grid</a></li>
+				<li><a href="modules/mod-samples/libs/templates/testunit/test-unit-tabext-slickgrid-test.inc.htm"><i class="sfi sfi-command"></i> &nbsp; BigData Grid</a></li>
+				<li><a href="modules/mod-samples/libs/templates/testunit/test-unit-tabext-charts-test.inc.htm"><i class="sfi sfi-pie-chart"></i> &nbsp; Charts</a></li>
+				<li><a href="modules/mod-samples/libs/templates/testunit/test-unit-tabext-barcodes-test.inc.htm"><i class="sfi sfi-qrcode"></i> &nbsp; Barcodes</a></li>
+				<li><a href="#tabs_tests_ui_components"><i class="sfi sfi-display"></i> &nbsp; UI / Components</a></li>
+				<li><a href="broken-link.html"><i class="sfi sfi-eye-blocked"></i> &nbsp; Broken Link</a></li><!-- this is just for testing (broken), the URL actually does not exists -->
+			</ul>
+		</div>
+		<div id="tabs_tests_core">
+
+			<span style="color: #778899; font-size: 37px; font-weight: bold;">Core Test Suite &nbsp;&nbsp;&nbsp; :: &nbsp;&nbsp;&nbsp; コアテスト·スイート</span>
+			<br>
+			<br>
+			<button class="ux-button ux-button-secondary" id="btn_loader_test_qunit"><i class="sfi sfi-hour-glass" style="color:#dddddd;"></i> &nbsp; All Tests: QUnit</button>
+			<button class="ux-button" id="btn_loader_test_strings" title="Unicode Strings Tests"><i class="sfi sfi-sphere" style="color:#555555;"></i> &nbsp; Test: Unicode Strings</button>
+			<button class="ux-button" id="btn_loader_test_crypto" title="Cryptography Tests"><i class="sfi sfi-make-group" style="color:#555555;"></i> &nbsp; Test: Cryptography</button>
+			<button class="ux-button" id="btn_loader_test_mtpl"><i class="sfi sfi-stack" style="color:#555555;"></i> &nbsp; Test: Marker-TPL</button>
+			<button class="ux-button" id="btn_loader_test_fs"><i class="sfi sfi-folder-open" style="color:#555555;"></i> &nbsp; Test: FileSystem Operations</button>
+			<br>
+			<button class="ux-button" id="btn_loader_test_dba"><i class="sfi sfi-library" style="color:#555555;"></i> &nbsp; Test: Dba DB</button>
+			<button class="ux-button" id="btn_loader_test_pcache"><i class="sfi sfi-magnet" style="color:#555555;"></i> &nbsp; Test: Persistent Cache</button>
+			<button class="ux-button" id="btn_loader_test_mongo"><i class="sfi sfi-leaf" style="color:#555555;"></i> &nbsp; Test: MongoDB Server</button>
+			<button class="ux-button" id="btn_loader_test_pgsql"><i class="sfi sfi-database" style="color:#555555;"></i> &nbsp; Test: PostgreSQL Server</button>
+			<button class="ux-button" id="btn_loader_test_mysql"><i class="sfi sfi-books" style="color:#555555;"></i> &nbsp; Test: MariaDB/MySQL Server</button>
+			<script type="text/javascript">
+			var the_url_test_unicode_str = 'Platform \u30af\u30e9\u30a6\u30c9\u30a2\u30d7\u30ea\u30b1\u30fc\u30b7\u30e7\u30f3\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0 \u0027\u00e1\u00e2\u00e3\u00e4\u00e5\u0101\u0103\u0105\u00c1\u00c2\u00c3\u00c4\u00c5\u0100\u0102\u0104\u0107\u0109\u010d\u00e7\u0106\u0108\u010c\u00c7\u010f\u010e\u00e8\u00e9\u00ea\u00eb\u0113\u0115\u0117\u011b\u0119\u00c8\u00c9\u00ca\u00cb\u0112\u0114\u0116\u011a\u0118\u011d\u0123\u011c\u0122\u0125\u0127\u0124\u0126\u00ec\u00ed\u00ee\u00ef\u0129\u012b\u012d\u0209\u020b\u012f\u00cc\u00cd\u00ce\u00cf\u0128\u012a\u012c\u0208\u020a\u012e\u0133\u0135\u0132\u0134\u0137\u0136\u013a\u013c\u013e\u0142\u0139\u013b\u013d\u0141\u00f1\u0144\u0146\u0148\u00d1\u0143\u0145\u0147\u00f2\u00f3\u00f4\u00f5\u00f6\u014d\u014f\u0151\u00f8\u0153\u00d2\u00d3\u00d4\u00d5\u00d6\u014c\u014e\u0150\u00d8\u0152\u0155\u0157\u0159\u0154\u0156\u0158\u0219\u015f\u0161\u015b\u015d\u00df\u0218\u015e\u0160\u015a\u015c\u021b\u0163\u0165\u021a\u0162\u0164\u00f9\u00fa\u00fb\u00fc\u0169\u016b\u016d\u016f\u0171\u0173\u00d9\u00da\u00db\u00dc\u0168\u016a\u016c\u016e\u0170\u0172\u0175\u0174\u1e8f\u1ef3\u0177\u00ff\u00fd\u1e8e\u1ef2\u0176\u0178\u00dd\u017a\u017c\u017e\u0179\u017b\u017d \u0022 \u003Cp\u003E\u003C\/p\u003E ? \u0026 * ^ $ @ ! ` ~ % () [] {} | \\ \/ + - _ : ; , . #\u00270.51085630 1454529172#\r\n\t`~@#$%^\u0026*()-_=+[{]}|;:\u0022\u003C\u003E,.?\/\\';
+			jQuery(function() {
+				//--
+				$('#btn_loader_test_qunit').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;"></span>');
+					SmartJS_BrowserUtils.PopUpLink('?page=samples.qunit-run-tests', 'qunit-ext-test', null, null, -1, 1);
+				});
+				//--
+				$('#btn_loader_test_strings').click(function() {
+					var the_type_page_test_str = 'html';
+					var the_param_page_test_str = 'testunit.strings-test';
+					var the_img_page_test_str = 'lib/framework/img/loading-spokes.svg';
+					var the_rand_chooser = Math.floor((Math.random() * 100) + 1);
+					if(the_rand_chooser >= 50) {
+						the_type_page_test_str = 'json';
+						the_param_page_test_str = 'testunit.strings-test-json';
+						the_img_page_test_str = 'lib/framework/img/loading-cylon.svg';
+					} //end if
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;">Loading the Unicode String Test Suite ...</span>');
+					// the URL below MUST CONTAIN a combination between semantic paths and url variables to get a real testing ; from PHP to Semantic ; from JS to URL var
+					SmartJS_BrowserUtils.Load_Div_Content_By_Ajax('test_div_by_ajax', String(the_img_page_test_str), '?\/page\/samples.testunit\/op\/' + the_param_page_test_str + '/time/1613113711/str_php/Platform%20%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%20%27%C3%A1%C3%A2%C3%A3%C3%A4%C3%A5%C4%81%C4%83%C4%85%C3%81%C3%82%C3%83%C3%84%C3%85%C4%80%C4%82%C4%84%C4%87%C4%89%C4%8D%C3%A7%C4%86%C4%88%C4%8C%C3%87%C4%8F%C4%8E%C3%A8%C3%A9%C3%AA%C3%AB%C4%93%C4%95%C4%97%C4%9B%C4%99%C3%88%C3%89%C3%8A%C3%8B%C4%92%C4%94%C4%96%C4%9A%C4%98%C4%9D%C4%A3%C4%9C%C4%A2%C4%A5%C4%A7%C4%A4%C4%A6%C3%AC%C3%AD%C3%AE%C3%AF%C4%A9%C4%AB%C4%AD%C8%89%C8%8B%C4%AF%C3%8C%C3%8D%C3%8E%C3%8F%C4%A8%C4%AA%C4%AC%C8%88%C8%8A%C4%AE%C4%B3%C4%B5%C4%B2%C4%B4%C4%B7%C4%B6%C4%BA%C4%BC%C4%BE%C5%82%C4%B9%C4%BB%C4%BD%C5%81%C3%B1%C5%84%C5%86%C5%88%C3%91%C5%83%C5%85%C5%87%C3%B2%C3%B3%C3%B4%C3%B5%C3%B6%C5%8D%C5%8F%C5%91%C3%B8%C5%93%C3%92%C3%93%C3%94%C3%95%C3%96%C5%8C%C5%8E%C5%90%C3%98%C5%92%C5%95%C5%97%C5%99%C5%94%C5%96%C5%98%C8%99%C5%9F%C5%A1%C5%9B%C5%9D%C3%9F%C8%98%C5%9E%C5%A0%C5%9A%C5%9C%C8%9B%C5%A3%C5%A5%C8%9A%C5%A2%C5%A4%C3%B9%C3%BA%C3%BB%C3%BC%C5%A9%C5%AB%C5%AD%C5%AF%C5%B1%C5%B3%C3%99%C3%9A%C3%9B%C3%9C%C5%A8%C5%AA%C5%AC%C5%AE%C5%B0%C5%B2%C5%B5%C5%B4%E1%BA%8F%E1%BB%B3%C5%B7%C3%BF%C3%BD%E1%BA%8E%E1%BB%B2%C5%B6%C5%B8%C3%9D%C5%BA%C5%BC%C5%BE%C5%B9%C5%BB%C5%BD%20%22%20%3Cp%3E%3C%2Fp%3E%20%3F%20%26%20%2A%20%5E%20%24%20%40%20%21%20%60%20~%20%25%20%28%29%20%5B%5D%20%7B%7D%20%7C%20%5C%20%2F%20%2B%20-%20_%20%3A%20%3B%20%2C%20.%20%23%270.51085630%201454529172%23%0D%0A%09%60~%40%23%24%25%5E%26%2A%28%29-_%3D%2B%5B%7B%5D%7D%7C%3B%3A%22%3C%3E%2C.%3F%2F%5C+./' + '&str_js=' + SmartJS_CoreUtils.escape_url(the_url_test_unicode_str) + '+.', 'GET', String(the_type_page_test_str));
+				});
+				//--
+				jQuery('#btn_loader_test_crypto').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;">Loading the Crypto Test Suite ...</span><br><img src="lib/framework/img/loading-bars.svg">');
+					SmartJS_BrowserUtils.Ajax_XHR_Request_From_URL('?\/page\/samples.testunit\/op\/testunit.crypto-test&time=1613113711', 'GET').done(function(msg) { // {{{JQUERY-AJAX}}}
+						$('#test_div_by_ajax').html(msg); // this will also evaluate the js scripts
+					}).fail(function(msg) {
+						alert('ERROR (Test-Unit): Invalid Server Response !', '' + msg.responseText);
+					});
+				});
+				//--
+				$('#btn_loader_test_mtpl').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;"></span>');
+					SmartJS_BrowserUtils.PopUpLink('?page=samples.templating-test-extended&time=1613113711', 'markertpl-ext-test', null, null, -1, 1);
+				});
+				//--
+				$('#btn_loader_test_fs').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;">Loading the FileSystem Test Suite ...</span>');
+					SmartJS_BrowserUtils.Load_Div_Content_By_Ajax('test_div_by_ajax', 'lib/framework/img/loading-cubes.svg', '?\/page\/samples.testunit\/op\/testunit.filesys-test&time=1613113711', 'GET', 'html');
+				});
+				//--
+				$('#btn_loader_test_dba').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;">Loading the Dba DB Test Suite ...</span>');
+					SmartJS_BrowserUtils.Load_Div_Content_By_Ajax('test_div_by_ajax', 'lib/framework/img/loading-cubes.svg', '?\/page\/samples.testunit\/op\/testunit.dbadb-test&time=1613113711', 'GET', 'html');
+				});
+				//--
+				$('#btn_loader_test_pcache').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;">Loading the Persistent Cache Test Suite ...<br>This test will run ~ 15 seconds as it needs to set and wait (sleep) for some keys to expire ...</span>');
+					SmartJS_BrowserUtils.Load_Div_Content_By_Ajax('test_div_by_ajax', 'lib/framework/img/loading-spin.svg', '?\/page\/samples.testunit\/op\/testunit.pcache-test&time=1613113711', 'GET', 'html');
+				});
+				//--
+				jQuery('#btn_loader_test_mongo').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;">Loading the MongoDB Server Test Suite ...</span>');
+					SmartJS_BrowserUtils.Load_Div_Content_By_Ajax('test_div_by_ajax', 'lib/framework/img/loading-spinning-bubbles.svg', '?\/page\/samples.testunit\/op\/testunit.mongodb-server-test&time=1613113711', 'GET', 'html');
+				});
+				//--
+				jQuery('#btn_loader_test_pgsql').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;">Loading the PostgreSQL Server Test Suite ...</span>');
+					SmartJS_BrowserUtils.Load_Div_Content_By_Ajax('test_div_by_ajax', 'lib/framework/img/loading-bubbles.svg', '?\/page\/samples.testunit\/op\/testunit.pgsql-server-test&time=1613113711', 'GET', 'html');
+				});
+				//--
+				jQuery('#btn_loader_test_mysql').click(function() {
+					$('#test_div_by_ajax').html('<span style="color: #003399; font-size: 27px; font-weight: bold;">Loading the MariaDB/MySQL Server Test Suite ...</span>');
+					SmartJS_BrowserUtils.Load_Div_Content_By_Ajax('test_div_by_ajax', 'lib/framework/img/loading-bubbles.svg', '?\/page\/samples.testunit\/op\/testunit.mysql-server-test&time=1613113711', 'GET', 'html');
+				});
+				//--
+			});
+			</script>
+			<hr>
+			<div id="test_div_by_ajax">
+				<h1><span style="color:#111111; background:#FFCC00; padding:5px;">TESTING AREA (tests will be loaded here) :: 2021-02-12 07:08:31 +0000 ...</span></h1>
+				<a data-slimbox="slimbox" href="lib/core/img/app/server.svg" title="Image One"><img height="90" src="lib/core/img/app/server.svg" alt="Click to Test Image Gallery" title="Click to Test Image Gallery"></a>
+				<a data-slimbox="slimbox" href="?page=samples.test-image" title="Image Two"><img src="?page=samples.test-image" alt="Click to Test Image Gallery" title="Click to Test Image Gallery"></a>
+				<br>
+			</div>
+			<hr>
+			<br>
+<div id="Powered-Info" style="position:relative!important; display:block!important; background:#FFFFFF!important; color:#cccccc!important; padding-left:5px; max-width:800px!important; border:1px solid #ECECEC; border-radius:3px;">
+	<div style="display:block!important; padding:0px!important; margin:0px!important; width:250px!important; text-align:left!important;">
+		<div style="display:inline-block!important; margin:10px!important; cursor:pointer;">
+			<a href="http://demo.unix-world.org/smart-framework/" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="Smart.Framework, a PHP / Javascript Web Framework" title="Smart.Framework, a PHP / Javascript Web Framework" src="http://127.0.0.1/smart-framework/lib/framework/img/sf-logo.svg"></a>
+		</div>
+		<div style="display:inline-block!important; cursor:default; position:absolute!important; top:10px;">
+			<span style="line-height:64px!important; font-size:20px!important; font-weight:normal!important; font-style:italic!important;">app::powered.by</span>
+		</div>
+	</div>
+	<div style="display:block!important; padding:0px!important; margin:0px!important;">
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<img width="64" height="64" alt="Debian Linux Operating System" title="Debian Linux Operating System" src="http://127.0.0.1/smart-framework/lib/core/img/os/linux-debian.svg">
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<a href="https://httpd.apache.org" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="Apache Web Server" title="Apache Web Server" src="http://127.0.0.1/smart-framework/lib/framework/img/apache-logo.svg"></a>
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<a href="http://www.php.net" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="PHP Server-Side Scripting Language" title="PHP Server-Side Scripting Language" src="http://127.0.0.1/smart-framework/lib/framework/img/php-logo.svg"></a>
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<a href="https://www.sqlite.org" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="SQLite Embedded Database" title="SQLite Embedded Database" src="http://127.0.0.1/smart-framework/lib/core/img/db/sqlite-logo.svg"></a>
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<a href="https://www.gnu.org/software/gdbm" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="DBA/GDBM Embedded DataStore (@autoselect)" title="DBA/GDBM Embedded DataStore (@autoselect)" src="http://127.0.0.1/smart-framework/lib/core/img/db/dba-logo.svg"></a>
+
+		</div>
+
+	</div>
+	<div style="display:block!important; padding:0px!important; margin:0px!important;">
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<a href="https://www.w3.org/TR/html/" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="HTML Markup Language for World Wide Web" title="HTML Markup Language for World Wide Web" src="http://127.0.0.1/smart-framework/lib/framework/img/html-logo.svg"></a>
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<a href="https://www.w3.org/TR/CSS/" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="CSS Style Sheet Language for World Wide Web" title="CSS Style Sheet Language for World Wide Web" src="http://127.0.0.1/smart-framework/lib/framework/img/css-logo.svg"></a>
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="Javascript Client-Side Scripting Language for World Wide Web" title="Javascript Client-Side Scripting Language for World Wide Web" src="http://127.0.0.1/smart-framework/lib/framework/img/javascript-logo.svg"></a>
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<a href="https://jquery.com" target="_blank" style="cursor:pointer!important;"><img width="64" height="64" alt="jQuery Javascript Library" title="jQuery Javascript Library" src="http://127.0.0.1/smart-framework/lib/framework/img/jquery-logo.svg"></a>
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<div style="width:64px; height:64px; cursor:default!important;"></div>
+
+		</div>
+			<div style="display:inline-block!important; margin:10px!important; cursor:help;">
+					<img width="64" height="64" alt="Mozilla Firefox :: Web Browser" title="Mozilla Firefox :: Web Browser" src="http://127.0.0.1/smart-framework/lib/core/img/browser/fox.svg">
+
+		</div>
+
+	</div>
+</div>
+
+		</div>
+		<div id="tabs_tests_interractions">
+	<h5 class="inline"><b>Click</b> on the (buttons) links below / <b>Press</b> the <b><i>Submit</i></b> buttons to play with interractions ...</h5>
+	<br><br>
+	<a class="ux-button ux-button-secondary" style="min-width:320px;" href="#" onClick="SmartJS_BrowserUtils.alert_Dialog('\u003Ch2\u003EYou can press now OK !\u003C\/h2\u003E\u003Cdiv\u003EOption: \u003Cselect id=\u0022test-dlg-select-el-sf\u0022 class=\u0022ux-field\u0022\u003E\u003Coption value=\u0022One\u0022\u003EOne\u003C\/option\u003E\u003Coption value=\u0022Two\u0022\u003ETwo\u003C\/option\u003E\u003C\/select\u003E\u003C\/div\u003E', 'jQuery.alertable.alert(\u0027Good ... you selected the value: [\u0027 + $(\u0027#test-dlg-select-el-sf\u0027).val() + \u0027]\\n ... \\\u0027 \u0022 \u003Ctag\u003E !\u0027).always(function(){});', '!', 0, 0); return false;">Test JS-UI Alert  &nbsp; <i class="sfi sfi-share"></i></a>
+	&nbsp;&nbsp;
+	<a class="ux-button ux-button-primary" style="min-width:320px;" href="#" onClick="SmartJS_BrowserUtils.confirm_Dialog('\u003Ch1\u003EDo you like this framework ?\u003C\/h1\u003E\u003Cdiv\u003EOption: \u003Cselect id=\u0022test-dlg-select-el-sf\u0022 class=\u0022ux-field\u0022\u003E\u003Coption value=\u0022Yes\u0022\u003EYes\u003C\/option\u003E\u003Coption value=\u0022No\u0022\u003ENo\u003C\/option\u003E\u003C\/select\u003E\u003C\/div\u003E', 'jQuery.alertable.alert(\u0027Well ... then you selected the value: [\u0027 + $(\u0027#test-dlg-select-el-sf\u0027).val() + \u0027]\\n ... \\\u0027 \u0022 \u003Ctag\u003E !\u0027).always(function(){});', '?', 0, 0); return false;">Test JS-UI Dialog &nbsp; <i class="sfi sfi-share"></i></a>
+	<br><br>
+	<form class="ux-form ux-inline-block" id="form_for_test" action="?/page/samples.testunit/op/testunit.main&tab=1&winmod=yes" method="post" target="_blank"><input type="hidden" name="testformdata[test]" value="Testing ..."><input type="hidden" name="testformdata[another-test]" value="Testing more ..."><input class="ux-button ux-button-info" style="min-width:320px;" type="submit" value="Submit Form with Confirmation / Modal" OnClick="SmartJS_BrowserUtils.confirmSubmitForm('\u003Cdiv align=\u0022left\u0022\u003E\u003Ch3\u003E\u003Cb\u003EAre you sure you want to submit this form [MODAL] ?\u003C\/b\u003E\u003C\/h3\u003E\u003C\/div\u003E', this.form, 'my_form', '', '', '', ''); return false;"></form>
+	&nbsp;&nbsp;
+	<form class="ux-form ux-inline-block" id="form_for_test" action="?/page/samples.testunit/op/testunit.main&tab=1&winmod=yes" method="post" target="_blank"><input type="hidden" name="testformdata[test]" value="Testing ..."><input type="hidden" name="testformdata[another-test]" value="Testing more ..."><input class="ux-button ux-button-dark" style="min-width:320px;" type="submit" value="Submit Form with Confirmation / PopUp" OnClick="SmartJS_BrowserUtils.confirmSubmitForm('\u003Cdiv align=\u0022left\u0022\u003E\u003Ch3\u003E\u003Cb\u003EAre you sure you want to submit this form [POPUP] ?\u003C\/b\u003E\u003C\/h3\u003E\u003C\/div\u003E', this.form, 'my_form', '780', '420', '1', ''); return false;"></form>
+	<br><br>
+	<a class="ux-button ux-button-regular" style="min-width:320px;" target="test_bw_win_interractions_modal_start" href="?/page/samples.testunit/op/testunit.interractions" onClick="SmartJS_BrowserUtils.PopUpLink(this.href, this.target, null, null, -1); return false;">Open Modal (strict)  &nbsp; <i class="sfi sfi-terminal"></i></a>
+	&nbsp;&nbsp;
+	<a class="ux-button ux-button-highlight" style="min-width:320px;" target="test_bw_win_interractions_popup_start" href="?/page/samples.testunit/op/testunit.interractions" onClick="SmartJS_BrowserUtils.PopUpLink(this.href, this.target, null, null, 1); return false;">Open PopUp (strict)  &nbsp; <i class="sfi sfi-shift"></i></a>
+	<br><br>
+	<a href="http://www.unix-world.org" target="testunit_code_wl" data-smart="open.popup" class="ux-button ux-button-special" style="width:320px;"><i class="sfi sfi-shift"></i> &nbsp; PopUp + Focus (with a remote URL)</a>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<img title="This is a lazy load image that should load the OSI SVG Logo" class="unveil" width="320" src="lib/framework/img/sf-logo.svg" data-src="modules/mod-samples/views/img/osi.svg">
+		</div>
+		<div id="tabs_tests_forms">
+	<h4 class="inline"><b><i>Play</i></b> with the <b>Form <i>controls</i></b> below (if the Limited TextArea is not empty a REDIRECTION on Success/Error is reversed !):</h4>
+	<br><br>
+	<div id="answer_ajax" style="background: #778899; z-index: 999999; border-radius:3px;"><div style="padding:2px; padding-left:5px; color: #FFFFFF;"><b>[Selecting Date is mandatory. This area will be replaced on sending the form if the below TextArea is not empty. Else, the page will refresh after post !]</b></div></div>
+	<br>
+	<form class="ux-form" id="test_form_ajax" name="test_form_ajax" method="post" action="#">
+	<input type="hidden" name="test_ajax_var" value="Testing by Ajax (hidden) ...">
+	<style type="text/css">
+	#myFormFluidTable div.ux-fluid-table {
+		width: 1024px;
+	}
+	#myFormFluidTable div.ux-fluid-table div.ux-fluid-tbl-row {
+		width: 100%;
+	}
+	#myFormFluidTable div.ux-fluid-table div.ux-fluid-tbl-row div.ux-fluid-tbl-cell {
+		width: 50%;
+		border: 0px;
+		padding: 3px;
+		padding-bottom: 5px;
+	}
+	@media all and (max-width: 1023px) {
+		#myFormFluidTable div.ux-fluid-table {
+			width: 100% !important;
+		}
+		#myFormFluidTable div.ux-fluid-table div.ux-fluid-tbl-row {
+			display: block !important;
+		}
+		#myFormFluidTable div.ux-fluid-table div.ux-fluid-tbl-row div.ux-fluid-tbl-cell {
+			display: inline-block !important;
+			width: 100% !important;
+			text-align: left !important;
+		}
+		#myFormFluidTable div.ux-fluid-table div.ux-fluid-tbl-row div.ux-fluid-tbl-cell * {
+			text-align: left !important;
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+		}
+	}
+	</style>
+	<div id="myFormFluidTable">
+		<div class="ux-fluid-table">
+			<div class="ux-fluid-tbl-row">
+				<div class="ux-fluid-tbl-cell">
+					Calendar Selector: <!-- Partial Template: Plugins.UIPickerDate r.20200121 -->
+<span id="date-area-frm_calendar_id" title="Select Date [dd.mm.yy]">
+<input type="hidden" id="frm_calendar_id" name="frm[date]" value="">
+<input type="text" id="date-entry-frm_calendar_id" name="dtfmt__frm[date]" maxlength="13" value="" readonly="readonly" class="ux-field datetime_Field_DatePicker" style=" width:85px;" autocomplete="off">
+</span>
+<script type="text/javascript">
+if(typeof SmartJS_BrowserUIUtils != 'undefined') {
+	(function() {
+		try {
+			SmartJS_BrowserUIUtils.Date_Picker_Init('frm_calendar_id', 'dd.mm.yy', '', 0, '0d', '1y', 2, 'alert(\u0027You selected the date: \u0027 + date);');
+			jQuery('#date-entry-frm_calendar_id').on('click', function(e){
+				setTimeout(function(){ try { SmartJS_BrowserUIUtils.Date_Picker_Display('frm_calendar_id'); } catch(err){} }, 200);
+			}).on('dblclick doubletap', function(e){
+				jQuery('#frm_calendar_id').val('');
+				jQuery(this).val('');
+			});
+		} catch(err) {
+			console.log('UI DatePicker ERR: ' + err);
+		}
+	})();
+} else {
+	console.log('UI:Js:DatePicker: No DatePicker widget is available ...');
+}
+</script>
+<!-- #END :: Partial Template: Plugins.UIPickerDate -->
+				</div>
+				<div class="ux-fluid-tbl-cell">
+					TimePicker Selector: <!-- Partial Template: Plugins.UIPickerTime r.20200121 -->
+<span id="time-area-frm_timepicker_id" title="Select Time [HH:ii]">
+<input type="text" name="frm[time]" id="frm_timepicker_id" maxlength="5" value="" readonly="readonly" class="ux-field datetime_Field_TimePicker" style=" width:50px;" autocomplete="off">
+</span>
+<script type="text/javascript">
+if(typeof SmartJS_BrowserUIUtils != 'undefined') {
+	(function() {
+		try {
+			SmartJS_BrowserUIUtils.Time_Picker_Init('frm_timepicker_id', 9, 19, 0, 55, 5, 3, 'alert(\u0027You selected the time: \u0027 + time);');
+			jQuery('#frm_timepicker_id').on('click', function(e){
+				setTimeout(function(){ SmartJS_BrowserUIUtils.Time_Picker_Display('frm_timepicker_id'); }, 200);
+			}).on('dblclick doubletap', function(e){
+				jQuery(this).val('');
+			});
+		} catch(err) {
+			console.log('UI TimePicker ERR: ' + err);
+		}
+	})();
+} else {
+	console.log('UI:Js:TimePicker: No TimePicker widget is available ...');
+}
+</script>
+<!-- #END :: Partial Template: Plugins.UIPickerTime -->
+				</div>
+			</div>
+			<div class="ux-fluid-tbl-row">
+				<div class="ux-fluid-tbl-cell">
+					AutoComplete Single: <input id="auto-complete-fld" type="text" name="frm[autocomplete]" style="width:75px;"><script type="text/javascript">try { SmartJS_BrowserUIUtils.AutoCompleteField('single', 'auto-complete-fld', '?\/page\/samples.testunit\/op\/testunit.autocomplete', 'src', 1, 'alert(\u0027You selected: \u0027 + value);'); } catch(e) { console.log('Failed to initialize JS-UI AutoComplete-Single: ' + e); }</script>
+				</div>
+				<div class="ux-fluid-tbl-cell">
+					Autocomplete Multi: <input id="auto-complete-mfld" type="text" name="frm[mautocomplete]" style="width:125px;"><script type="text/javascript">try { SmartJS_BrowserUIUtils.AutoCompleteField('multilist', 'auto-complete-mfld', '?\/page\/samples.testunit\/op\/testunit.autocomplete', 'src', 1, 'alert(\u0027You selected: \u0027 + value);'); } catch(e) { console.log('Failed to initialize JS-UI AutoComplete-Multi: ' + e); }</script>
+				</div>
+			</div>
+			<div class="ux-fluid-tbl-row">
+				<div class="ux-fluid-tbl-cell">
+					SingleSelect DropDown List without Blank: <select name="frm[one_single]" id="test-unit-s-list-one" size="1"  style="width:170px;" >
+<option value="one">One</option>
+</select>
+<!-- Partial Template: Plugins.UIListSingle r.20200121 -->
+<!-- require: jquery.multiselect.css jquery.multiselect.js jquery.multiselect.filter.css jquery.multiselect.filter.js -->
+<script type="text/javascript">
+if(typeof SmartJS_BrowserUIUtils != 'undefined') {
+	try {
+		SmartJS_BrowserUIUtils.Smart_SelectList('test-unit-s-list-one', 170, 60, false, false);
+	} catch(err) {
+		console.log('UI List Single Select ERR: ' + err);
+	}
+}
+</script>
+<!-- #END :: Partial Template: Plugins.UIListSingle -->
+
+				</div>
+				<div class="ux-fluid-tbl-cell">
+					SingleSelect DropDown List (from Multi): <select name="frm[one_multi][]" id="test-unit-lst-m-1"  style="width:225px;" size="1" >
+<option value="">&nbsp;</option>
+<option value="one">&nbsp;One</option>
+</select>
+<!-- Partial Template: Plugins.UIListMulti r.20200121 -->
+<!-- require: jquery.multiselect.css jquery.multiselect.js jquery.multiselect.filter.css jquery.multiselect.filter.js -->
+<script type="text/javascript">
+if(typeof SmartJS_BrowserUIUtils != 'undefined') {
+	try {
+		SmartJS_BrowserUIUtils.Smart_SelectList('test-unit-lst-m-1', 225, 60, false, false);
+	} catch(err) {
+		console.log('UI List Multi Select ERR: ' + err);
+	}
+}
+</script>
+<!-- #END :: Partial Template: Plugins.UIListMulti -->
+
+				</div>
+			</div>
+			<div class="ux-fluid-tbl-row">
+				<div class="ux-fluid-tbl-cell">
+					SingleSelect DropDown List with Search: <select name="frm[list_single]" id="test-unit-s-list-two" size="1"  style="width:195px;" onChange="alert('Getting value from the \u0022SingleList\u0022: ' + $('#test-unit-s-list-two').val());">
+<option value="">&nbsp;</option>
+<option value="a&amp;&quot;/&gt;&lt;i&gt;Italic&lt;/i&gt;&lt;/body&gt;">a&amp;&quot;/&gt;&lt;i&gt;Italic&lt;/i&gt;&lt;/body&gt;</option>
+<optgroup label="Labels">
+<option value="id1">Label 1</option>
+<option value="id2" selected>Label 2</option>
+<option value="id3">Label 3</option>
+<option value="id4">Label 4</option>
+<option value="id5">Label 5</option>
+<option value="id6">Label 6</option>
+<option value="id7">Label 7</option>
+<option value="id8">Label 8</option>
+<option value="id9">Label 9</option>
+<option value="id10">Label 10</option>
+<option value="id11">Label 11</option>
+<option value="id12">Label 12</option>
+<option value="id13">Label 13</option>
+<option value="id14">Label 14</option>
+<option value="id15">Label 15</option>
+<option value="id16">Label 16</option>
+<option value="id17">Label 17</option>
+<option value="id18">Label 18</option>
+<option value="id19">Label 19</option>
+<option value="id20">Label 20</option>
+<option value="id21">Label 21</option>
+<option value="id22">Label 22</option>
+<option value="id23">Label 23</option>
+<option value="id24">Label 24</option>
+<option value="id25">Label 25</option>
+<option value="id26">Label 26</option>
+<option value="id27">Label 27</option>
+<option value="id28">Label 28</option>
+<option value="id29">Label 29</option>
+<option value="id30">Label 30</option>
+<option value="id31">Label 31</option>
+<option value="id32">Label 32</option>
+<option value="id33">Label 33</option>
+<option value="id34">Label 34</option>
+<option value="id35">Label 35</option>
+<option value="id36">Label 36</option>
+<option value="id37">Label 37</option>
+<option value="id38">Label 38</option>
+<option value="id39">Label 39</option>
+<option value="id40">Label 40</option>
+<option value="id41">Label 41</option>
+<option value="id42">Label 42</option>
+<option value="id43">Label 43</option>
+<option value="id44">Label 44</option>
+<option value="id45">Label 45</option>
+<option value="id46">Label 46</option>
+<option value="id47">Label 47</option>
+<option value="id48">Label 48</option>
+<option value="id49">Label 49</option>
+<option value="id50">Label 50</option>
+<option value="id51">Label 51</option>
+<option value="id52">Label 52</option>
+<option value="id53">Label 53</option>
+<option value="id54">Label 54</option>
+<option value="id55">Label 55</option>
+<option value="id56">Label 56</option>
+<option value="id57">Label 57</option>
+<option value="id58">Label 58</option>
+<option value="id59">Label 59</option>
+<option value="id60">Label 60</option>
+<option value="id61">Label 61</option>
+<option value="id62">Label 62</option>
+<option value="id63">Label 63</option>
+<option value="id64">Label 64</option>
+<option value="id65">Label 65</option>
+<option value="id66">Label 66</option>
+<option value="id67">Label 67</option>
+<option value="id68">Label 68</option>
+<option value="id69">Label 69</option>
+<option value="id70">Label 70</option>
+<option value="id71">Label 71</option>
+<option value="id72">Label 72</option>
+<option value="id73">Label 73</option>
+<option value="id74">Label 74</option>
+<option value="id75">Label 75</option>
+<option value="id76">Label 76</option>
+<option value="id77">Label 77</option>
+<option value="id78">Label 78</option>
+<option value="id79">Label 79</option>
+<option value="id80">Label 80</option>
+<option value="id81">Label 81</option>
+<option value="id82">Label 82</option>
+<option value="id83">Label 83</option>
+<option value="id84">Label 84</option>
+<option value="id85">Label 85</option>
+<option value="id86">Label 86</option>
+<option value="id87">Label 87</option>
+<option value="id88">Label 88</option>
+<option value="id89">Label 89</option>
+<option value="id90">Label 90</option>
+<option value="id91">Label 91</option>
+<option value="id92">Label 92</option>
+<option value="id93">Label 93</option>
+<option value="id94">Label 94</option>
+<option value="id95">Label 95</option>
+<option value="id96">Label 96</option>
+<option value="id97">Label 97</option>
+<option value="id98">Label 98</option>
+<option value="id99">Label 99</option>
+<option value="id100">Label 100</option>
+<option value="id101">Label 101</option>
+<option value="id102">Label 102</option>
+<option value="id103">Label 103</option>
+<option value="id104">Label 104</option>
+<option value="id105">Label 105</option>
+<option value="id106">Label 106</option>
+<option value="id107">Label 107</option>
+<option value="id108">Label 108</option>
+<option value="id109">Label 109</option>
+<option value="id110">Label 110</option>
+<option value="id111">Label 111</option>
+<option value="id112">Label 112</option>
+<option value="id113">Label 113</option>
+<option value="id114">Label 114</option>
+<option value="id115">Label 115</option>
+<option value="id116">Label 116</option>
+<option value="id117">Label 117</option>
+<option value="id118">Label 118</option>
+<option value="id119">Label 119</option>
+<option value="id120">Label 120</option>
+<option value="id121">Label 121</option>
+<option value="id122">Label 122</option>
+<option value="id123">Label 123</option>
+<option value="id124">Label 124</option>
+<option value="id125">Label 125</option>
+<option value="id126">Label 126</option>
+<option value="id127">Label 127</option>
+<option value="id128">Label 128</option>
+<option value="id129">Label 129</option>
+<option value="id130">Label 130</option>
+<option value="id131">Label 131</option>
+<option value="id132">Label 132</option>
+<option value="id133">Label 133</option>
+<option value="id134">Label 134</option>
+<option value="id135">Label 135</option>
+<option value="id136">Label 136</option>
+<option value="id137">Label 137</option>
+<option value="id138">Label 138</option>
+<option value="id139">Label 139</option>
+<option value="id140">Label 140</option>
+<option value="id141">Label 141</option>
+<option value="id142">Label 142</option>
+<option value="id143">Label 143</option>
+<option value="id144">Label 144</option>
+<option value="id145">Label 145</option>
+<option value="id146">Label 146</option>
+<option value="id147">Label 147</option>
+<option value="id148">Label 148</option>
+<option value="id149">Label 149</option>
+<option value="id150">Label 150</option>
+<option value="id151">Label 151</option>
+<option value="id152">Label 152</option>
+<option value="id153">Label 153</option>
+<option value="id154">Label 154</option>
+<option value="id155">Label 155</option>
+<option value="id156">Label 156</option>
+<option value="id157">Label 157</option>
+<option value="id158">Label 158</option>
+<option value="id159">Label 159</option>
+<option value="id160">Label 160</option>
+<option value="id161">Label 161</option>
+<option value="id162">Label 162</option>
+<option value="id163">Label 163</option>
+<option value="id164">Label 164</option>
+<option value="id165">Label 165</option>
+<option value="id166">Label 166</option>
+<option value="id167">Label 167</option>
+<option value="id168">Label 168</option>
+<option value="id169">Label 169</option>
+<option value="id170">Label 170</option>
+<option value="id171">Label 171</option>
+<option value="id172">Label 172</option>
+<option value="id173">Label 173</option>
+<option value="id174">Label 174</option>
+<option value="id175">Label 175</option>
+<option value="id176">Label 176</option>
+<option value="id177">Label 177</option>
+<option value="id178">Label 178</option>
+<option value="id179">Label 179</option>
+<option value="id180">Label 180</option>
+<option value="id181">Label 181</option>
+<option value="id182">Label 182</option>
+<option value="id183">Label 183</option>
+<option value="id184">Label 184</option>
+<option value="id185">Label 185</option>
+<option value="id186">Label 186</option>
+<option value="id187">Label 187</option>
+<option value="id188">Label 188</option>
+<option value="id189">Label 189</option>
+<option value="id190">Label 190</option>
+<option value="id191">Label 191</option>
+<option value="id192">Label 192</option>
+<option value="id193">Label 193</option>
+<option value="id194">Label 194</option>
+<option value="id195">Label 195</option>
+<option value="id196">Label 196</option>
+<option value="id197">Label 197</option>
+<option value="id198">Label 198</option>
+<option value="id199">Label 199</option>
+<option value="id200">Label 200</option>
+<option value="id201">Label 201</option>
+<option value="id202">Label 202</option>
+<option value="id203">Label 203</option>
+<option value="id204">Label 204</option>
+<option value="id205">Label 205</option>
+<option value="id206">Label 206</option>
+<option value="id207">Label 207</option>
+<option value="id208">Label 208</option>
+<option value="id209">Label 209</option>
+<option value="id210">Label 210</option>
+<option value="id211">Label 211</option>
+<option value="id212">Label 212</option>
+<option value="id213">Label 213</option>
+<option value="id214">Label 214</option>
+<option value="id215">Label 215</option>
+<option value="id216">Label 216</option>
+<option value="id217">Label 217</option>
+<option value="id218">Label 218</option>
+<option value="id219">Label 219</option>
+<option value="id220">Label 220</option>
+<option value="id221">Label 221</option>
+<option value="id222">Label 222</option>
+<option value="id223">Label 223</option>
+<option value="id224">Label 224</option>
+<option value="id225">Label 225</option>
+<option value="id226">Label 226</option>
+<option value="id227">Label 227</option>
+<option value="id228">Label 228</option>
+<option value="id229">Label 229</option>
+<option value="id230">Label 230</option>
+<option value="id231">Label 231</option>
+<option value="id232">Label 232</option>
+<option value="id233">Label 233</option>
+<option value="id234">Label 234</option>
+<option value="id235">Label 235</option>
+<option value="id236">Label 236</option>
+<option value="id237">Label 237</option>
+<option value="id238">Label 238</option>
+<option value="id239">Label 239</option>
+<option value="id240">Label 240</option>
+<option value="id241">Label 241</option>
+<option value="id242">Label 242</option>
+<option value="id243">Label 243</option>
+<option value="id244">Label 244</option>
+<option value="id245">Label 245</option>
+<option value="id246">Label 246</option>
+<option value="id247">Label 247</option>
+<option value="id248">Label 248</option>
+<option value="id249">Label 249</option>
+<option value="id250">Label 250</option>
+<option value="id251">Label 251</option>
+<option value="id252">Label 252</option>
+<option value="id253">Label 253</option>
+<option value="id254">Label 254</option>
+<option value="id255">Label 255</option>
+<option value="id256">Label 256</option>
+<option value="id257">Label 257</option>
+<option value="id258">Label 258</option>
+<option value="id259">Label 259</option>
+<option value="id260">Label 260</option>
+<option value="id261">Label 261</option>
+<option value="id262">Label 262</option>
+<option value="id263">Label 263</option>
+<option value="id264">Label 264</option>
+<option value="id265">Label 265</option>
+<option value="id266">Label 266</option>
+<option value="id267">Label 267</option>
+<option value="id268">Label 268</option>
+<option value="id269">Label 269</option>
+<option value="id270">Label 270</option>
+<option value="id271">Label 271</option>
+<option value="id272">Label 272</option>
+<option value="id273">Label 273</option>
+<option value="id274">Label 274</option>
+<option value="id275">Label 275</option>
+<option value="id276">Label 276</option>
+<option value="id277">Label 277</option>
+<option value="id278">Label 278</option>
+<option value="id279">Label 279</option>
+<option value="id280">Label 280</option>
+<option value="id281">Label 281</option>
+<option value="id282">Label 282</option>
+<option value="id283">Label 283</option>
+<option value="id284">Label 284</option>
+<option value="id285">Label 285</option>
+<option value="id286">Label 286</option>
+<option value="id287">Label 287</option>
+<option value="id288">Label 288</option>
+<option value="id289">Label 289</option>
+<option value="id290">Label 290</option>
+<option value="id291">Label 291</option>
+<option value="id292">Label 292</option>
+<option value="id293">Label 293</option>
+<option value="id294">Label 294</option>
+<option value="id295">Label 295</option>
+<option value="id296">Label 296</option>
+<option value="id297">Label 297</option>
+<option value="id298">Label 298</option>
+<option value="id299">Label 299</option>
+<option value="id300">Label 300</option>
+<option value="id301">Label 301</option>
+<option value="id302">Label 302</option>
+<option value="id303">Label 303</option>
+<option value="id304">Label 304</option>
+<option value="id305">Label 305</option>
+<option value="id306">Label 306</option>
+<option value="id307">Label 307</option>
+<option value="id308">Label 308</option>
+<option value="id309">Label 309</option>
+<option value="id310">Label 310</option>
+<option value="id311">Label 311</option>
+<option value="id312">Label 312</option>
+<option value="id313">Label 313</option>
+<option value="id314">Label 314</option>
+<option value="id315">Label 315</option>
+<option value="id316">Label 316</option>
+<option value="id317">Label 317</option>
+<option value="id318">Label 318</option>
+<option value="id319">Label 319</option>
+<option value="id320">Label 320</option>
+<option value="id321">Label 321</option>
+<option value="id322">Label 322</option>
+<option value="id323">Label 323</option>
+<option value="id324">Label 324</option>
+<option value="id325">Label 325</option>
+<option value="id326">Label 326</option>
+<option value="id327">Label 327</option>
+<option value="id328">Label 328</option>
+<option value="id329">Label 329</option>
+<option value="id330">Label 330</option>
+<option value="id331">Label 331</option>
+<option value="id332">Label 332</option>
+<option value="id333">Label 333</option>
+<option value="id334">Label 334</option>
+<option value="id335">Label 335</option>
+<option value="id336">Label 336</option>
+<option value="id337">Label 337</option>
+<option value="id338">Label 338</option>
+<option value="id339">Label 339</option>
+<option value="id340">Label 340</option>
+<option value="id341">Label 341</option>
+<option value="id342">Label 342</option>
+<option value="id343">Label 343</option>
+<option value="id344">Label 344</option>
+<option value="id345">Label 345</option>
+<option value="id346">Label 346</option>
+<option value="id347">Label 347</option>
+<option value="id348">Label 348</option>
+<option value="id349">Label 349</option>
+<option value="id350">Label 350</option>
+<option value="id351">Label 351</option>
+<option value="id352">Label 352</option>
+<option value="id353">Label 353</option>
+<option value="id354">Label 354</option>
+<option value="id355">Label 355</option>
+<option value="id356">Label 356</option>
+<option value="id357">Label 357</option>
+<option value="id358">Label 358</option>
+<option value="id359">Label 359</option>
+<option value="id360">Label 360</option>
+<option value="id361">Label 361</option>
+<option value="id362">Label 362</option>
+<option value="id363">Label 363</option>
+<option value="id364">Label 364</option>
+<option value="id365">Label 365</option>
+<option value="id366">Label 366</option>
+<option value="id367">Label 367</option>
+<option value="id368">Label 368</option>
+<option value="id369">Label 369</option>
+<option value="id370">Label 370</option>
+<option value="id371">Label 371</option>
+<option value="id372">Label 372</option>
+<option value="id373">Label 373</option>
+<option value="id374">Label 374</option>
+<option value="id375">Label 375</option>
+<option value="id376">Label 376</option>
+<option value="id377">Label 377</option>
+<option value="id378">Label 378</option>
+<option value="id379">Label 379</option>
+<option value="id380">Label 380</option>
+<option value="id381">Label 381</option>
+<option value="id382">Label 382</option>
+<option value="id383">Label 383</option>
+<option value="id384">Label 384</option>
+<option value="id385">Label 385</option>
+<option value="id386">Label 386</option>
+<option value="id387">Label 387</option>
+<option value="id388">Label 388</option>
+<option value="id389">Label 389</option>
+<option value="id390">Label 390</option>
+<option value="id391">Label 391</option>
+<option value="id392">Label 392</option>
+<option value="id393">Label 393</option>
+<option value="id394">Label 394</option>
+<option value="id395">Label 395</option>
+<option value="id396">Label 396</option>
+<option value="id397">Label 397</option>
+<option value="id398">Label 398</option>
+<option value="id399">Label 399</option>
+<option value="id400">Label 400</option>
+<option value="id401">Label 401</option>
+<option value="id402">Label 402</option>
+<option value="id403">Label 403</option>
+<option value="id404">Label 404</option>
+<option value="id405">Label 405</option>
+<option value="id406">Label 406</option>
+<option value="id407">Label 407</option>
+<option value="id408">Label 408</option>
+<option value="id409">Label 409</option>
+<option value="id410">Label 410</option>
+<option value="id411">Label 411</option>
+<option value="id412">Label 412</option>
+<option value="id413">Label 413</option>
+<option value="id414">Label 414</option>
+<option value="id415">Label 415</option>
+<option value="id416">Label 416</option>
+<option value="id417">Label 417</option>
+<option value="id418">Label 418</option>
+<option value="id419">Label 419</option>
+<option value="id420">Label 420</option>
+<option value="id421">Label 421</option>
+<option value="id422">Label 422</option>
+<option value="id423">Label 423</option>
+<option value="id424">Label 424</option>
+<option value="id425">Label 425</option>
+<option value="id426">Label 426</option>
+<option value="id427">Label 427</option>
+<option value="id428">Label 428</option>
+<option value="id429">Label 429</option>
+<option value="id430">Label 430</option>
+<option value="id431">Label 431</option>
+<option value="id432">Label 432</option>
+<option value="id433">Label 433</option>
+<option value="id434">Label 434</option>
+<option value="id435">Label 435</option>
+<option value="id436">Label 436</option>
+<option value="id437">Label 437</option>
+<option value="id438">Label 438</option>
+<option value="id439">Label 439</option>
+<option value="id440">Label 440</option>
+<option value="id441">Label 441</option>
+<option value="id442">Label 442</option>
+<option value="id443">Label 443</option>
+<option value="id444">Label 444</option>
+<option value="id445">Label 445</option>
+<option value="id446">Label 446</option>
+<option value="id447">Label 447</option>
+<option value="id448">Label 448</option>
+<option value="id449">Label 449</option>
+<option value="id450">Label 450</option>
+<option value="id451">Label 451</option>
+<option value="id452">Label 452</option>
+<option value="id453">Label 453</option>
+<option value="id454">Label 454</option>
+<option value="id455">Label 455</option>
+<option value="id456">Label 456</option>
+<option value="id457">Label 457</option>
+<option value="id458">Label 458</option>
+<option value="id459">Label 459</option>
+<option value="id460">Label 460</option>
+<option value="id461">Label 461</option>
+<option value="id462">Label 462</option>
+<option value="id463">Label 463</option>
+<option value="id464">Label 464</option>
+<option value="id465">Label 465</option>
+<option value="id466">Label 466</option>
+<option value="id467">Label 467</option>
+<option value="id468">Label 468</option>
+<option value="id469">Label 469</option>
+<option value="id470">Label 470</option>
+<option value="id471">Label 471</option>
+<option value="id472">Label 472</option>
+<option value="id473">Label 473</option>
+<option value="id474">Label 474</option>
+<option value="id475">Label 475</option>
+<option value="id476">Label 476</option>
+<option value="id477">Label 477</option>
+<option value="id478">Label 478</option>
+<option value="id479">Label 479</option>
+<option value="id480">Label 480</option>
+<option value="id481">Label 481</option>
+<option value="id482">Label 482</option>
+<option value="id483">Label 483</option>
+<option value="id484">Label 484</option>
+<option value="id485">Label 485</option>
+<option value="id486">Label 486</option>
+<option value="id487">Label 487</option>
+<option value="id488">Label 488</option>
+<option value="id489">Label 489</option>
+<option value="id490">Label 490</option>
+<option value="id491">Label 491</option>
+<option value="id492">Label 492</option>
+<option value="id493">Label 493</option>
+<option value="id494">Label 494</option>
+<option value="id495">Label 495</option>
+<option value="id496">Label 496</option>
+<option value="id497">Label 497</option>
+<option value="id498">Label 498</option>
+<option value="id499">Label 499</option>
+<option value="id500">Label 500</option>
+</select>
+<!-- Partial Template: Plugins.UIListSingle r.20200121 -->
+<!-- require: jquery.multiselect.css jquery.multiselect.js jquery.multiselect.filter.css jquery.multiselect.filter.js -->
+<script type="text/javascript">
+if(typeof SmartJS_BrowserUIUtils != 'undefined') {
+	try {
+		SmartJS_BrowserUIUtils.Smart_SelectList('test-unit-s-list-two', 195, 200, false, true);
+	} catch(err) {
+		console.log('UI List Single Select ERR: ' + err);
+	}
+}
+</script>
+<!-- #END :: Partial Template: Plugins.UIListSingle -->
+
+				</div>
+				<div class="ux-fluid-tbl-cell">
+					<span>MultiSelect DropDown List: </span><select name="frm[list_multi_one][]" id="test-unit-m-list-2"  style="width:275px;" multiple size="8" onBlur="alert('Getting value from the:\n \u0022MultiList\u0022: ' + $('#test-unit-m-list-2').val());">
+<option value="a&amp;&quot;/&gt;&lt;i&gt;Italic&lt;/i&gt;&lt;/body&gt;">&nbsp;a&amp;&quot;/&gt;&lt;i&gt;Italic&lt;/i&gt;&lt;/body&gt;</option>
+<optgroup label="Labels">
+<option value="id1" selected>&nbsp;Label 1</option>
+<option value="id2">&nbsp;Label 2</option>
+<option value="id3" selected>&nbsp;Label 3</option>
+<option value="id4">&nbsp;Label 4</option>
+<option value="id5">&nbsp;Label 5</option>
+<option value="id6">&nbsp;Label 6</option>
+<option value="id7">&nbsp;Label 7</option>
+<option value="id8">&nbsp;Label 8</option>
+<option value="id9">&nbsp;Label 9</option>
+<option value="id10">&nbsp;Label 10</option>
+<option value="id11">&nbsp;Label 11</option>
+<option value="id12">&nbsp;Label 12</option>
+<option value="id13">&nbsp;Label 13</option>
+<option value="id14">&nbsp;Label 14</option>
+<option value="id15">&nbsp;Label 15</option>
+<option value="id16">&nbsp;Label 16</option>
+<option value="id17">&nbsp;Label 17</option>
+<option value="id18">&nbsp;Label 18</option>
+<option value="id19">&nbsp;Label 19</option>
+<option value="id20">&nbsp;Label 20</option>
+<option value="id21">&nbsp;Label 21</option>
+<option value="id22">&nbsp;Label 22</option>
+<option value="id23">&nbsp;Label 23</option>
+<option value="id24">&nbsp;Label 24</option>
+<option value="id25">&nbsp;Label 25</option>
+<option value="id26">&nbsp;Label 26</option>
+<option value="id27">&nbsp;Label 27</option>
+<option value="id28">&nbsp;Label 28</option>
+<option value="id29">&nbsp;Label 29</option>
+<option value="id30">&nbsp;Label 30</option>
+<option value="id31">&nbsp;Label 31</option>
+<option value="id32">&nbsp;Label 32</option>
+<option value="id33">&nbsp;Label 33</option>
+<option value="id34">&nbsp;Label 34</option>
+<option value="id35">&nbsp;Label 35</option>
+<option value="id36">&nbsp;Label 36</option>
+<option value="id37">&nbsp;Label 37</option>
+<option value="id38">&nbsp;Label 38</option>
+<option value="id39">&nbsp;Label 39</option>
+<option value="id40">&nbsp;Label 40</option>
+<option value="id41">&nbsp;Label 41</option>
+<option value="id42">&nbsp;Label 42</option>
+<option value="id43">&nbsp;Label 43</option>
+<option value="id44">&nbsp;Label 44</option>
+<option value="id45">&nbsp;Label 45</option>
+<option value="id46">&nbsp;Label 46</option>
+<option value="id47">&nbsp;Label 47</option>
+<option value="id48">&nbsp;Label 48</option>
+<option value="id49">&nbsp;Label 49</option>
+<option value="id50">&nbsp;Label 50</option>
+<option value="id51">&nbsp;Label 51</option>
+<option value="id52">&nbsp;Label 52</option>
+<option value="id53">&nbsp;Label 53</option>
+<option value="id54">&nbsp;Label 54</option>
+<option value="id55">&nbsp;Label 55</option>
+<option value="id56">&nbsp;Label 56</option>
+<option value="id57">&nbsp;Label 57</option>
+<option value="id58">&nbsp;Label 58</option>
+<option value="id59">&nbsp;Label 59</option>
+<option value="id60">&nbsp;Label 60</option>
+<option value="id61">&nbsp;Label 61</option>
+<option value="id62">&nbsp;Label 62</option>
+<option value="id63">&nbsp;Label 63</option>
+<option value="id64">&nbsp;Label 64</option>
+<option value="id65">&nbsp;Label 65</option>
+<option value="id66">&nbsp;Label 66</option>
+<option value="id67">&nbsp;Label 67</option>
+<option value="id68">&nbsp;Label 68</option>
+<option value="id69">&nbsp;Label 69</option>
+<option value="id70">&nbsp;Label 70</option>
+<option value="id71">&nbsp;Label 71</option>
+<option value="id72">&nbsp;Label 72</option>
+<option value="id73">&nbsp;Label 73</option>
+<option value="id74">&nbsp;Label 74</option>
+<option value="id75">&nbsp;Label 75</option>
+<option value="id76">&nbsp;Label 76</option>
+<option value="id77">&nbsp;Label 77</option>
+<option value="id78">&nbsp;Label 78</option>
+<option value="id79">&nbsp;Label 79</option>
+<option value="id80">&nbsp;Label 80</option>
+<option value="id81">&nbsp;Label 81</option>
+<option value="id82">&nbsp;Label 82</option>
+<option value="id83">&nbsp;Label 83</option>
+<option value="id84">&nbsp;Label 84</option>
+<option value="id85">&nbsp;Label 85</option>
+<option value="id86">&nbsp;Label 86</option>
+<option value="id87">&nbsp;Label 87</option>
+<option value="id88">&nbsp;Label 88</option>
+<option value="id89">&nbsp;Label 89</option>
+<option value="id90">&nbsp;Label 90</option>
+<option value="id91">&nbsp;Label 91</option>
+<option value="id92">&nbsp;Label 92</option>
+<option value="id93">&nbsp;Label 93</option>
+<option value="id94">&nbsp;Label 94</option>
+<option value="id95">&nbsp;Label 95</option>
+<option value="id96">&nbsp;Label 96</option>
+<option value="id97">&nbsp;Label 97</option>
+<option value="id98">&nbsp;Label 98</option>
+<option value="id99">&nbsp;Label 99</option>
+<option value="id100">&nbsp;Label 100</option>
+<option value="id101">&nbsp;Label 101</option>
+<option value="id102">&nbsp;Label 102</option>
+<option value="id103">&nbsp;Label 103</option>
+<option value="id104">&nbsp;Label 104</option>
+<option value="id105">&nbsp;Label 105</option>
+<option value="id106">&nbsp;Label 106</option>
+<option value="id107">&nbsp;Label 107</option>
+<option value="id108">&nbsp;Label 108</option>
+<option value="id109">&nbsp;Label 109</option>
+<option value="id110">&nbsp;Label 110</option>
+<option value="id111">&nbsp;Label 111</option>
+<option value="id112">&nbsp;Label 112</option>
+<option value="id113">&nbsp;Label 113</option>
+<option value="id114">&nbsp;Label 114</option>
+<option value="id115">&nbsp;Label 115</option>
+<option value="id116">&nbsp;Label 116</option>
+<option value="id117">&nbsp;Label 117</option>
+<option value="id118">&nbsp;Label 118</option>
+<option value="id119">&nbsp;Label 119</option>
+<option value="id120">&nbsp;Label 120</option>
+<option value="id121">&nbsp;Label 121</option>
+<option value="id122">&nbsp;Label 122</option>
+<option value="id123">&nbsp;Label 123</option>
+<option value="id124">&nbsp;Label 124</option>
+<option value="id125">&nbsp;Label 125</option>
+<option value="id126">&nbsp;Label 126</option>
+<option value="id127">&nbsp;Label 127</option>
+<option value="id128">&nbsp;Label 128</option>
+<option value="id129">&nbsp;Label 129</option>
+<option value="id130">&nbsp;Label 130</option>
+<option value="id131">&nbsp;Label 131</option>
+<option value="id132">&nbsp;Label 132</option>
+<option value="id133">&nbsp;Label 133</option>
+<option value="id134">&nbsp;Label 134</option>
+<option value="id135">&nbsp;Label 135</option>
+<option value="id136">&nbsp;Label 136</option>
+<option value="id137">&nbsp;Label 137</option>
+<option value="id138">&nbsp;Label 138</option>
+<option value="id139">&nbsp;Label 139</option>
+<option value="id140">&nbsp;Label 140</option>
+<option value="id141">&nbsp;Label 141</option>
+<option value="id142">&nbsp;Label 142</option>
+<option value="id143">&nbsp;Label 143</option>
+<option value="id144">&nbsp;Label 144</option>
+<option value="id145">&nbsp;Label 145</option>
+<option value="id146">&nbsp;Label 146</option>
+<option value="id147">&nbsp;Label 147</option>
+<option value="id148">&nbsp;Label 148</option>
+<option value="id149">&nbsp;Label 149</option>
+<option value="id150">&nbsp;Label 150</option>
+<option value="id151">&nbsp;Label 151</option>
+<option value="id152">&nbsp;Label 152</option>
+<option value="id153">&nbsp;Label 153</option>
+<option value="id154">&nbsp;Label 154</option>
+<option value="id155">&nbsp;Label 155</option>
+<option value="id156">&nbsp;Label 156</option>
+<option value="id157">&nbsp;Label 157</option>
+<option value="id158">&nbsp;Label 158</option>
+<option value="id159">&nbsp;Label 159</option>
+<option value="id160">&nbsp;Label 160</option>
+<option value="id161">&nbsp;Label 161</option>
+<option value="id162">&nbsp;Label 162</option>
+<option value="id163">&nbsp;Label 163</option>
+<option value="id164">&nbsp;Label 164</option>
+<option value="id165">&nbsp;Label 165</option>
+<option value="id166">&nbsp;Label 166</option>
+<option value="id167">&nbsp;Label 167</option>
+<option value="id168">&nbsp;Label 168</option>
+<option value="id169">&nbsp;Label 169</option>
+<option value="id170">&nbsp;Label 170</option>
+<option value="id171">&nbsp;Label 171</option>
+<option value="id172">&nbsp;Label 172</option>
+<option value="id173">&nbsp;Label 173</option>
+<option value="id174">&nbsp;Label 174</option>
+<option value="id175">&nbsp;Label 175</option>
+<option value="id176">&nbsp;Label 176</option>
+<option value="id177">&nbsp;Label 177</option>
+<option value="id178">&nbsp;Label 178</option>
+<option value="id179">&nbsp;Label 179</option>
+<option value="id180">&nbsp;Label 180</option>
+<option value="id181">&nbsp;Label 181</option>
+<option value="id182">&nbsp;Label 182</option>
+<option value="id183">&nbsp;Label 183</option>
+<option value="id184">&nbsp;Label 184</option>
+<option value="id185">&nbsp;Label 185</option>
+<option value="id186">&nbsp;Label 186</option>
+<option value="id187">&nbsp;Label 187</option>
+<option value="id188">&nbsp;Label 188</option>
+<option value="id189">&nbsp;Label 189</option>
+<option value="id190">&nbsp;Label 190</option>
+<option value="id191">&nbsp;Label 191</option>
+<option value="id192">&nbsp;Label 192</option>
+<option value="id193">&nbsp;Label 193</option>
+<option value="id194">&nbsp;Label 194</option>
+<option value="id195">&nbsp;Label 195</option>
+<option value="id196">&nbsp;Label 196</option>
+<option value="id197">&nbsp;Label 197</option>
+<option value="id198">&nbsp;Label 198</option>
+<option value="id199">&nbsp;Label 199</option>
+<option value="id200">&nbsp;Label 200</option>
+<option value="id201">&nbsp;Label 201</option>
+<option value="id202">&nbsp;Label 202</option>
+<option value="id203">&nbsp;Label 203</option>
+<option value="id204">&nbsp;Label 204</option>
+<option value="id205">&nbsp;Label 205</option>
+<option value="id206">&nbsp;Label 206</option>
+<option value="id207">&nbsp;Label 207</option>
+<option value="id208">&nbsp;Label 208</option>
+<option value="id209">&nbsp;Label 209</option>
+<option value="id210">&nbsp;Label 210</option>
+<option value="id211">&nbsp;Label 211</option>
+<option value="id212">&nbsp;Label 212</option>
+<option value="id213">&nbsp;Label 213</option>
+<option value="id214">&nbsp;Label 214</option>
+<option value="id215">&nbsp;Label 215</option>
+<option value="id216">&nbsp;Label 216</option>
+<option value="id217">&nbsp;Label 217</option>
+<option value="id218">&nbsp;Label 218</option>
+<option value="id219">&nbsp;Label 219</option>
+<option value="id220">&nbsp;Label 220</option>
+<option value="id221">&nbsp;Label 221</option>
+<option value="id222">&nbsp;Label 222</option>
+<option value="id223">&nbsp;Label 223</option>
+<option value="id224">&nbsp;Label 224</option>
+<option value="id225">&nbsp;Label 225</option>
+<option value="id226">&nbsp;Label 226</option>
+<option value="id227">&nbsp;Label 227</option>
+<option value="id228">&nbsp;Label 228</option>
+<option value="id229">&nbsp;Label 229</option>
+<option value="id230">&nbsp;Label 230</option>
+<option value="id231">&nbsp;Label 231</option>
+<option value="id232">&nbsp;Label 232</option>
+<option value="id233">&nbsp;Label 233</option>
+<option value="id234">&nbsp;Label 234</option>
+<option value="id235">&nbsp;Label 235</option>
+<option value="id236">&nbsp;Label 236</option>
+<option value="id237">&nbsp;Label 237</option>
+<option value="id238">&nbsp;Label 238</option>
+<option value="id239">&nbsp;Label 239</option>
+<option value="id240">&nbsp;Label 240</option>
+<option value="id241">&nbsp;Label 241</option>
+<option value="id242">&nbsp;Label 242</option>
+<option value="id243">&nbsp;Label 243</option>
+<option value="id244">&nbsp;Label 244</option>
+<option value="id245">&nbsp;Label 245</option>
+<option value="id246">&nbsp;Label 246</option>
+<option value="id247">&nbsp;Label 247</option>
+<option value="id248">&nbsp;Label 248</option>
+<option value="id249">&nbsp;Label 249</option>
+<option value="id250">&nbsp;Label 250</option>
+<option value="id251">&nbsp;Label 251</option>
+<option value="id252">&nbsp;Label 252</option>
+<option value="id253">&nbsp;Label 253</option>
+<option value="id254">&nbsp;Label 254</option>
+<option value="id255">&nbsp;Label 255</option>
+<option value="id256">&nbsp;Label 256</option>
+<option value="id257">&nbsp;Label 257</option>
+<option value="id258">&nbsp;Label 258</option>
+<option value="id259">&nbsp;Label 259</option>
+<option value="id260">&nbsp;Label 260</option>
+<option value="id261">&nbsp;Label 261</option>
+<option value="id262">&nbsp;Label 262</option>
+<option value="id263">&nbsp;Label 263</option>
+<option value="id264">&nbsp;Label 264</option>
+<option value="id265">&nbsp;Label 265</option>
+<option value="id266">&nbsp;Label 266</option>
+<option value="id267">&nbsp;Label 267</option>
+<option value="id268">&nbsp;Label 268</option>
+<option value="id269">&nbsp;Label 269</option>
+<option value="id270">&nbsp;Label 270</option>
+<option value="id271">&nbsp;Label 271</option>
+<option value="id272">&nbsp;Label 272</option>
+<option value="id273">&nbsp;Label 273</option>
+<option value="id274">&nbsp;Label 274</option>
+<option value="id275">&nbsp;Label 275</option>
+<option value="id276">&nbsp;Label 276</option>
+<option value="id277">&nbsp;Label 277</option>
+<option value="id278">&nbsp;Label 278</option>
+<option value="id279">&nbsp;Label 279</option>
+<option value="id280">&nbsp;Label 280</option>
+<option value="id281">&nbsp;Label 281</option>
+<option value="id282">&nbsp;Label 282</option>
+<option value="id283">&nbsp;Label 283</option>
+<option value="id284">&nbsp;Label 284</option>
+<option value="id285">&nbsp;Label 285</option>
+<option value="id286">&nbsp;Label 286</option>
+<option value="id287">&nbsp;Label 287</option>
+<option value="id288">&nbsp;Label 288</option>
+<option value="id289">&nbsp;Label 289</option>
+<option value="id290">&nbsp;Label 290</option>
+<option value="id291">&nbsp;Label 291</option>
+<option value="id292">&nbsp;Label 292</option>
+<option value="id293">&nbsp;Label 293</option>
+<option value="id294">&nbsp;Label 294</option>
+<option value="id295">&nbsp;Label 295</option>
+<option value="id296">&nbsp;Label 296</option>
+<option value="id297">&nbsp;Label 297</option>
+<option value="id298">&nbsp;Label 298</option>
+<option value="id299">&nbsp;Label 299</option>
+<option value="id300">&nbsp;Label 300</option>
+<option value="id301">&nbsp;Label 301</option>
+<option value="id302">&nbsp;Label 302</option>
+<option value="id303">&nbsp;Label 303</option>
+<option value="id304">&nbsp;Label 304</option>
+<option value="id305">&nbsp;Label 305</option>
+<option value="id306">&nbsp;Label 306</option>
+<option value="id307">&nbsp;Label 307</option>
+<option value="id308">&nbsp;Label 308</option>
+<option value="id309">&nbsp;Label 309</option>
+<option value="id310">&nbsp;Label 310</option>
+<option value="id311">&nbsp;Label 311</option>
+<option value="id312">&nbsp;Label 312</option>
+<option value="id313">&nbsp;Label 313</option>
+<option value="id314">&nbsp;Label 314</option>
+<option value="id315">&nbsp;Label 315</option>
+<option value="id316">&nbsp;Label 316</option>
+<option value="id317">&nbsp;Label 317</option>
+<option value="id318">&nbsp;Label 318</option>
+<option value="id319">&nbsp;Label 319</option>
+<option value="id320">&nbsp;Label 320</option>
+<option value="id321">&nbsp;Label 321</option>
+<option value="id322">&nbsp;Label 322</option>
+<option value="id323">&nbsp;Label 323</option>
+<option value="id324">&nbsp;Label 324</option>
+<option value="id325">&nbsp;Label 325</option>
+<option value="id326">&nbsp;Label 326</option>
+<option value="id327">&nbsp;Label 327</option>
+<option value="id328">&nbsp;Label 328</option>
+<option value="id329">&nbsp;Label 329</option>
+<option value="id330">&nbsp;Label 330</option>
+<option value="id331">&nbsp;Label 331</option>
+<option value="id332">&nbsp;Label 332</option>
+<option value="id333">&nbsp;Label 333</option>
+<option value="id334">&nbsp;Label 334</option>
+<option value="id335">&nbsp;Label 335</option>
+<option value="id336">&nbsp;Label 336</option>
+<option value="id337">&nbsp;Label 337</option>
+<option value="id338">&nbsp;Label 338</option>
+<option value="id339">&nbsp;Label 339</option>
+<option value="id340">&nbsp;Label 340</option>
+<option value="id341">&nbsp;Label 341</option>
+<option value="id342">&nbsp;Label 342</option>
+<option value="id343">&nbsp;Label 343</option>
+<option value="id344">&nbsp;Label 344</option>
+<option value="id345">&nbsp;Label 345</option>
+<option value="id346">&nbsp;Label 346</option>
+<option value="id347">&nbsp;Label 347</option>
+<option value="id348">&nbsp;Label 348</option>
+<option value="id349">&nbsp;Label 349</option>
+<option value="id350">&nbsp;Label 350</option>
+<option value="id351">&nbsp;Label 351</option>
+<option value="id352">&nbsp;Label 352</option>
+<option value="id353">&nbsp;Label 353</option>
+<option value="id354">&nbsp;Label 354</option>
+<option value="id355">&nbsp;Label 355</option>
+<option value="id356">&nbsp;Label 356</option>
+<option value="id357">&nbsp;Label 357</option>
+<option value="id358">&nbsp;Label 358</option>
+<option value="id359">&nbsp;Label 359</option>
+<option value="id360">&nbsp;Label 360</option>
+<option value="id361">&nbsp;Label 361</option>
+<option value="id362">&nbsp;Label 362</option>
+<option value="id363">&nbsp;Label 363</option>
+<option value="id364">&nbsp;Label 364</option>
+<option value="id365">&nbsp;Label 365</option>
+<option value="id366">&nbsp;Label 366</option>
+<option value="id367">&nbsp;Label 367</option>
+<option value="id368">&nbsp;Label 368</option>
+<option value="id369">&nbsp;Label 369</option>
+<option value="id370">&nbsp;Label 370</option>
+<option value="id371">&nbsp;Label 371</option>
+<option value="id372">&nbsp;Label 372</option>
+<option value="id373">&nbsp;Label 373</option>
+<option value="id374">&nbsp;Label 374</option>
+<option value="id375">&nbsp;Label 375</option>
+<option value="id376">&nbsp;Label 376</option>
+<option value="id377">&nbsp;Label 377</option>
+<option value="id378">&nbsp;Label 378</option>
+<option value="id379">&nbsp;Label 379</option>
+<option value="id380">&nbsp;Label 380</option>
+<option value="id381">&nbsp;Label 381</option>
+<option value="id382">&nbsp;Label 382</option>
+<option value="id383">&nbsp;Label 383</option>
+<option value="id384">&nbsp;Label 384</option>
+<option value="id385">&nbsp;Label 385</option>
+<option value="id386">&nbsp;Label 386</option>
+<option value="id387">&nbsp;Label 387</option>
+<option value="id388">&nbsp;Label 388</option>
+<option value="id389">&nbsp;Label 389</option>
+<option value="id390">&nbsp;Label 390</option>
+<option value="id391">&nbsp;Label 391</option>
+<option value="id392">&nbsp;Label 392</option>
+<option value="id393">&nbsp;Label 393</option>
+<option value="id394">&nbsp;Label 394</option>
+<option value="id395">&nbsp;Label 395</option>
+<option value="id396">&nbsp;Label 396</option>
+<option value="id397">&nbsp;Label 397</option>
+<option value="id398">&nbsp;Label 398</option>
+<option value="id399">&nbsp;Label 399</option>
+<option value="id400">&nbsp;Label 400</option>
+<option value="id401">&nbsp;Label 401</option>
+<option value="id402">&nbsp;Label 402</option>
+<option value="id403">&nbsp;Label 403</option>
+<option value="id404">&nbsp;Label 404</option>
+<option value="id405">&nbsp;Label 405</option>
+<option value="id406">&nbsp;Label 406</option>
+<option value="id407">&nbsp;Label 407</option>
+<option value="id408">&nbsp;Label 408</option>
+<option value="id409">&nbsp;Label 409</option>
+<option value="id410">&nbsp;Label 410</option>
+<option value="id411">&nbsp;Label 411</option>
+<option value="id412">&nbsp;Label 412</option>
+<option value="id413">&nbsp;Label 413</option>
+<option value="id414">&nbsp;Label 414</option>
+<option value="id415">&nbsp;Label 415</option>
+<option value="id416">&nbsp;Label 416</option>
+<option value="id417">&nbsp;Label 417</option>
+<option value="id418">&nbsp;Label 418</option>
+<option value="id419">&nbsp;Label 419</option>
+<option value="id420">&nbsp;Label 420</option>
+<option value="id421">&nbsp;Label 421</option>
+<option value="id422">&nbsp;Label 422</option>
+<option value="id423">&nbsp;Label 423</option>
+<option value="id424">&nbsp;Label 424</option>
+<option value="id425">&nbsp;Label 425</option>
+<option value="id426">&nbsp;Label 426</option>
+<option value="id427">&nbsp;Label 427</option>
+<option value="id428">&nbsp;Label 428</option>
+<option value="id429">&nbsp;Label 429</option>
+<option value="id430">&nbsp;Label 430</option>
+<option value="id431">&nbsp;Label 431</option>
+<option value="id432">&nbsp;Label 432</option>
+<option value="id433">&nbsp;Label 433</option>
+<option value="id434">&nbsp;Label 434</option>
+<option value="id435">&nbsp;Label 435</option>
+<option value="id436">&nbsp;Label 436</option>
+<option value="id437">&nbsp;Label 437</option>
+<option value="id438">&nbsp;Label 438</option>
+<option value="id439">&nbsp;Label 439</option>
+<option value="id440">&nbsp;Label 440</option>
+<option value="id441">&nbsp;Label 441</option>
+<option value="id442">&nbsp;Label 442</option>
+<option value="id443">&nbsp;Label 443</option>
+<option value="id444">&nbsp;Label 444</option>
+<option value="id445">&nbsp;Label 445</option>
+<option value="id446">&nbsp;Label 446</option>
+<option value="id447">&nbsp;Label 447</option>
+<option value="id448">&nbsp;Label 448</option>
+<option value="id449">&nbsp;Label 449</option>
+<option value="id450">&nbsp;Label 450</option>
+<option value="id451">&nbsp;Label 451</option>
+<option value="id452">&nbsp;Label 452</option>
+<option value="id453">&nbsp;Label 453</option>
+<option value="id454">&nbsp;Label 454</option>
+<option value="id455">&nbsp;Label 455</option>
+<option value="id456">&nbsp;Label 456</option>
+<option value="id457">&nbsp;Label 457</option>
+<option value="id458">&nbsp;Label 458</option>
+<option value="id459">&nbsp;Label 459</option>
+<option value="id460">&nbsp;Label 460</option>
+<option value="id461">&nbsp;Label 461</option>
+<option value="id462">&nbsp;Label 462</option>
+<option value="id463">&nbsp;Label 463</option>
+<option value="id464">&nbsp;Label 464</option>
+<option value="id465">&nbsp;Label 465</option>
+<option value="id466">&nbsp;Label 466</option>
+<option value="id467">&nbsp;Label 467</option>
+<option value="id468">&nbsp;Label 468</option>
+<option value="id469">&nbsp;Label 469</option>
+<option value="id470">&nbsp;Label 470</option>
+<option value="id471">&nbsp;Label 471</option>
+<option value="id472">&nbsp;Label 472</option>
+<option value="id473">&nbsp;Label 473</option>
+<option value="id474">&nbsp;Label 474</option>
+<option value="id475">&nbsp;Label 475</option>
+<option value="id476">&nbsp;Label 476</option>
+<option value="id477">&nbsp;Label 477</option>
+<option value="id478">&nbsp;Label 478</option>
+<option value="id479">&nbsp;Label 479</option>
+<option value="id480">&nbsp;Label 480</option>
+<option value="id481">&nbsp;Label 481</option>
+<option value="id482">&nbsp;Label 482</option>
+<option value="id483">&nbsp;Label 483</option>
+<option value="id484">&nbsp;Label 484</option>
+<option value="id485">&nbsp;Label 485</option>
+<option value="id486">&nbsp;Label 486</option>
+<option value="id487">&nbsp;Label 487</option>
+<option value="id488">&nbsp;Label 488</option>
+<option value="id489">&nbsp;Label 489</option>
+<option value="id490">&nbsp;Label 490</option>
+<option value="id491">&nbsp;Label 491</option>
+<option value="id492">&nbsp;Label 492</option>
+<option value="id493">&nbsp;Label 493</option>
+<option value="id494">&nbsp;Label 494</option>
+<option value="id495">&nbsp;Label 495</option>
+<option value="id496">&nbsp;Label 496</option>
+<option value="id497">&nbsp;Label 497</option>
+<option value="id498">&nbsp;Label 498</option>
+<option value="id499">&nbsp;Label 499</option>
+<option value="id500">&nbsp;Label 500</option>
+</select>
+<!-- Partial Template: Plugins.UIListMulti r.20200121 -->
+<!-- require: jquery.multiselect.css jquery.multiselect.js jquery.multiselect.filter.css jquery.multiselect.filter.js -->
+<script type="text/javascript">
+if(typeof SmartJS_BrowserUIUtils != 'undefined') {
+	try {
+		SmartJS_BrowserUIUtils.Smart_SelectList('test-unit-m-list-2', 275, 200, true, true);
+	} catch(err) {
+		console.log('UI List Multi Select ERR: ' + err);
+	}
+}
+</script>
+<!-- #END :: Partial Template: Plugins.UIListMulti -->
+
+				</div>
+			</div>
+			<div class="ux-fluid-tbl-row">
+				<div class="ux-fluid-tbl-cell">
+					<select name="" id="test_normal_m" class="ux-field" style="width:200px; height:65px;" multiple size="8" >
+<option value="1">&nbsp;Val 1</option>
+<option value="2">&nbsp;Val 2</option>
+<option value="3">&nbsp;Val 3</option>
+<option value="4">&nbsp;Val 4</option>
+<option value="5">&nbsp;Val 5</option>
+</select>
+
+
+				</div>
+				<div class="ux-fluid-tbl-cell">
+					<select name="" id="test_normal_s" size="1" class="ux-field" style="width:150px;" >
+<option value="">&nbsp;</option>
+<option value="1">Val 1</option>
+<option value="2">Val 2</option>
+<option value="3">Val 3</option>
+<option value="4">Val 4</option>
+<option value="5">Val 5</option>
+</select>
+
+
+					<br>
+					<!-- Partial Template: Plugins.HTMLSelectorYNTF r.20200121 -->
+Yes<input type="radio" name="yes_or_no" value="y" checked>  &nbsp;&nbsp; No<input type="radio" name="yes_or_no" value="n">
+<!-- #END :: Partial Template: Plugins.HTMLSelectorYNTF -->
+					<br>
+					<!-- Partial Template: Plugins.HTMLSelectorYNTF r.20200121 -->
+Yes<input type="radio" name="true_or_false" value="1">  &nbsp;&nbsp; No<input type="radio" name="true_or_false" value="0" checked>
+<!-- #END :: Partial Template: Plugins.HTMLSelectorYNTF -->
+				</div>
+			</div>
+			<div class="ux-fluid-tbl-row">
+				<div class="ux-fluid-tbl-cell">
+					MultiSelect CheckBoxes:<br><input type="hidden" name="frm[list_multi_two][]" value="">
+<input type="checkbox" name="frm[list_multi_two][]" id="SmartFrameworkComponents_MultiSelect_ID__6d786e74d19558efce7bff67fb0efa0e25506add" value="id1"> &nbsp; Label 1<br><input type="checkbox" name="frm[list_multi_two][]" id="SmartFrameworkComponents_MultiSelect_ID__a43695f70269494755de223960149215df9bd1f4" value="id2" checked> &nbsp; Label 2<br><input type="checkbox" name="frm[list_multi_two][]" id="SmartFrameworkComponents_MultiSelect_ID__7a75f40cab7d96f3abe953537ce3cae9e67e9c03" value="id3" checked> &nbsp; Label 3<br><br>
+
+				</div>
+				<div class="ux-fluid-tbl-cell">
+					<div>Limited TextArea:</div><!-- Partial Template: Plugins.LimitedTextArea r.20200121 -->
+<textarea id="__Fld_TEXTAREA__55a14a9d784e292c235ea6db08baed72ec881b90_7Q8L6L2G7A__NO_Id__" name="frm[text_area_1]" wrap="physical" maxlength="300" style="width:400px; height:90px;"></textarea>
+<script type="text/javascript">
+	SmartJS_BrowserUtils.textArea_addLimit('__Fld_TEXTAREA__55a14a9d784e292c235ea6db08baed72ec881b90_7Q8L6L2G7A__NO_Id__', 300);
+</script>
+<!-- #END :: Partial Template: Plugins.LimitedTextArea -->
+				</div>
+			</div>
+			<div class="ux-fluid-tbl-row" style="padding-top:10px; padding-bottom:10px;">
+				<div class="ux-fluid-tbl-cell">
+					<!-- Partial Template: Plugins.CaptchaFormImage r.20200619 -->
+<div id="Smart-Captcha-Area-8769469636-4h1n3t5c4e" class="Smart-Captcha-Area" title="Captcha - Enter the code from the image into the validation field.">
+	<div id="Smart-Captcha-Container-8769469636-4h1n3t5c4e" class="Smart-Captcha-Container">
+		<div id="Smart-Captcha-Plugin-8769469636-4h1n3t5c4e" class="Smart-Captcha-Plugin">
+			<img src="?/page/samples.testunit/op/testunit.captcha&amp;captcha_form=Test_Unit-Ajax-Form-forCaptcha_2021&amp;captcha_mode=image&amp;new=" alt="Captcha Image" title="Click to Refresh Image" onClick="(function(img) { var captcha_date = new Date(); img.attr('src', '?\/page\/samples.testunit\/op\/testunit.captcha\u0026captcha_form=Test_Unit-Ajax-Form-forCaptcha_2021\u0026captcha_mode=image\u0026new=' + String(captcha_date.getTime()) + String(captcha_date.getMilliseconds())); try { img.parent().parent().find('input').val(''); } catch(err){ console.error('Captcha Plugin ERROR: Cannot Reset Input Field on Image Change !'); } })(jQuery(this));">
+		</div>
+		<div id="Smart-Captcha-Input-8769469636-4h1n3t5c4e" class="Smart-Captcha-Input">
+			<span>Confirm you are not a Robot</span><br>
+			<input style="" class="ux-field" type="text" value="" size="15" maxlength="255" title="Validation Code" placeholder="Validation Code" data-id="8769469636-4h1n3t5c4e" data-time="1613113711.087" onblur="(function(fld){ try { eval(String(SmartJS_CryptoBlowfish.decrypt('36FB01342130B5C44F05E5A30A265616135A61D61790936F452C104FF88EAE5A0F196B11FF1D306F9DAF799FB8166C4CA7267F9A0D8198FC91E831AFE82AE1BF104F6D2DECB9ED09F3199C87C318B1081B4BC150E91C0CA0EF0F5FB7FFDE99A9562D6CA96FB0B354C8B78CA0E68D6E0D4BBE647EBABC487AE4AE7119AFC12274A09F4FE5C275D3B38FDBE0E2E33D390238423671A99BE29591D053880E47E7676288A94455133DCED899B00C157B2DD5F5A7372911493738C78EE2B7BADD5806EA9FAC595A4BF3CBF56DA2D892D7493D9F8F98819EF1040B65B88946EB2FA77A1D9D017048DED2BC4BA5C590A7F20F252C59D62E45C4D9E23964DB47C3A463BC9F8658CF22B37D01A140D2D49185D0C313C82A063A311BA6655B0A316E941BF2CB8933141526C92EF0A2DEE9F211E262322E7AE86E931D7E6E1EE1E753DF0C9AFCC0592E40B4B2EE51862DA13B2DF344E4A66F112FBBD554371268B7B2551C72B154AA19F4A73E15F9B1F028893F3BE153C5B9A44E6C901D7C28A6A612E37404C977FCEEF95AB5C64665FB2E9B2A10392D17B074C352AED166B61B8C788102A23F6E54649B7B631693D8AF88FF08AE5142933E9D77DA108E759A88590ECC6B5EDD2FEED513BFECF494FCD22FCE610CA1C084B214B5F7DC475659EC9994F79A963F162654B5787CB645179A99439C758FED988141524EF00EAC5AFB005BCD0172228701DD5CEA942547ACA6032E87E419DB42D5E78BE4DF2294D8F09303BEFD11A496B32609818CBFB38B0B6B8829AADCAF3E47E4A420322E200675DD7AE46D416C6666036610585A70A38AFB98EBD3DF7F3EE7A85DB26F32DC3C2CF307D7E428C6B79853D68CDF46560AF93C43FC43CE68DAA3AA03E2F5DC49E9F546A3B2B1A6C65E08BEBBCAA6ECCD01758BAEFA819DAF885616C904811916A9BE992258FED3B46B33014178DCF0C241F2885095961E6D9D2EBD53FC8CEBCF6473EE2BFFF0C9E0A85A5FBEFAE948694A3DE4D92A6C74D8ECFF5B864909C67C67307F29237104D9D6628472376395772FAB14C5E0B60254E07A779762B3FE49727099E7EF5350E2A6CC3AE7274231DD210DF0876DC9E8E860AABC4C7330E4FCCFFE0961E66918C273C9F8BEC302293FC2071F6D21FB1AE1BB607B1076742B318C27B31B33B9FF42F7221A08CF62CCC7540C170BFE8264C39CA2F7BB1CC2C05DB1E9115A3CBBE1DEC05C39396DFE699B5CF5859D10B4DEDE15C2488F1E498BE6DD3C34D7EFD6C6CB17207D7D12FB4C0DCC67C92A9292263AEB0B7BE58C12C2FA430A793BC02CD37F57F143B9A10224549CF64DA243412C2DB9344E6E02C97E8861BE6218AD7E887AE28C1F719F7CB5CB156E7D5BA1C9966D26CFD84C877738888850C128B478D591B0915D6E9729B142B249565A1002135C114E69920A2693AAEA2DB12F3836346F8EF13C4AE4D93520DDC84A1E0502FA6946773E7C0785F6489C6A0888ACA93C64D8FED1817464FB80CF424BA5FD4C59B524D30DFA40020FA18EFEEC1A4076317CC56BC4F59E5146B718638C9CB478F17D861138B2FB537622634F7D8369A5990F9CFFF6F1ECC7EC711518F7ED9E959AEA301C132C37307133EA4F0398EE0CDB3E44961DCAD5B4DC28CFEF51C639A065CE03F648FE964D28A6C478DFC4E84C1F77B49C3528B86CFD4C97DD99F8480D21028045EDD3206CC2759BED7021C508B7538950B1393EF95ACA4575E34EA8266326FAACCECFBDFE7B03F455B1F243E5CF645417DAF89E5D2A3CA53F35876C7332A902C33CB4EC77489612F45BF53E10D2F480D27099F2FCA039D313D77A89A3F20CCE3D4034735BB0C3537E95395927988FA61AB5FF22F7CF25A38E02FA34F6F64D3DF44DC2C2F0824DD9709CE015C61AE7740338797112A681476EEDC9818E5DFB68C99882F7A404C8B649F62D71DDB01A273DE6CE7B2C6E9F3CE39BB309A67F6597E7AC3204A21E4D2AD41C2728CC98F68B910FD5998384C43C8C07ABD5D196601EF1D8EFF59F091AD4C2F8E8BE4CBFC3214194144EA94E1C3C33FEA73068DD35CC40F8672F7D06F40E1093392484F7FA9E9322A7B81048',String(String(typeof(null)).toLowerCase() + '_id:' + String(Number(fld.data('time')).toFixed(0)) + String(1/0).toLowerCase() + '!=' + String(Number(undefined)))))); } catch(error) { console.error('ERROR: Invalid Captcha Script'); } })(jQuery(this));" autocomplete="off">
+		</div>
+	</div>
+</div>
+<!-- #END :: Partial Template: Plugins.CaptchaFormImage -->
+				</div>
+				<div class="ux-fluid-tbl-cell" style="vertical-align:bottom!important;">
+					<button title="Submit this Test Form by AJAX (with Confirmation)" class="ux-button ux-button-large ux-button-primary" onClick="SmartJS_BrowserUtils.confirm_Dialog('\u003Ch2\u003EAre you sure you want to submit this form by Ajax !?\u003C\/h2\u003E', 'SmartJS_BrowserUtils.Submit_Form_By_Ajax(\u0027test_form_ajax\u0027, \u0027?\\\/page\\\/samples.testunit\\\/op\\\/testunit.post-form-by-ajax\\u0026tab=2\u0027, \u0027auto\u0027, \u0027jQuery(\\u0027[id^=Smart-Captcha-Plugin] img:first\\u0027).trigger(\\u0027click\\u0027);\u0027);', '?', 0, 0); return false;">Submit this Test Form by AJAX &nbsp; <span class="sfi sfi-compass"></span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</form>
+<!-- #END :: Partial Sub-Template: TestUnit.Main.Forms -->
+		</div>
+		<div id="tabs_tests_templating">
+			<!-- Partial Sub-Template: TestUnit.Main.Various -->
+	<!-- Partial Template: TestUnit.Partials.Notifications -->
+	<style type="text/css">
+	#notifications_FluidTable {
+		width: 100%;
+	}
+	#notifications_FluidTable div.ux-fluid-tbl-cell {
+		padding: 3px;
+		width: 50% !important;
+	}
+	@media all and (max-width:767px) {
+		#notifications_FluidTable {
+			width: 100% !important;
+		}
+		#notifications_FluidTable div.ux-fluid-tbl-row {
+			display: block !important;
+		}
+		#notifications_FluidTable div.ux-fluid-tbl-cell {
+			display: inline-block !important;
+			width: 100% !important;
+		}
+	}
+	</style>
+	<div id="notifications_FluidTable" class="ux-fluid-table">
+		<div class="ux-fluid-tbl-row">
+			<div class="ux-fluid-tbl-cell">
+				<h2 class="inline">CSS Notifications:</h2> &nbsp; <img src="lib/framework/img/sign-ok.svg" height="32"><!-- For SVGs is better to specify height instead of width (or both) due some bugs in Internet Explorer -->
+			</div>
+			<div class="ux-fluid-tbl-cell">
+				<div id="operation_info">This is an Info</div>
+			</div>
+		</div>
+		<div class="ux-fluid-tbl-row">
+			<div class="ux-fluid-tbl-cell">
+				<div id="operation_notice">This is a Notice</div>
+			</div>
+			<div class="ux-fluid-tbl-cell">
+				<div id="operation_question">This is a Question</div>
+			</div>
+		</div>
+		<div class="ux-fluid-tbl-row">
+			<div class="ux-fluid-tbl-cell">
+				<div id="operation_warn">This is a Warning</div>
+			</div>
+			<div class="ux-fluid-tbl-cell">
+				<div id="operation_error">This is an Error</div>
+			</div>
+		</div>
+	</div>
+<!-- #END# Partial Template: TestUnit.Partials.Notifications -->
+	<br>
+	<hr>
+	<br>
+	<!-- Partial Template: TestUnit.Partials.TplSyntaxTest -->
+	<table width="100%" cellpadding="0" cellspacing="0" class="ux-reflow-table">
+		<tr>
+			<td>
+				<h1 style="display:inline;">Marker-TPL, a powerful and secure Templating Engine:</h1>
+			</td>
+			<td> &nbsp;&nbsp;&nbsp; </td>
+			<td align="right">
+				<a href="?/page/samples.templating-test" target="testunit_tpl_test" data-smart="open.modal" class="ux-button ux-button-primary" title="Marker-TPL Engine is the default, built-in Templating Engine in Smart.Framework"><i class="sfi sfi-stack"></i> &nbsp; Marker-TPL Templating Demo</a>
+			</td>
+		</tr>
+	</table>
+
+	<div>
+	<p class="txt-columns-count-2">
+		<b>Marker-TPL Templating Engine is a very fast and <span class="sf__test__notice" style="color:#333333; cursor:help;" title="If used correctly and all escapes are applied as required ...">100% secure<sup> [*] </sup></span> PHP Templating Engine</b> and is available for both PHP and Javascript<sup> [**] </sup> languages.<br><b><i>Because the Marker-TPL Templating is rendering the Views by injecting plain strings and data arrays directly into these Views (no re-interpreted PHP/Javascript code) there are NO SECURITY RISKS like injecting malicious code into the Views</i></b> like in the case of using the <a class="ux-link" target="twig_reference_tpl" data-smart="open.popup" href="https://twig.sensiolabs.org">Twig Templating for PHP</a> or <a class="ux-link" target="smarty_reference_tpl" data-smart="open.popup" href="http://www.smarty.net">Smarty Templating for PHP</a>. The original concept of <b>Marker-TPL Templating</b> was inspired by <a class="ux-link" href="https://docs.typo3.org/typo3cms/TemplatingTutorial/7.6/Tasks/WorkingHTML/HtmlTemplate/Index.html" target="typo3_reference_markers" data-smart="open.popup">simplistic mark(er)s used in templates by Typo3 CMS</a>. Thereafter, a full new concept was developed from the scratch into Smart.Framework based on this idea as a brand new TPL engine: Marker-TPL.<br>
+		The Marker-TPL Templating Engine, built into Smart.Framework begins by using markers that have a start [ and stop ] limits and marking variables are enclosed in 3 # # #. At the very begining the full escaping syntax was developed for these markers to escape: html, js, url, json, ... and more ... was added a support for loading SUB-TEMPLATES files. Later the support for IF / ELSE, LOOP, SPECIAL CHARACTERS and COMMENTS syntax was finalizing this concept.<br>
+		Currently the <b>TPL Marker Syntax Templating Engine for PHP (and TPL Marker Syntax Templating Engine for Javascript [**])</b> is a mature project, fully developed and maintained inside the code base of Smart.Framework. It is heavily tested in production on web servers serving million+ page views / day.
+	</p>
+	<br>
+	<!-- Partial Template: TestUnit.Partials.TplSyntaxDesc@NoSyntax -->
+<div style="margin-top:10px;">
+	<table width="99%" id="mtpl-syntax-tbl" class="display ux-reflow-table">
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>Marker-TPL Syntax</th>
+				<th>Explanation</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr valign="top" title="Feature is currently supported in both PHP and Javascript">
+				<td style="cursor:help;">1.</td>
+				<td>
+					<b>MARKERS</b>
+					<br>
+					* with optional escapings or transformers
+				</td>
+				<td>
+					<span class="sf__test__span__tpl__features"><span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span> with optional escapings or transformers that may be combined in logic chains: <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|bool<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|int<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|dec{1..4}<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|num<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|slug|lower<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|htmid<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|jsvar<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|json<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|lower<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|upper<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|ucfirst<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|ucwords<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|trim<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|substr{1..65535}<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|subtxt{5..65535}<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|url<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|js<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|html<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|nl2br<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|url|js<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|html|nl2br<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|trim|js|html<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|dec2|url<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|js|html<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|css|html<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, ..., <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>MARKER|url|js|html<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, ...)</span>
+				</td>
+			</tr>
+			<tr valign="top" title="Feature is currently supported in both PHP and Javascript">
+				<td style="cursor:help;">2.</td>
+				<td>
+					<b>SPECIAL CHARACTERS and COMMENTS</b>
+					<br>
+					* special characters can be used in templates to assure consistency
+					<br>
+					* commented code in a template will not be rendered at all
+				</td>
+				<td>
+					<span class="sf__test__span__tpl__features">
+						<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>|SB-L<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span> ensures a LEFT SQUARE BRACKET [<br>
+						<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>|SB-R<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span> ensures a RIGHT SQUARE BRACKET ]<br>
+						<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>|SPACE<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span> ensures a SPACE &bbrk;<br>
+						<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>|T<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span> ensures a TAB \t<br>
+						<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>|N<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span> ensures a LINE FEED \n<br>
+						<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>|R<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span> ensures a CARRIAGE RETURN \r<br>
+						<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>|R<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span><span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>|N<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span> ensures a CRLF (CARRIAGE RETURN + LINE FEED) \r\n<br>
+						<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>COMMENT<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span> This text will never be displayed and will be cut off when rendering this template <span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>/COMMENT<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span>
+					</span>
+				</td>
+			</tr>
+			<tr valign="top" title="Feature is currently supported only in PHP">
+				<td style="cursor:help;">3.</td>
+				<td>
+					<b>IF / ELSE</b><sup> [**] </sup>
+					<br>
+					* conditionals are available with optional ELSE syntax
+				</td>
+				<td>
+					<span class="sf__test__span__tpl__features"><span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>IF:VARIABLE:@==|@!=|@&lt;=|@&lt;|@&gt;=|@&gt;|==|!=|&lt;=|&lt;|&gt;=|&gt;|!%|%|!?|?|^~|^*|&amp;~|&amp;*|$~|$*{string/number/a|list|with|elements/###MARKER###};<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span><br> conditional IF part, display when condition is matched <br><span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>ELSE:VARIABLE<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span><br> conditional ELSE part, display otherwise (optional) <br><span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>/IF:VARIABLE<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span></span>
+				</td>
+			</tr>
+			<tr valign="top" title="Feature is currently supported only in PHP">
+				<td style="cursor:help;">4.</td>
+				<td>
+					<b>LOOP</b><sup> [**] </sup>
+					<br>
+					* expect associative array: (by key/val) or non-associative (by iterator)
+				</td>
+				<td>
+					<span class="sf__test__span__tpl__features"><span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>LOOP:ARRAY-VAR<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span>
+					<br><span><i>Rendering of Loop syntax is depending upon the array type ; it can be combined with IF / ELSE and the other syntax elements ...</i></span><br>
+					* if ARRAY-VAR is a NON-ASSOCIATIVE ARRAY [0=&gt;[row]..n=&gt;[row]] can display for each row the columns 'column-A', 'column-N' which are as ARRAY-VAR[i][column-a] and ARRAY-VAR[i][column-n] where 'i' is the row number for non-associative array and 'row' is an associative array of key/val pairs which must contain at least the keys (columns) 'column-a' and 'column-n' such as: <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>ARRAY-VAR.COLUMN-A|int<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>, <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>ARRAY-VAR.COLUMN-B|html<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>
+					<br>
+					* if ARRAY-VAR is an ASSOCIATIVE ARRAY [key1=>val1,...,keyN=>valueN] can display for each key/value pair: <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>ARRAY-VAR._-KEY-_|html<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span> = <span class="sf__tpl__highlight__marker" title="TPL Marker: Start">&lbrack;###</span>ARRAY-VAR._-VAL-_|trim|html<span class="sf__tpl__highlight__marker" title="TPL Marker: End">###&rbrack;</span>
+					<br>
+					<span class="sf__tpl__highlight__syntax" title="TPL Syntax: Start">&lbrack;%%%</span>/LOOP:ARRAY-VAR<span class="sf__tpl__highlight__syntax" title="TPL Syntax: End">%%%&rbrack;</span></span>
+				</td>
+			</tr>
+			<tr valign="top" title="Feature is currently supported only in PHP">
+				<td style="cursor:help;">5.</td>
+				<td>
+					<b>INCLUDE Sub-Template</b><sup> [**] </sup>
+					<br>
+					* can include subtemplates mandatory or optional, includding make use of variable path
+				</td>
+				<td>
+					<span class="sf__test__span__tpl__features"><span class="sf__tpl__highlight__subtpl" title="TPL SubTemplate: Start">&lbrack;@@@</span>SUB-TEMPLATE:the-main-tpl-relative-path/partials/the-partial-tpl-to-be-includded.inc.htm<span class="sf__tpl__highlight__subtpl" title="TPL SubTemplate: End">@@@&rbrack;</span> mandatory include a partial from the same directory under the sub-directory 'partials'
+					<br>
+					<span class="sf__tpl__highlight__subtpl" title="TPL SubTemplate: Start">&lbrack;@@@</span>SUB-TEMPLATE:!web-dir/relative/tpl-path/the-partial-tpl-to-be-includded.inc.htm!<span class="sf__tpl__highlight__subtpl" title="TPL SubTemplate: End">@@@&rbrack;</span> mandatory include a partial from another directory, from inside the app web root
+					<br>
+					<span class="sf__tpl__highlight__subtpl" title="TPL SubTemplate: Start">&lbrack;@@@</span>SUB-TEMPLATE:?!web-dir/relative/tpl-alternate-path/the-partial-tpl-to-be-includded-if-exists-only.inc.htm!<span class="sf__tpl__highlight__subtpl" title="TPL SubTemplate: End">@@@&rbrack;</span> optional include a partial from another alternate directory, from inside the app web root
+					<br>
+					<span class="sf__tpl__highlight__subtpl" title="TPL SubTemplate: Start">&lbrack;@@@</span>SUB-TEMPLATE:%variable-relative-path-of-sub-tpl-to-include%<span class="sf__tpl__highlight__subtpl" title="TPL SubTemplate: End">@@@&rbrack;</span></span> mandatory include a variable path partial which is set at the controller level in the section: '%variable-relative-path-of-sub-tpl-to-include%'
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div style="font-weight:bold; font-style: italic; color:#777777;">
+		[**]: Feature is currently supported only when rendering a Marker-TPL Template from server-side PHP (not also if rendering it directly from client-side Javascript)
+	</div>
+	<script>
+	jQuery(document).ready(function() {
+		SmartJS_BrowserUIUtils.Smart_DataTable_Init('mtpl-syntax-tbl', {
+			filter: false,
+			sort: true,
+			paginate: false,
+			colorder: [
+				[ 0, 'asc' ],
+		//		[ 1, 'desc' ]
+			],
+			coldefs: [
+				{
+					targets: 0,
+					width: '25px',
+					render: function(data, type, row) {
+						if(type === 'type' || type === 'sort' || type === 'filter') {
+							return data;
+						} else {
+							return '<span style="color:#CCCCCC;">' + SmartJS_CoreUtils.escape_html(data) + '</span>';
+						}
+					}
+				},
+				{
+					targets: 1,
+					width: '275px'
+				}
+			]
+		});
+	//	SmartJS_BrowserUIUtils.Smart_DataTable_FilterColumns('mtpl-syntax-tbl', 0, '^(1|2|3|4|5)\.$');
+	});
+	</script>
+</div>
+<!-- #END :: Partial Template: TestUnit.Partials.TplSyntaxDesc@NoSyntax -->
+	</div>
+	<br>
+	<div align="center">
+		<table class="ux-table ux-reflow-table" style="width:595px;">
+			<tr style="background:#778899; color:#FFFFFF;">
+				<th colspan="3" align="center">
+					TPL Render Test: Marker-TPL Templating - Basic Syntax
+				</th>
+			</tr>
+								<tr style="background:#666699; color:#FFFFFF;" title="This line is displayed conditional using a templating IF syntax ; Values = [1] / [3] ...">
+
+				<td width="33%">Column 1.x (HTML Escape)</td>
+				<td width="33%">Column 2.x (JS Escape)</td>
+				<td width="33%">Column 3.x (URL Escape)</td>
+			</tr>
+
+		</table>
+		<table class="ux-table ux-table-striped ux-reflow-table" style="width:595px;">
+					<tr>
+									<td width="33%">&lt;Column 1.1&gt;</td>
+
+				<td width="33%">Column 1.2\n</td>
+				<td width="33%">Column%201.3%09</td>
+			</tr>
+					<tr>
+									<td width="33%">&lt;Column 2.1&gt;</td>
+
+				<td width="33%">Column 2.2\n</td>
+				<td width="33%">Column%202.3%09</td>
+			</tr>
+					<tr>
+									<td width="33%">&lt;Column 3.1&gt;</td>
+
+				<td width="33%">Column 3.2\n</td>
+				<td width="33%">Column%203.3%09</td>
+			</tr>
+					<tr>
+															<td width="33%" style="color:#003399;">1 [ &gt;= 1 ; C2 = a ]</td>
+
+
+				<td width="33%">a</td>
+				<td width="33%">A</td>
+			</tr>
+
+		</table>
+		<table class="ux-table ux-reflow-table" style="width:595px;">
+			<tr align="center">
+				<td>1 * 0.123456789 (Numeric Escape)</td>
+			</tr>
+		</table>
+	</div>
+<!-- #END# Partial Template: TestUnit.Partials.TplSyntaxTest -->
+<!-- #END :: Partial Sub-Template: TestUnit.Main.Various -->
+		</div>
+		<div id="tabs_tests_ui_components">
+			<!-- Partial Sub-Template: TestUnit.Main.Components -->
+	<h2 style="display:inline;">UI Toolkit Plugins</h2>
+	<br>
+	<br>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="?page=samples.toolkit" target="testunit_html_ed" data-smart="open.modal" class="ux-button ux-button-dark ux-button-large"><i class="sfi sfi-bullhorn"></i> &nbsp; UX Toolkit (default, core)</a>
+	</div>
+	<!-- Partial Sub-Template: TestUnit.Main.ModUiUikit -->
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-ui-uikit/toolkit/uikit/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-info ux-button-large"><i class="sfi sfi-bullhorn"></i> &nbsp; UiKit Toolkit (extra, modules)</a>
+</div>
+<!-- #END :: Partial Sub-Template: TestUnit.Main.ModUiUikit --><!-- Partial Sub-Template: TestUnit.Main.ModUiBootstrap -->
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-ui-bootstrap/toolkit/bootstrap4/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-primary ux-button-large"><i class="sfi sfi-bullhorn"></i> &nbsp; Bootstrap Toolkit (extra, modules)</a>
+</div>
+<!-- #END :: Partial Sub-Template: TestUnit.Main.ModUiBootstrap --><!-- Partial Sub-Template: TestUnit.Main.ModUijQueryUI -->
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-ui-jqueryui/toolkit/themes/default/theme.html" data-smart="open.modal" class="ux-button ux-button-large"><i class="sfi sfi-bullhorn"></i> &nbsp; jQueryUI Toolkit (extra, modules)</a>
+</div>
+<!-- #END :: Partial Sub-Template: TestUnit.Main.ModUijQueryUI -->
+	<br>
+	<hr>
+	<h2 style="display:inline;">Other Components available in Smart.Framework</h2>
+	<br>
+	<br>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="?/page/samples.testunit/op/testunit.html-editor" target="testunit_html_ed" data-smart="open.modal 960 570" class="ux-button ux-button-secondary" style="width:320px;"><i class="sfi sfi-embed2"></i> &nbsp; HTML 5 Editor</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="?/page/samples.testunit/op/testunit.code-editor" target="testunit_code_ed" data-smart="open.modal 960 515" class="ux-button ux-button-special" style="width:320px;"><i class="sfi sfi-quill"></i> &nbsp; Code / Markup Editor</a>
+	</div>
+	<br>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/css/animate/demo/sample.html" target="css_animate" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-spinner9"></i> &nbsp; CSS Animate</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/css/txt-columns/demo/sample.html" target="testunit_txtcolumns" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-file-text"></i> &nbsp; Text Columns</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/css/v-timeline/demo/sample.html" target="testunit_vtimeline" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-flag"></i> &nbsp; Vertical TimeLine</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jquery/datatables/demo/sample.html" target="data_tables" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-table"></i> &nbsp; Data Tables</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jquery/calendar/demo/sample.html" target="testunit_ical" data-smart="open.modal 0.8 0.9" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-calendar"></i> &nbsp; Events Calendar</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jquery/carousel/demo/sample.html" target="testunit_carousel" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi  sfi-spinner10"></i> &nbsp; Carousel</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jquery/slimbox/demo/sample.html" target="testunit_slideshow" data-smart="open.modal 0.7 0.7" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-images"></i> &nbsp; Photo Slideshow</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jquery/ratingstars/demo/sample.html" target="rating_stars" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-star-half"></i> &nbsp; Rating Stars</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jsvkbd/demo/sample.html" target="testunit_jsvkbd" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-keyboard"></i> &nbsp; Virtual Keyboard</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jquery/jsonview/demo/sample.html" target="testunit_jsonview" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-list2"></i> &nbsp; Json Viewer</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jsdiff/demo/sample-diff-json.html" target="testunit_diff" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-shuffle"></i> &nbsp; Json Diff</a>
+	</div>
+	<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+		<a href="lib/js/jsdiff/demo/sample-diff-text.html" target="testunit_diff" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-loop"></i> &nbsp; Text Diff</a>
+	</div>
+	<!-- Partial Sub-Template: TestUnit.Main.ModJsComponents -->
+<br>
+<hr>
+<div>
+	<h2 style="display:inline;">Extra Components available from Smart.Framework.Modules / Js-Components</h2>
+</div>
+<br>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-js-components/views/js/swipebox/demo/sample.html" data-smart="open.modal 760 0.92" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-camera"></i> &nbsp; Image Gallery</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-js-components/views/js/imgcrop/demo/sample-cropper.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-crop"></i> &nbsp; Image Crop</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-js-components/views/js/chart2-js/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-stats-bars"></i> &nbsp; Complex Charts</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-js-components/views/js/graphael/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-svg"></i> &nbsp; SVG Graphics</a>
+</div>
+<!-- #END :: Partial Sub-Template: TestUnit.Main.ModJsComponents --><!-- Partial Sub-Template: TestUnit.Main.ModWflowComponents -->
+<br>
+<hr>
+<div>
+	<h2 style="display:inline;">Extra Components available from Smart.Framework.Modules / Wflow-Components (GPLv3)</h2>
+</div>
+<br>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/texteditor/demo/sample.html" data-smart="open.modal 0.98 0.96" class="ux-button ux-button-highlight" style="width:220px;"><i class="sfi sfi-newspaper"></i> &nbsp; Documents Editor</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/spreadsheet/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-highlight" style="width:220px;"><i class="sfi sfi-ungroup"></i> &nbsp; Spreadsheet</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/qmockup/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-paint-format"></i> &nbsp; Mockup Designer</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/kanban/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-price-tags"></i> &nbsp; Kanban Board</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/codeflow/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-files-empty"></i> &nbsp; CodeFlow Diagrams</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/flowchart/demo/flowchart-editor/demo.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-paste"></i> &nbsp; FlowChart Diagrams</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/bpmn-flow/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-copy"></i> &nbsp; BpmnFlow Diagrams</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/mindmap/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-feed"></i> &nbsp; MindMap Diagrams</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/fullcalendar/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-alarm"></i> &nbsp; Calendar Agenda</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/sched/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-stopwatch"></i> &nbsp; Time Scheduler</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/gantt/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-equalizer"></i> &nbsp; Gantt Chart</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/dbmodeler/demo/demo.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-cogs"></i> &nbsp; DB Modeler</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/vector-canvas/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-pen"></i> &nbsp; Vector Canvas</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/d3/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-target"></i> &nbsp; Data Visualisation</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/lf-maps/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-map"></i> &nbsp; LeafletJs Maps</a>
+</div>
+<div style="display:inline-block; margin-right:20px; margin-bottom:20px;">
+	<a href="modules/mod-wflow-components/views/3dcad/demo/sample.html" data-smart="open.modal" class="ux-button ux-button-regular" style="width:220px;"><i class="sfi sfi-codepen"></i> &nbsp; 3D JsCAD</a>
+</div>
+<!-- #END :: Partial Sub-Template: TestUnit.Main.ModWflowComponents -->
+<!-- #END :: Partial Sub-Template: TestUnit.Main.Components -->
+		</div>
+	</div>
+	<script type="text/javascript">try { SmartJS_BrowserUIUtils.Tabs_Init('tabs_draw', 0, false); } catch(e) { console.log('Failed to initialize JS-UI Tabs: ' + e); }</script>
+	<!-- end tabs -->
+</div>
+<div style="text-align:right; color:#999999;">
+	Smart.Framework TestUnit: Demo and Samples, License: BSD
+</div>
+<script>
+jQuery(document).ready(function(){
+	SmartJS_BrowserUIUtils.ToolTip('a, button');
+});
+</script>
+<!-- #END :: Partial Template: TestUnit.Main --><div style="color:#999999;"><small><b>Unique Entropy Test Values:</b><br>UUID32:0L0NP2D6NR-2353751783-Z0C0X7H4N8<br>
+UUID34:0L0NP2D6NZ01-6664909201-J8W9R2S9B7<br>
+UUID35:00wB04DBPa2cV-9917672662-F3X0E7K3Z3<br>
+UUID37:00wB04DBPa2n801-0962578816-7G1R4K6T2F<br>
+UUID36:28e44085-2a4b-2566-9bf7-a90134782a41<br>
+UUID45:b8a68beb-9b9b-acc2-a6c8-fa5b99e95313-1be0b845</small></div><br><br>
+</div>
+
+</body>
+</html>
+<!-- Smart.Framework PHP/Javascript :: v.7.2.1-r.2021.01.21 @ http://demo.unix-world.org/smart-framework/ -->
+<!-- WebPage Server-Side Metrics [I]:     Total Execution Time = 0.9981789588928 seconds      |      Memory Peak Usage = 2.86 MB      -->

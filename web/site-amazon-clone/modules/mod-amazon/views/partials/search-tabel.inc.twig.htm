@@ -1,0 +1,61 @@
+<!-- bootsstrap UI, required by cart -->
+<link href="modules/mod-ui-bootstrap/toolkit/bootstrap4/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<script src="modules/mod-ui-bootstrap/toolkit/bootstrap4/js/bootstrap-bundle.js"></script>
+<!-- cart -->
+<link href="modules/mod-amazon/views/js/cart/jquery.smartCart.css" rel="stylesheet" type="text/css" media="all">
+<script src="modules/mod-amazon/views/js/cart/jquery.smartCart.js"></script>
+<!-- # -->
+<script>
+$(document).ready(function() {
+	$('#smartcart').smartCart();
+});
+</script>
+<script>
+function AddToCart(id, price, quantity, name) {
+	if(id, price, quantity, name) {
+		price = String(price || '');
+		price = price.replace(/\$/g, '');
+		$('#smartcart').smartCart('add', {
+			unique_key: id,
+			product_id: id,
+			product_price: parseFloat(price),
+			product_quantity: quantity,
+			product_name: name
+		});
+	}
+}
+</script>
+<aside class="col-md-4" style="position:fixed; top: 75px; right: 25px;">
+	<form action="#cart" method="POST">
+		<div id="smartcart"></div>
+	</form>
+</aside>
+{% if TABEL|length > 0 %}
+<h2>Rezultate cautare</h2>
+<table class="ux-table ux-table-bordered">
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Image</th>
+		<th>Price $</th>
+		<th><span class="sfi sfi-cart"></span></th>
+	</tr>
+</thead>
+<tbody>
+	{% for key, line in TABEL %}
+	<tr>
+		<td>{{key + 1}}</td>
+		<td>{{line.name}}</td>
+		<td align="right">
+			<img src="{{line.image}}" height="128">
+		</td>
+		<td>{{line.price}}</td>
+		<td><button class="ux-button ux-button-small" onClick="AddToCart('{{line.id}}', '{{line.price}}', 1, '{{line.name}}');">Add to Cart</button>
+	</tr>
+	{% endfor %}
+</tbody>
+</table>
+{% else %}
+<h3>Nu au fost gasite rezultate</h3>
+{% endif %}

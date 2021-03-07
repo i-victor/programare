@@ -48,10 +48,10 @@ MyClass::setZecimale(2);
 
 echo('<pre>');
 
-$test =  MyClass::adunare('3.2', 0);
+$test =  MyClass::adunare('3.2', '1');
 echo($test."\n");
 
-$test = MyClass::scadere('3.2', 0);
+$test = MyClass::scadere('3.2', '1');
 echo($test."\n");
 
 $test = MyClass::inmultire('3.2', 1);

@@ -8,6 +8,12 @@ switch(dayofweek) {
 		document.write('back to work');
 	break;
 
+	case 2:
+	case 3:
+	case 4:
+		document.write('wait for the weekend');
+	break;
+
 	case 5:
 		document.write('end of work');
 	break;

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="[###CHARSET|html###]">
+<meta http-equiv="Content-Type" content="text/html; charset=[###CHARSET|html###]">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[###TITLE|html###]</title>
+
+<!-- smart framework styles -->
+<link rel="stylesheet" type="text/css" href="lib/core/plugins/fonts/typo/sans/ibm-plex-sans.css" media="all">
+<style type="text/css">* { font-family: 'IBM Plex Sans',arial,sans-serif; }</style>
+<link rel="stylesheet" type="text/css" href="etc/templates/default/app.css">
+<link rel="stylesheet" type="text/css" href="etc/templates/default/styles.css">
+<!-- jQuery -->
+<script type="text/javascript" src="lib/js/jquery/jquery.js"></script>
+<!-- jQuery UI -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<style>
+#tags, #button {
+	margin-top: 5px;
+	margin-left: 10px;
+}
+</style>
+
+<script>
+$(function(){
+	$( "#menu" ).menu();
+});
+</script>
+<script>
+$(function(){
+	 var availableTags = [
+		"ActionScript",
+		"AppleScript",
+		"Asp",
+		"BASIC",
+		"C",
+		"C++",
+		"Clojure",
+		"COBOL",
+		"ColdFusion",
+		"Erlang",
+		"Fortran",
+		"Go",
+		"Groovy",
+		"Haskell",
+		"iPhone",
+		"Java",
+		"JavaScript",
+		"Lisp",
+		"Pascal",
+		"Perl",
+		"PHP",
+		"Python",
+		"Ruby",
+		"Scala",
+		"Scheme",
+		"Swift"
+	 ];
+	 $("#tags").autocomplete({
+		source: availableTags
+	 });
+});
+</script>
+
+</head>
+<body>
+<!-- menu -->
+<div class="ux-menubar-bar ux-menubar-color-black">
+	<span class="ux-menubar-bar-item ux-menubar-bar-ctrl"></span>
+	<a href="?page=amazon.page1" class="ux-menubar-bar-item ux-menubar-button"><b>Home</b></a>
+	<a href="?page=amazon.page2" class="ux-menubar-bar-item ux-menubar-button">Page 2</a>
+	<form method="post" action="?page=amazon.search">
+	<input id="tags" class="ux-field" name="search">
+	<button type="submit" id="button" class="ux-button ux-button-small">Go search</button>
+	</form>
+</div>
+<!-- #end menu -->
+<div id="app-container">
+[###MAIN###]
+</div>
+</body>
+</html>

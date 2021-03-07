@@ -1,6 +1,6 @@
 
 // Area Calculator
-// (c) 2019 unix-world.org
+// (c) 2019 i-victor.org
 // License: GPLv3
 // v.20190207
 

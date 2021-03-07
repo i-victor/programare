@@ -1,0 +1,73 @@
+<head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#menu" ).menu();
+  } );
+  </script>
+  <style>
+  .ui-menu { width: 150px; }
+  </style>
+
+<style>
+#tags { position: relative; top: 24px; left: 230px; }
+  </style>
+
+<style>
+#button1 { position: relative; bottom: 5px; left: 442px; }
+</style>
+
+  <script>
+  $( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Go",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Pascal",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme",
+      "Swift"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+
+
+</head>
+<body>
+
+<div style="background-color: #ECECEC; padding: 10px">
+
+<form method="post">
+<div class="ui-widget">
+  <label for="tags"></label>
+  <input id="tags">
+</div>
+<button style="background-color:#ECECEC" id="button1" type="submit">go search</button>
+          </form>
+
+
+</div>
