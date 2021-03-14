@@ -27,12 +27,12 @@ class SmartAppIndexController extends SmartAbstractAppController {
 		$this->PageViewSetCfg('template-file', 'template.htm'); // the default template
 		//--
 
-		$title = 'Pagina 2';
+		$title = 'Page 2';
 
 		$html = SmartTemplating::render_file_template(
-			$this->ControllerGetParam('module-view-path').'pagina2.mtpl.htm',
+			$this->ControllerGetParam('module-view-path').'page2.mtpl.htm',
 			[
-				'TEXT' => 'si Pagina 2 ...'
+				'TEXT' => 'This is page 2'
 			]
 		);
 

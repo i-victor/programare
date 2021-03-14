@@ -4,10 +4,28 @@
 <!-- cart -->
 <link href="modules/mod-amazon/views/js/cart/jquery.smartCart.css" rel="stylesheet" type="text/css" media="all">
 <script src="modules/mod-amazon/views/js/cart/jquery.smartCart.js"></script>
+<!-- jQuery Cookie -->
+<script src="lib/js/jquery/jquery.cookie.js"></script>
 <!-- # -->
 <script>
 $(document).ready(function() {
-	$('#smartcart').smartCart();
+	var cartSavedData = $.cookie('cart');
+	if(cartSavedData) {
+		try {
+			cartSavedData = JSON.parse(cartSavedData);
+		} catch(err){
+			cartSavedData = null;
+		}
+		if(!Array.isArray(cartSavedData)) {
+			cartSavedData = [];
+		}
+	}
+	$('#smartcart').smartCart({
+		cart: cartSavedData,
+		saveData: function(cartJsonData) {
+			$.cookie('cart', cartJsonData, { path: '/' });
+		}
+	});
 });
 </script>
 <script>
@@ -25,37 +43,8 @@ function AddToCart(id, price, quantity, name) {
 	}
 }
 </script>
-<aside class="col-md-4" style="position:fixed; top: 75px; right: 25px;">
-	<form action="#cart" method="POST">
+<aside class="col-md-4" style="position:absolute; top: 75px; right: 25px;">
+	<form action="?page=amazon.checkout" method="POST">
 		<div id="smartcart"></div>
 	</form>
 </aside>
-{% if TABEL|length > 0 %}
-<h2>Rezultate cautare</h2>
-<table class="ux-table ux-table-bordered">
-<thead>
-	<tr>
-		<th>ID</th>
-		<th>Name</th>
-		<th>Image</th>
-		<th>Price $</th>
-		<th><span class="sfi sfi-cart"></span></th>
-	</tr>
-</thead>
-<tbody>
-	{% for key, line in TABEL %}
-	<tr>
-		<td>{{key + 1}}</td>
-		<td>{{line.name}}</td>
-		<td align="right">
-			<img src="{{line.image}}" height="128">
-		</td>
-		<td>{{line.price}}</td>
-		<td><button class="ux-button ux-button-small" onClick="AddToCart('{{line.id}}', '{{line.price}}', 1, '{{line.name}}');">Add to Cart</button>
-	</tr>
-	{% endfor %}
-</tbody>
-</table>
-{% else %}
-<h3>Nu au fost gasite rezultate</h3>
-{% endif %}

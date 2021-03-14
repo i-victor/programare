@@ -1,0 +1,56 @@
+{% include Tpl_Dir__ ~ 'cart.inc.twig.htm' %}
+{% if TABEL|length > 0 %}
+<h2>{{RESULTS}}</h2>
+<table class="ux-table ux-table-bordered">
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Image</th>
+		<th>Price $</th>
+		<th>Class</th>
+		<th><span class="sfi sfi-cart"></span></th>
+	</tr>
+</thead>
+<tbody>
+	{% for key, line in TABEL %}
+	<tr>
+		<td>{{key + 1 + NUMSHIFT}}</td>
+		<td>{{line.name}}</td>
+		<td align="center">
+			<img src="{{line.image}}" height="128">
+		</td>
+		<td align="right">{{line.price}}</td>
+		<td>{{line.class}}</td>
+		<td><button class="ux-button ux-button-small" onClick="AddToCart('{{line.id}}', '{{line.price}}', 1, '{{line.name}}');"><span class="sfi sfi-cart"></span> Add to Cart</button>
+	</tr>
+	{% endfor %}
+</tbody>
+</table>
+<br>
+{% if PAGES > 0 %}
+<nav aria-label="Page navigation" title="Pages: {{PAGES + 1}}">
+  <ul class="pagination">
+    {% if SEARCH %}
+    <li class="page-item"><a class="page-link" href="?page=amazon.search&search={{SEARCH|url_encode}}&ofs=0">First</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page=amazon.all&ofs=0">First</a></li>
+    {% endif %}
+    {% for i in 0..PAGES %}
+      {% if SEARCH %}
+      <li class="page-item {%if i == OFS %} active{% endif %}"><a class="page-link" href="?page=amazon.search&search={{SEARCH|url_encode}}&ofs={{i}}">{{i+1}}</a></li>
+      {% else %}
+      <li class="page-item {%if i == OFS %} active{% endif %}"><a class="page-link" href="?page=amazon.all&ofs={{i}}">{{i+1}}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if SEARCH %}
+    <li class="page-item"><a class="page-link" href="?page=amazon.search&search={{SEARCH|url_encode}}&ofs={{PAGES}}">Last</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page=amazon.all&ofs={{PAGES}}">Last</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+{% else %}
+<h3> {{STRING}} </h3>
+{% endif %}

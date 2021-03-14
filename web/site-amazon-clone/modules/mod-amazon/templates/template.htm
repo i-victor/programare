@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=[###CHARSET|html###]">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[###TITLE|html###]</title>
-
 <!-- smart framework styles -->
 <link rel="stylesheet" type="text/css" href="lib/core/plugins/fonts/typo/sans/ibm-plex-sans.css" media="all">
 <style type="text/css">* { font-family: 'IBM Plex Sans',arial,sans-serif; }</style>
@@ -20,8 +19,10 @@
 <style>
 #tags, #button {
 	margin-top: 5px;
-	margin-left: 10px;
+	margin-left: 20px;
 }
+
+.pointer {cursor: pointer;}
 </style>
 
 <script>
@@ -31,37 +32,26 @@ $(function(){
 </script>
 <script>
 $(function(){
+	$.getJSON('?page=amazon.tags', function(data) {
+		 $("#tags").autocomplete({
+			source: data
+		 });
+	});
+/*
 	 var availableTags = [
-		"ActionScript",
-		"AppleScript",
-		"Asp",
-		"BASIC",
-		"C",
-		"C++",
-		"Clojure",
-		"COBOL",
-		"ColdFusion",
-		"Erlang",
-		"Fortran",
-		"Go",
-		"Groovy",
-		"Haskell",
+		"Apple",
 		"iPhone",
-		"Java",
-		"JavaScript",
-		"Lisp",
-		"Pascal",
-		"Perl",
-		"PHP",
-		"Python",
-		"Ruby",
-		"Scala",
-		"Scheme",
-		"Swift"
+		"Ipad",
+		"iMac Pro",
+		"iMac",
+		"Mac",
+		"Mac Pro",
+		"Mac Mini",
+		"macbook",
+		"macbook Pro",
+		"macbook Air"
 	 ];
-	 $("#tags").autocomplete({
-		source: availableTags
-	 });
+*/
 });
 </script>
 
@@ -69,12 +59,22 @@ $(function(){
 <body>
 <!-- menu -->
 <div class="ux-menubar-bar ux-menubar-color-black">
-	<span class="ux-menubar-bar-item ux-menubar-bar-ctrl"></span>
 	<a href="?page=amazon.page1" class="ux-menubar-bar-item ux-menubar-button"><b>Home</b></a>
 	<a href="?page=amazon.page2" class="ux-menubar-bar-item ux-menubar-button">Page 2</a>
+	<a href="?page=amazon.page3" class="ux-menubar-bar-item ux-menubar-button">Page 3</a>
+	<div class="ux-menubar-dropdown-hover">
+		<button class="ux-menubar-button ux-menubar-dropbutton ux-menubar-bar-ctrl"></button>
+		<div class="ux-menubar-dropdown-content " style="min-width:239px;">
+			<a href="?page=amazon.all" class="ux-menubar-bar-item ux-menubar-button">All</a>
+			<a href="?page=amazon.electronics" class="ux-menubar-bar-item ux-menubar-button">Electronics</a>
+			<a href="?page=amazon.books" class="ux-menubar-bar-item ux-menubar-button">Books</a>
+			<a href="?page=amazon.movies" class="ux-menubar-bar-item ux-menubar-button">Movies</a>
+			<a href="?page=amazon.toys" class="ux-menubar-bar-item ux-menubar-button">Toys</a>
+		</div>
+	</div>
 	<form method="post" action="?page=amazon.search">
-	<input id="tags" class="ux-field" name="search">
-	<button type="submit" id="button" class="ux-button ux-button-small">Go search</button>
+		<input id="tags" class="ux-field" name="search">
+		<button type="submit" id="button" class="ux-button ux-button-small">Go search</button>
 	</form>
 </div>
 <!-- #end menu -->

@@ -23,23 +23,25 @@ class SmartAppIndexController extends SmartAbstractAppController {
 
 	public function Run() {
 
+		//-- this page output is json, NOT html
+		$this->PageViewSetCfg('rawpage', true);
+		$this->PageViewSetCfg('rawmime', 'text/json');
+		$this->PageViewSetCfg('rawdisp', 'inline');
 		//--
-		$this->PageViewSetCfg('template-path', '@'); // set template path to this module
-		$this->PageViewSetCfg('template-file', 'template.htm'); // the default template
+
+		//--
+		$db = new \SmartModDataModel\Amazon\TagsModel();
+		$data_arr = (array) $db->getData(25, 0);
+		$db = null; // close connection
+		//--
+		$json = Smart::json_encode((array)$data_arr);
 		//--
 
-		$title = 'Homepage';
-
-		$html = (string) SmartTemplating::render_file_template(
-			$this->ControllerGetParam('module-view-path').'page1.mtpl.htm',
-			[
-			]
-		);
-
+		//--
 		$this->PageViewSetVars([
-			'title' => (string) $title,
-			'main' => (string) $html
+			'main' => (string) $json
 		]);
+		//--
 
 	} //END FUNCTION
 

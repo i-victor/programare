@@ -1,7 +1,7 @@
 <?php
 
-// Controller: amazone/page1
-// Route: ?page=test.page1
+// Controller: Test/amazonMinimal
+// Route: ?page=amazone.minimal
 
 //----------------------------------------------------- PREVENT EXECUTION BEFORE RUNTIME READY
 if(!defined('SMART_FRAMEWORK_RUNTIME_READY')) { // this must be defined in the first line of the application
@@ -20,7 +20,6 @@ define('SMART_APP_MODULE_AREA', 'INDEX'); // INDEX, ADMIN, SHARED
  */
 class SmartAppIndexController extends SmartAbstractAppController {
 
-
 	public function Run() {
 
 		//--
@@ -28,14 +27,16 @@ class SmartAppIndexController extends SmartAbstractAppController {
 		$this->PageViewSetCfg('template-file', 'template.htm'); // the default template
 		//--
 
-		$title = 'Homepage';
-
-		$html = (string) SmartTemplating::render_file_template(
-			$this->ControllerGetParam('module-view-path').'page1.mtpl.htm',
+		//--
+		$title = 'Titlu';
+		//--
+		$html = SmartTemplating::render_file_template(
+			$this->ControllerGetParam('module-view-path').'checkout.twig.htm',
 			[
+				'MESSAGE' => (string) 'ok. done'
 			]
 		);
-
+		//--
 		$this->PageViewSetVars([
 			'title' => (string) $title,
 			'main' => (string) $html
@@ -43,6 +44,6 @@ class SmartAppIndexController extends SmartAbstractAppController {
 
 	} //END FUNCTION
 
-} // END CLASS
+} //END CLASS
 
 // end of php code

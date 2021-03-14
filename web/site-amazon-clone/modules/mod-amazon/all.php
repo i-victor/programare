@@ -28,16 +28,14 @@ class SmartAppIndexController extends SmartAbstractAppController {
 		$this->PageViewSetCfg('template-file', 'template.htm'); // the default template
 		//--
 
-		$search = (string) $this->RequestVarGet('search'); // vine din $_POST['search']
-
-		$title = 'Search Results';
+		$title = 'All';
 
 		//--
 		$db = new \SmartModDataModel\Amazon\ProductsModel();
 		$limit = 10;
 		$ofs = (int) $this->RequestVarGet('ofs'); // vine din request de la navbox
-		$tabel_arr = (array) $db->searchData($search, $limit, $ofs * $limit);
-		$total_records = (int) $db->countSearchData($search);
+		$tabel_arr = (array) $db->getData($limit, $ofs * $limit);
+		$total_records = (int) $db->countData();
 		$pages = (int) ceil($total_records / $limit);
 		$db = null; // close connection
 		//--
@@ -45,19 +43,18 @@ class SmartAppIndexController extends SmartAbstractAppController {
 			$this->ControllerGetParam('module-view-path').'partials/tabel.inc.twig.htm',
 			[
 				'TABEL' => (array) $tabel_arr,
-				'RESULTS' => 'Rezultate cautare',
-				'STRING' => 'Nu au fost gasite rezultate',
+				'RESULTS' => 'Lista Produse',
+				'STRING' => 'Nu au fost gasite produse',
 				'PAGES' => (int) ($pages - 1),
 				'OFS' => (int) $ofs,
 				'NUMSHIFT' => (int) $ofs * $limit,
-				'SEARCH' => (string) $search
+				'SEARCH' => (string) '' // aici nu avem search
 			]
 		);
 
 		$html = SmartTemplating::render_file_template(
-			$this->ControllerGetParam('module-view-path').'search.mtpl.htm',
+			$this->ControllerGetParam('module-view-path').'all.mtpl.htm',
 			[
-				'SEARCH' => (string) $search,
 				'TABEL-TWIG-HTML' => (string) $tabel_html
 			]
 		);
