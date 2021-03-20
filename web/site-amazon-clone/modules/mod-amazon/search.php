@@ -1,7 +1,7 @@
 <?php
 
 // Controller: amazone/amazon-clone
-// Route: ?page=amazone.search
+// Route: ?page=amazon.search
 
 //----------------------------------------------------- PREVENT EXECUTION BEFORE RUNTIME READY
 if(!defined('SMART_FRAMEWORK_RUNTIME_READY')) { // this must be defined in the first line of the application

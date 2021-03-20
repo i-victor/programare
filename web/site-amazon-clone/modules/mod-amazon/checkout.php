@@ -28,12 +28,12 @@ class SmartAppIndexController extends SmartAbstractAppController {
 		//--
 
 		//--
-		$title = 'Titlu';
+		$title = 'Ceckout';
 		//--
 		$html = SmartTemplating::render_file_template(
 			$this->ControllerGetParam('module-view-path').'checkout.twig.htm',
 			[
-				'MESSAGE' => (string) 'ok. done'
+				'MESSAGE' => (string) 'This is the checkout page'
 			]
 		);
 		//--

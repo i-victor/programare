@@ -1,7 +1,7 @@
 <?php
 
 // Controller: amazone/page1
-// Route: ?page=test.page1
+// Route: ?page=amazon.page1
 
 //----------------------------------------------------- PREVENT EXECUTION BEFORE RUNTIME READY
 if(!defined('SMART_FRAMEWORK_RUNTIME_READY')) { // this must be defined in the first line of the application

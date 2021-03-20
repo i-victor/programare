@@ -22,6 +22,12 @@
 	margin-left: 20px;
 }
 
+#signin {
+position: relative;
+	margin-top: -42px;
+	margin-left: 1320px;
+}
+
 .pointer {cursor: pointer;}
 </style>
 
@@ -59,23 +65,26 @@ $(function(){
 <body>
 <!-- menu -->
 <div class="ux-menubar-bar ux-menubar-color-black">
+		<span class="ux-menubar-bar-item ux-menubar-bar-ctrl"></span>
 	<a href="?page=amazon.page1" class="ux-menubar-bar-item ux-menubar-button"><b>Home</b></a>
 	<a href="?page=amazon.page2" class="ux-menubar-bar-item ux-menubar-button">Page 2</a>
 	<a href="?page=amazon.page3" class="ux-menubar-bar-item ux-menubar-button">Page 3</a>
 	<div class="ux-menubar-dropdown-hover">
-		<button class="ux-menubar-button ux-menubar-dropbutton ux-menubar-bar-ctrl"></button>
+		<button class="ux-menubar-button ux-menubar-dropbutton">Categories</button>
 		<div class="ux-menubar-dropdown-content " style="min-width:239px;">
 			<a href="?page=amazon.all" class="ux-menubar-bar-item ux-menubar-button">All</a>
 			<a href="?page=amazon.electronics" class="ux-menubar-bar-item ux-menubar-button">Electronics</a>
 			<a href="?page=amazon.books" class="ux-menubar-bar-item ux-menubar-button">Books</a>
 			<a href="?page=amazon.movies" class="ux-menubar-bar-item ux-menubar-button">Movies</a>
+			<a href="?page=amazon.music" class="ux-menubar-bar-item ux-menubar-button">Music</a>
 			<a href="?page=amazon.toys" class="ux-menubar-bar-item ux-menubar-button">Toys</a>
-		</div>
+	</div>
 	</div>
 	<form method="post" action="?page=amazon.search">
 		<input id="tags" class="ux-field" name="search">
 		<button type="submit" id="button" class="ux-button ux-button-small">Go search</button>
 	</form>
+	<a href="?page=amazon.accounts" id="signin" class="ux-menubar-bar-item ux-menubar-button">Sign up</a>
 </div>
 <!-- #end menu -->
 <div id="app-container">

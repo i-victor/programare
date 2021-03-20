@@ -1,7 +1,7 @@
 <?php
 
-// Controller: amazon/Page2
-// Route: ?page=amazon.page2
+// Controller: amazon/page3
+// Route: ?page=amazon.page3
 
 //----------------------------------------------------- PREVENT EXECUTION BEFORE RUNTIME READY
 if(!defined('SMART_FRAMEWORK_RUNTIME_READY')) { // this must be defined in the first line of the application
@@ -20,22 +20,23 @@ define('SMART_APP_MODULE_AREA', 'INDEX'); // INDEX, ADMIN, SHARED
  */
 class SmartAppIndexController extends SmartAbstractAppController {
 
-	public function Run() {
+	public function Run () {
 
 		//--
 		$this->PageViewSetCfg('template-path', '@'); // set template path to this module
 		$this->PageViewSetCfg('template-file', 'template.htm'); // the default template
 		//--
 
-		$title = 'Page 2';
-
+		//--
+		$title = 'Sign up';
+		//--
 		$html = SmartTemplating::render_file_template(
-			$this->ControllerGetParam('module-view-path').'page2.mtpl.htm',
+			$this->ControllerGetParam('module-view-path').'accounts.mtpl.htm',
 			[
-				'TEXT' => 'This is page 2'
+				'TEXT' => 'Sign up'
 			]
 		);
-
+		//--
 		$this->PageViewSetVars([
 			'title' => (string) $title,
 			'main' => (string) $html

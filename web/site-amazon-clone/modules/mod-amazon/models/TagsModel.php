@@ -124,6 +124,7 @@ final class TagsModel {
 			[ 'id' => 'MacBook' ],
 			[ 'id' => 'MacBook Pro' ],
 			[ 'id' => 'MacBook Air' ],
+			[ 'id' => 'Lego Star Wars StarDestroyer' ],
 		];
 		//--
 
