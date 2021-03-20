@@ -1,6 +1,6 @@
 <?php
 
-// Controller: amazon/page3
+// Controller: amazon/Page3
 // Route: ?page=amazon.page3
 
 //----------------------------------------------------- PREVENT EXECUTION BEFORE RUNTIME READY

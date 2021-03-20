@@ -1,6 +1,6 @@
 <?php
 
-// Controller: amazone/amazon-clone
+// Controller: amazon/Electronics
 // Route: ?page=amazon.electronics
 
 //----------------------------------------------------- PREVENT EXECUTION BEFORE RUNTIME READY

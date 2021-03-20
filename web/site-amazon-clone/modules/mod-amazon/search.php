@@ -1,6 +1,6 @@
 <?php
 
-// Controller: amazone/amazon-clone
+// Controller: amazon/Search
 // Route: ?page=amazon.search
 
 //----------------------------------------------------- PREVENT EXECUTION BEFORE RUNTIME READY
