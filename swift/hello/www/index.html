@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=yes"><!-- enable url tel: -->
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Hello World</title>
+  <style>
+    fieldset {
+      border: 0;
+    }
+    label {
+      display: block;
+      margin: 30px 0 0 0;
+    }
+    .overflow {
+      height: 200px;
+    }
+  </style>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+
+<button id="button1" type="button" class="btn btn-primary">Primary</button>
+<button id="button2" type="button" class="btn btn-primary">phone call</button>
+
+<div class="demo">
+
+<form action="#">
+
+  <fieldset>
+    <label for="speed">Select position</label>
+    <select name="speed" id="speed">
+      <option>St</option>
+      <option>Lw</option>
+      <option selected="selected">Rw</option>
+      <option>Cam</option>
+      <option>Mc</option>
+      <option>Rb</option>
+      <option>Cb</option>
+      <option>Lb</option>
+      <option>Gk</option>
+    </select>
+
+    <label for="files">Select ligue</label>
+    <select name="files" id="files">
+      <optgroup label="The top ligues">
+        <option value="jquery">La liga santander</option>
+        <option value="somefile">Premier ligue</option>
+        <option value="someotherfile">Serie A</option>
+        <option value="someotherfile">Bundesliga</option>
+      </optgroup>
+      <optgroup label="Other ligues">
+        <option value="someotherfile">France ligue</option>
+        <option value="someotherfile">EFL</option>
+        <option value="someotherfile">Ligue one</option>
+      </optgroup>
+    </select>
+
+    <label for="number">Select a number</label>
+    <select name="number" id="number">
+      <option>1</option>
+      <option selected="selected">2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+      <option>13</option>
+      <option>14</option>
+      <option>15</option>
+      <option>16</option>
+      <option>17</option>
+      <option>18</option>
+      <option>19</option>
+    </select>
+
+    <label for="salutation">Select a title</label>
+    <select name="salutation" id="salutation">
+      <option disabled selected>Please pick one</option>
+      <option>Mr.</option>
+      <option>Mrs.</option>
+      <option>Dr.</option>
+      <option>Prof.</option>
+      <option>Other</option>
+    </select>
+  </fieldset>
+
+</form>
+
+</div>
+
+        <script src="cordova.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
