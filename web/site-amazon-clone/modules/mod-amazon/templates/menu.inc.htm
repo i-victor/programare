@@ -1,0 +1,46 @@
+<!-- menu -->
+<script>
+$(function(){
+	$( "#menu" ).menu();
+});
+</script>
+<script>
+$(function(){
+	$.getJSON('?page=amazon.tags', function(data) {
+		 $("#tags").autocomplete({
+			source: data
+		 });
+	});
+/*
+	 var availableTags = [
+		"val1",
+		"val2",
+	 ];
+*/
+});
+</script>
+<div class="ux-menubar-bar ux-menubar-color-black">
+	<span class="ux-menubar-bar-item ux-menubar-bar-ctrl"></span>
+	<a href="?page=amazon.page1" class="ux-menubar-bar-item ux-menubar-button"><b>Home</b></a>
+	<a href="?page=amazon.page2" class="ux-menubar-bar-item ux-menubar-button">Page 2</a>
+	<a href="?page=amazon.page3" class="ux-menubar-bar-item ux-menubar-button">Page 3</a>
+	<div class="ux-menubar-dropdown-hover">
+		<button class="ux-menubar-button ux-menubar-dropbutton">Categories</button>
+		<div class="ux-menubar-dropdown-content ux-menubar-bar-block" style="min-width:239px;">
+			<a href="?page=amazon.all" class="ux-menubar-bar-item ux-menubar-button">All</a>
+			<a href="?page=amazon.electronics" class="ux-menubar-bar-item ux-menubar-button">Electronics</a>
+			<a href="?page=amazon.books" class="ux-menubar-bar-item ux-menubar-button">Books</a>
+			<a href="?page=amazon.movies" class="ux-menubar-bar-item ux-menubar-button">Movies & TV</a>
+			<a href="?page=amazon.Videogames" class="ux-menubar-bar-item ux-menubar-button">Video Games</a>
+			<a href="?page=amazon.homeshopping" class="ux-menubar-bar-item ux-menubar-button">Home & Kitchen</a>
+			<a href="?page=amazon.sports" class="ux-menubar-bar-item ux-menubar-button">Sprots & Outdoor</a>
+			<a href="?page=amazon.toys" class="ux-menubar-bar-item ux-menubar-button">Toys & Games</a>
+		</div>
+	</div>
+	<form method="post" action="?page=amazon.search">
+		<input id="tags" class="ux-field" name="search">
+		<button type="submit" id="button" class="ux-button ux-button-small">Search</button>
+	</form>
+	<a href="?page=amazon.accounts" id="signin" class="ux-menubar-bar-item ux-menubar-button">Sign up</a>
+</div>
+<!-- #end menu -->

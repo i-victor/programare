@@ -72,37 +72,19 @@
     {% if SEARCH %}
     <li class="page-item previous"><a class="page-link" href="?page=amazon.search&search={{SEARCH|url_encode}}&ofs=0">First</a></li>
     {% else %}
-    {% if TYPE %}
-    <li class="page-item"><a class="page-link" href="?page=amazon.all&ofs=0">First</a></li>
-    {% elseif ID %}
-    <li class="page-item next"><a class="page-link" href="?page=amazon.electronics&ofs=0">First</a></li>
-      {% else %}
-    <li class="page-item next"><a class="page-link" href="?page=amazon.toys&ofs=0">First</a></li>
-    {% endif %}
+    <li class="page-item"><a class="page-link" href="?page=amazon.{{TYPE|url_encode}}&ofs=0">First</a></li>
     {% endif %}
     {% for i in 0..PAGES %}
       {% if SEARCH %}
       <li class="page-item {%if i == OFS %} active{% endif %}"><a class="page-link" href="?page=amazon.search&search={{SEARCH|url_encode}}&ofs={{i}}">{{i+1}}</a></li>
       {% else %}
-    {% if TYPE %}
-      <li class="page-item {%if i == OFS %} active{% endif %}"><a class="page-link" href="?page=amazon.all&ofs={{i}}">{{i+1}}</a></li>
-    {% elseif ID %}
-      <li class="page-item {%if i == OFS %} active{% endif %}"><a class="page-link" href="?page=amazon.electronics&ofs={{i}}">{{i+1}}</a></li>
-      {% else %}
-      <li class="page-item {%if i == OFS %} active{% endif %}"><a class="page-link" href="?page=amazon.toys&ofs={{i}}">{{i+1}}</a></li>
-      {% endif %}
+      <li class="page-item {%if i == OFS %} active{% endif %}"><a class="page-link" href="?page=amazon.{{TYPE|url_encode}}&ofs={{i}}">{{i+1}}</a></li>
       {% endif %}
     {% endfor %}
     {% if SEARCH %}
     <li class="page-item"><a class="page-link" href="?page=amazon.search&search={{SEARCH|url_encode}}&ofs={{PAGES}}">Last</a></li>
     {% else %}
-    {% if TYPE %}
-    <li class="page-item next"><a class="page-link" href="?page=amazon.all&ofs={{PAGES}}">Last</a></li>
-    {% elseif ID %}
-    <li class="page-item next"><a class="page-link" href="?page=amazon.electronics&ofs={{PAGES}}">Last</a></li>
-    {% else %}
-    <li class="page-item next"><a class="page-link" href="?page=amazon.toys&ofs={{PAGES}}">Last</a></li>
-    {% endif %}
+    <li class="page-item next"><a class="page-link" href="?page=amazon.{{TYPE|url_encode}}&ofs={{PAGES}}">Last</a></li>
     {% endif %}
   </ul>
 </nav>

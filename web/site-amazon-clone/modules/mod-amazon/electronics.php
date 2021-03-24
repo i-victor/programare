@@ -35,7 +35,7 @@ class SmartAppIndexController extends SmartAbstractAppController {
 		$limit = 10;
 		$ofs = (int) $this->RequestVarGet('ofs'); // vine din request de la navbox
 		$tabel_arr = (array) $db->filterDataElectronics($limit, $ofs * $limit);
-		$total_records = (int) $db->countData();
+		$total_records = (int) $db->countDataByClass('electronics');
 		$pages = (int) ceil($total_records / $limit);
 		$db = null; // close connection
 		//--
@@ -43,13 +43,13 @@ class SmartAppIndexController extends SmartAbstractAppController {
 			$this->ControllerGetParam('module-view-path').'partials/tabel.inc.twig.htm',
 			[
 				'TABEL' => (array) $tabel_arr,
-				'RESULTS' => 'Lista Produse',
+				'RESULTS' => 'Lista Produse: Electronics',
 				'STRING' => 'Nu au fost gasite produse',
 				'PAGES' => (int) ($pages - 1),
 				'OFS' => (int) $ofs,
 				'NUMSHIFT' => (int) $ofs * $limit,
 				'SEARCH' => (string) '', // aici nu avem search
-				'ID' => 'toys'
+				'TYPE' => 'electronics'
 			]
 		);
 
