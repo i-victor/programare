@@ -125,6 +125,10 @@ final class TagsModel {
 			[ 'id' => 'MacBook Pro' ],
 			[ 'id' => 'MacBook Air' ],
 			[ 'id' => 'Lego Star Wars StarDestroyer' ],
+			[ 'id' => 'Minecraft video game' ],
+			[ 'id' => 'PHP and MYSQL and JavaScript book' ],
+			[ 'id' => 'Golang book' ],
+			[ 'id' => 'JavaScript book' ],
 		];
 		//--
 

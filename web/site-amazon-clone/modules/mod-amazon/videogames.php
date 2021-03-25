@@ -43,7 +43,7 @@ class SmartAppIndexController extends SmartAbstractAppController {
 			$this->ControllerGetParam('module-view-path').'partials/tabel.inc.twig.htm',
 			[
 				'TABEL' => (array) $tabel_arr,
-				'RESULTS' => 'Lista Produse: Video Games',
+				'RESULTS' => 'Products list: Video Games',
 				'STRING' => 'Nu au fost gasite produse',
 				'PAGES' => (int) ($pages - 1),
 				'OFS' => (int) $ofs,
