@@ -129,6 +129,10 @@ final class TagsModel {
 			[ 'id' => 'PHP and MYSQL and JavaScript book' ],
 			[ 'id' => 'Golang book' ],
 			[ 'id' => 'JavaScript book' ],
+			[ 'id' => 'electronics' ],
+			[ 'id' => 'toys' ],
+			[ 'id' => 'videogames' ],
+			[ 'id' => 'books' ],
 		];
 		//--
 

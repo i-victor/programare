@@ -12,6 +12,22 @@ width: 150px
 #Buton2 {
 width: 150px
 }
+
+#card {
+	margin-top: -230px;
+	margin-left: 321px;
+}
+
+#card1 {
+	margin-top: -230px;
+	margin-left: 642px;
+}
+
+#card2 {
+	margin-top: -230px;
+	margin-left: 963px;
+}
+
 </style>
 
 <h1>This is homepage</h1>
@@ -23,6 +39,8 @@ width: 150px
     <li data-target="#demo" data-slide-to="0" class="active"></li>
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+    <li data-target="#demo" data-slide-to="4"></li>
   </ul>
 
   <div class="carousel-inner">
@@ -40,8 +58,17 @@ width: 150px
 <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Toys_en_US_1x._CB431858161_.jpg" width="1500px" height="400px" alt="Shop Toys & Games">
 </a>
 </div>
+    <div class="carousel-item">
+<a href="?page=amazon.electronics">
+<img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Home_v2_en_US_2x._CB429090087_.jpg" width="1500px" height="400px" alt="Shop Home">
+</a>
+</div>
+    <div class="carousel-item">
+<a href="?page=amazon.music">
+<img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonMusic/2021/Marketing/EvergreenQ1/Gateway/US-EN_AMU_EvergreenQ1_DMUX-3799_JZ_OnS_GW_Hero_D_1500x600_1X_CV2._CB412009348_.jpg" width="1500px" height="400px" alt="Shop Music">
+</a>
+</div>
   </div>
-
 
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
@@ -52,16 +79,42 @@ width: 150px
 
 </div>
 
-<div id="card1" class="card">
-<h4 class="card-title">Shop electronics</h4>
-<img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Computers_1x._CB432469755_.jpg">
-    <a href="?page=amazon.electronics" id="Buton1" class="btn btn-primary stretched-link">Shop now</a>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Computers_1x._CB432469755_.jpg">
+  <div class="card-body">
+    <h5 class="card-title">Shop electronics</h5>
+    <a href="?page=amazon.electronics" class="btn btn-primary">Shp now</a>
+  </div>
 </div>
 
-<div id="card2" class="card">
+<div id="card" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Toys_en_US_1x._CB431858161_.jpg">
   <div class="card-body">
-	<h4 class="card-title">Shop toys</h4>
-	<img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Toys_en_US_1x._CB431858161_.jpg">
-    <a href="?page=amazon.toys" id="Buton2"  class="btn btn-primary stretched-link">Shop now</a>
+    <h5 class="card-title">Shop toys</h5>
+    <a href="?page=amazon.electronics" class="btn btn-primary">Shp now</a>
+  </div>
+</div>
+
+<div id="card1" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Home_v2_en_US_2x._CB429090087_.jpg">
+  <div class="card-body">
+    <h5 class="card-title">Shop home</h5>
+    <a href="?page=amazon.electronics" class="btn btn-primary">Shp now</a>
+  </div>
+</div>
+
+<div id="card2" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonMusic/2021/Marketing/EvergreenQ1/Gateway/US-EN_AMU_EvergreenQ1_DMUX-3799_JZ_OnS_GW_Hero_D_1500x600_1X_CV2._CB412009348_.jpg">
+  <div class="card-body">
+    <h5 class="card-title">Shop music</h5>
+    <a href="?page=amazon.music" class="btn btn-primary">Shp now</a>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_TV_2X._SY608_CB432517900_.jpg">
+  <div class="card-body">
+    <h5 class="card-title">Shop TV's</h5>
+    <a href="?page=amazon.electronics" class="btn btn-primary">Shp now</a>
   </div>
 </div>
