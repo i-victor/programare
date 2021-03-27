@@ -14,8 +14,8 @@ func do(i interface{}) {
 }
 
 func main() {
-	do(21)
-	do("hello")
+	do(12)
+	do("This is my first go project")
 	do(true)
 }
 
