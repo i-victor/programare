@@ -69,9 +69,11 @@ jQuery(() => {
 		return String(cardName);
 	};
 
+	let isReady = false; // flag
 	let arrSelCards = []; // keep record of what have been selected, which cards for the current deal
 
 	const playDeck = () => {
+		isReady = false;
 		arrSelCards = []; // reset on each play deck
 		let selCard;
 		for(let i=0; i<=260; i++) { // 13 * 4 * 5 (max combinations)
@@ -90,17 +92,8 @@ jQuery(() => {
 				displayCard(n+1, arrSelCards[n]);
 			}, 50 + (50*n));
 		}
-	};
-
-	// opts.shapes[Math.floor(Math.random() * (opts.shapes.length) )]
-
-	let isReady = false;
-
-	// load the card backgrounds, after 0.5 seconds
-	setTimeout(() => {
-		resetDeck();
 		isReady = true;
-	}, 500);
+	};
 
 	// action for the deal button
 	$('#deal').on('click', function(e) {
@@ -109,7 +102,51 @@ jQuery(() => {
 		}
 		playDeck();
 		console.log('Cards', arrSelCards);
+
+		// pre-process cards to an array of pairs: value, color
+		let processArr = [];
+		let cardName, cardVal, cardColor;
+		for(let i=0; i<arrSelCards.length; i++) {
+			let cardName = arrSelCards[i];
+			cardName = cardName.substr(0, cardName.length - 4); // take out .svg
+			cardName = cardName.split('_of_');
+			processArr.push(cardName);
+		}
+		console.log(processArr);
+
+		//count of duplicate value
+		let duplicateValues = {};
+		let duplicateColors = {};
+		for(let i=0; i<processArr.length; i++) {
+			//--
+			cardVal = String(processArr[i][0]);
+			cardColor = String(processArr[i][1]);
+			//--
+			if(!duplicateValues[cardVal]) {
+				duplicateValues[cardVal] = 1;
+			} else {
+				duplicateValues[cardVal]++;
+			}
+			//--
+			if(!duplicateColors[cardColor]) {
+				duplicateColors[cardColor] = 1;
+			} else {
+				duplicateColors[cardColor]++;
+			}
+			//--
+		}
+		console.log(duplicateValues);
+		console.log(duplicateColors);
+
+		//evaluate if we have a duplicate value
+
 	});
+
+	// load the card backgrounds, after 0.5 seconds
+	setTimeout(() => {
+		resetDeck();
+		isReady = true;
+	}, 500);
 
 	//-- solving
 
