@@ -36,6 +36,7 @@ jQuery(() => {
 	};
 
 	const resetDeck = () => {
+		console.clear();
 		updateCardImg('img-card1', 'back.svg');
 		updateCardImg('img-card2', 'back.svg');
 		updateCardImg('img-card3', 'back.svg');
@@ -74,6 +75,7 @@ jQuery(() => {
 
 	const playDeck = () => {
 		isReady = false;
+		console.clear();
 		arrSelCards = []; // reset on each play deck
 		let selCard;
 		for(let i=0; i<=260; i++) { // 13 * 4 * 5 (max combinations)
@@ -138,7 +140,47 @@ jQuery(() => {
 		console.log(duplicateValues);
 		console.log(duplicateColors);
 
-		//evaluate if we have a duplicate value
+		//evaluate if we have duplicate values
+		let pairs = 0;
+		let three = false;
+		let full = false;
+		let four = false;
+		for(let key in duplicateValues) {
+			if(duplicateValues[key] == 2) {
+				pairs++;
+				console.log('you`ve got 1 pair of:' , key);
+			} else if(duplicateValues[key] == 3) {
+				three = true;
+				console.log('you`ve got 3 kinds of:' , key);
+			} else if(duplicateValues[key] == 4) {
+				four = true;
+				console.log('you`ve got 4 kinds of:' , key);
+			}
+		}
+		// after: evaluate 2 pairs
+		if(pairs == 1) {
+			if(three === true) {
+				full = true;
+			}
+		} else if(pairs > 1) {
+			console.log('you`ve got 2 pairs');
+		}
+		if(full === true) {
+			console.log('you`ve got full');
+		}
+
+		//evaluate if we have duplicate colors
+		let flush = false;
+		for(let key in duplicateColors) {
+			if(duplicateColors[key] > 1) {
+				if(duplicateColors[key] >= 5) {
+					flush = true;
+					console.log('you`ve got flush of ', key , 'color');
+				} else {
+					console.log('you`ve got', duplicateColors[key], key , 'colors');
+				}
+			}
+		}
 
 	});
 
@@ -153,6 +195,7 @@ jQuery(() => {
 	//--
 
 });
+
 
 // #END
 
