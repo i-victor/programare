@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:,">
+<title>Poker Game</title>
+<!-- font -->
+<link rel="stylesheet" type="text/css" href="css/fonts/typo/sans/ibm-plex-sans.css" media="all">
+<style type="text/css">* { font-family: 'IBM Plex Sans',arial,sans-serif; }</style>
+<!-- toolkit -->
+<link rel="stylesheet" type="text/css" href="css/toolkit/sf-icons.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/toolkit/ux-toolkit.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/toolkit/ux-toolkit-responsive.css" media="all">
+<!-- animate -->
+<link rel="stylesheet" type="text/css" href="css/animate/animate.css" media="all">
+<!-- styles -->
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+</head>
+<body>
+<div id="app-container" class="app-box">
+<center>
+	<h1>Poker Game</h1>
+	<br>
+	<div id="cards">
+		<div class="ux-grid-row deck" id="cards-deck">
+			<div class="ux-grid-col c1">&nbsp;</div>
+			<div class="ux-grid-col c2 ux-center cards" id="card1"><img class="card" id="img-card1" src="js/img/loading-bars.svg"></div>
+			<div class="ux-grid-col c2 ux-center cards" id="card2"><img class="card" id="img-card2" src="js/img/loading-bars.svg"></div>
+			<div class="ux-grid-col c2 ux-center cards" id="card3"><img class="card" id="img-card3" src="js/img/loading-bars.svg"></div>
+			<div class="ux-grid-col c2 ux-center cards" id="card4"><img class="card" id="img-card4" src="js/img/loading-bars.svg"></div>
+			<div class="ux-grid-col c2 ux-center cards" id="card5"><img class="card" id="img-card5" src="js/img/loading-bars.svg"></div>
+			<div class="ux-grid-col c1">&nbsp;</div>
+		</div>
+	</div>
+	<br>
+	<button id="deal" class="ux-button ux-button-xlarge ux-button-special">Deal</button>
+</center>
+</div>
+<!-- jquery js -->
+<script src="js/jquery.js"></script>
+<!-- app js -->
+<script src="js/app.js"></script>
+</body>
+</html>

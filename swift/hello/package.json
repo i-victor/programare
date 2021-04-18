@@ -14,6 +14,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "cordova-ios": "^6.2.0",
+    "cordova-plugin-context-menu-state": "^0.2.5",
     "cordova-plugin-phone-call": "^1.1.3",
     "cordova-plugin-whitelist": "^1.3.4",
     "cordova-sms-plugin": "^1.0.1"
@@ -23,7 +24,8 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-phone-call": {},
       "cordova-plugin-inappbrowser": {},
-      "cordova-sms-plugin": {}
+      "cordova-sms-plugin": {},
+      "cordova-plugin-context-menu-state": {}
     },
     "platforms": [
       "ios"

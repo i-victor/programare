@@ -56,3 +56,9 @@ cordova.plugins.phonedialer.call(
 	$('#button1').on('click touchstart', function(e) {
 		placeCall('+91123456789');
 	});
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(ContextMenuState);
+    ContextMenuState.setVisible(true);
+}
