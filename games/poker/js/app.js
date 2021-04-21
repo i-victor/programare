@@ -35,8 +35,6 @@ jQuery(() => {
 		return true;
 	};
 
-	let cardNum = 0;
-
 	const resetDeck = () => {
 		console.clear();
 		updateCardImg('img-card1', 'back.svg');
@@ -44,7 +42,6 @@ jQuery(() => {
 		updateCardImg('img-card3', 'back.svg');
 		updateCardImg('img-card4', 'back.svg');
 		updateCardImg('img-card5', 'back.svg');
-		cardNum = 0;
 	};
 
 	const displayCard = (num, cardName) => {
@@ -63,20 +60,26 @@ jQuery(() => {
 		return Boolean(updateCardImg('img-card' + String(num), cardName));
 	};
 
-	const debug = 'straight'; // by default is false
+	const debug = '3ofAKind'; // by default is false
 	if(debug) {
 		$('body').append('<div style="text-align:center; font-weight:bold; position:fixed; top:10px; right:10px; background:#FFCC00; color:#111111; width:200px;">DEBUG: ' + $('<div></div>').text(debug).html() + '</div>');
 	}
 
-	const playCard = () => {
+	const playCard = (cnum) => {
 		//--
-		cardNum++;
+		if(cnum < 0 || cnum > 4) {
+			console.error('Invalid Card Num: ' + cnum);
+			return '';
+		}
+		//--
+		cnum += 1;
+		//--
 		let selVal = getRandomFromArray(cardsValues); // console.log('selVal:' + selVal);
 		let selColor = getRandomFromArray(cardsColors); // console.log('selColor:' + selColor);
 		//-- debug area
 		if(debug === 'royalFlush') {
 			selColor = 'clubs';
-			switch(cardNum) {
+			switch(cnum) {
 				case 1:
 					selVal = 10;
 					break;
@@ -93,12 +96,12 @@ jQuery(() => {
 					selVal = 'ace';
 					break;
 				default:
-					console.error('debug: too many cards: ' + cardNum);
+					console.error('debug: too many cards: ' + cnum);
 					return '';
 			}
 		} else if(debug === 'straightFlush') {
 			selColor = 'diamonds';
-			switch(cardNum) {
+			switch(cnum) {
 				case 1:
 					selVal = 9;
 					break;
@@ -115,85 +118,104 @@ jQuery(() => {
 					selVal = 'king';
 					break;
 				default:
-					console.error('debug: too many cards: ' + cardNum);
+					console.error('debug: too many cards: ' + cnum);
 					return '';
 			}
 		} else if(debug === 'straight') {
-			switch(cardNum) {
+			switch(cnum) {
 				case 1:
 					selVal = 2;
-					selColor = 'clubs';
 					break;
 				case 2:
 					selVal = 3;
-					selColor = 'spades';
 					break;
 				case 3:
 					selVal = 4;
-					selColor = 'diamonds';
 					break;
 				case 4:
 					selVal = 5;
-					selColor = 'hearts';
 					break;
 				case 5:
 					selVal = 6;
-					selColor = 'clubs';
 					break;
 				default:
-					console.error('debug: too many cards: ' + cardNum);
+					console.error('debug: too many cards: ' + cnum);
 					return '';
 			}
 		} else if(debug === '4ofAKind') {
-			switch(cardNum) {
+			switch(cnum) {
 				case 1:
 					selVal = 'ace';
-					selColor = 'clubs';
 					break;
 				case 2:
 					selVal = 'ace';
-					selColor = 'spades';
 					break;
 				case 3:
 					selVal = 'ace';
-					selColor = 'diamonds';
 					break;
 				case 4:
 					selVal = 'ace';
-					selColor = 'hearts';
 					break;
 				case 5:
 					selVal = 'king';
-					selColor = 'clubs';
 					break;
 				default:
-					console.error('debug: too many cards: ' + cardNum);
+					console.error('debug: too many cards: ' + cnum);
 					return '';
 			}
 		} else if(debug === 'fullHouse') {
-			switch(cardNum) {
+			switch(cnum) {
 				case 1:
 					selVal = 'ace';
-					selColor = 'clubs';
 					break;
 				case 2:
 					selVal = 'ace';
-					selColor = 'spades';
 					break;
 				case 3:
 					selVal = 'ace';
-					selColor = 'diamonds';
 					break;
 				case 4:
 					selVal = 'king';
-					selColor = 'hearts';
 					break;
 				case 5:
 					selVal = 'king';
-					selColor = 'clubs';
 					break;
 				default:
-					console.error('debug: too many cards: ' + cardNum);
+					console.error('debug: too many cards: ' + cnum);
+					return '';
+			}
+		} else if(debug === 'flush') {
+			selColor = 'diamonds';
+			switch(cnum) {
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+					break;
+				default:
+					console.error('debug: too many cards: ' + cnum);
+					return '';
+			}
+		} else if(debug === '3ofAKind') {
+			switch(cnum) {
+				case 1:
+					selVal = 'king';
+					break;
+				case 2:
+					selVal = 'king';
+					break;
+				case 3:
+					selVal = 'king';
+					break;
+				case 4:
+					selVal = 'queen';
+					break;
+				case 5:
+					selVal = 'jack';
+					break;
+				default:
+					console.error('debug: too many cards: ' + cnum);
 					return '';
 			}
 		} else if(debug) {
@@ -209,23 +231,30 @@ jQuery(() => {
 	let arrSelCards = []; // keep record of what have been selected, which cards for the current deal
 
 	const playDeck = () => {
+		const slots = 5;
+		const max = cardsValues.length * cardsColors.length * slots;
 		resetDeck();
 		arrSelCards = []; // reset on each play deck
 		let selCard;
+		let cardNum = 0;
 		for(let i=0; i<=260; i++) { // 13 * 4 * 5 (max combinations)
-			selCard = String(playCard());
+			selCard = String(playCard(cardNum));
+			console.log('Random Card:', selCard);
 			if(selCard) {
 				if(!arrSelCards.includes(selCard)) {
 					arrSelCards.push(selCard);
+					cardNum++;
 				} else {
 					//console.log('DUPLICATE:', selCard); // just for development
 				}
 				if(arrSelCards.length >= 5) { // stop at 5 cards selected
 					break;
 				}
+			} else {
+				break;
 			}
 		}
-		if(arrSelCards.length < 5) { // this can happen only in debug mode !!!
+		if(arrSelCards.length < slots) { // this can happen only in debug mode !!!
 			alert('POKER ERROR ... see console for details');
 			console.error('FAILED to select 5 different cards:', arrSelCards);
 			return false;
