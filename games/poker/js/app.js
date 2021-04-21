@@ -60,7 +60,7 @@ jQuery(() => {
 		return Boolean(updateCardImg('img-card' + String(num), cardName));
 	};
 
-	const debug = '3ofAKind'; // by default is false
+	const debug = '1pair'; // by default is false
 	if(debug) {
 		$('body').append('<div style="text-align:center; font-weight:bold; position:fixed; top:10px; right:10px; background:#FFCC00; color:#111111; width:200px;">DEBUG: ' + $('<div></div>').text(debug).html() + '</div>');
 	}
@@ -77,7 +77,20 @@ jQuery(() => {
 		let selVal = getRandomFromArray(cardsValues); // console.log('selVal:' + selVal);
 		let selColor = getRandomFromArray(cardsColors); // console.log('selColor:' + selColor);
 		//-- debug area
-		if(debug === 'royalFlush') {
+		if(debug === 'flush') {
+			selColor = 'hearts';
+			switch(cnum) {
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+					break;
+				default:
+					console.error('debug: too many cards: ' + cnum);
+					return '';
+			}
+		} else if(debug === 'royalFlush') {
 			selColor = 'clubs';
 			switch(cnum) {
 				case 1:
@@ -184,19 +197,6 @@ jQuery(() => {
 					console.error('debug: too many cards: ' + cnum);
 					return '';
 			}
-		} else if(debug === 'flush') {
-			selColor = 'diamonds';
-			switch(cnum) {
-				case 1:
-				case 2:
-				case 3:
-				case 4:
-				case 5:
-					break;
-				default:
-					console.error('debug: too many cards: ' + cnum);
-					return '';
-			}
 		} else if(debug === '3ofAKind') {
 			switch(cnum) {
 				case 1:
@@ -213,6 +213,52 @@ jQuery(() => {
 					break;
 				case 5:
 					selVal = 'jack';
+					break;
+				default:
+					console.error('debug: too many cards: ' + cnum);
+					return '';
+			}
+		} else if(debug === '2pairs') {
+			switch(cnum) {
+				case 1:
+					selVal = '7';
+					break;
+				case 2:
+					selVal = '7';
+					break;
+				case 3:
+					selVal = '8';
+					selColor = 'spades';
+					break;
+				case 4:
+					selVal = '8';
+					selColor = 'diamonds';
+					break;
+				case 5:
+					selVal = 'ace';
+					break;
+				default:
+					console.error('debug: too many cards: ' + cnum);
+					return '';
+			}
+		} else if(debug === '1pair') {
+			switch(cnum) {
+				case 1:
+					selVal = 'queen';
+					break;
+				case 2:
+					selVal = 'queen';
+					break;
+				case 3:
+					selVal = 'jack';
+					break;
+				case 4:
+					selVal = 'king';
+					selColor = 'hearts';
+					break;
+				case 5:
+					selVal = 'ace';
+					selColor = 'clubs';
 					break;
 				default:
 					console.error('debug: too many cards: ' + cnum);
@@ -338,8 +384,10 @@ jQuery(() => {
 			//console.log('Straight.Check', idx, valuesArr[x]);
 		}
 		straightArr = straightArr.sort((a, b) => a - b); // sort array numeric
+		let highestCard = null;
 		console.log('straightArr', straightArr);
 		if(straightArr.length == 5) {
+			highestCard = straightArr[4];
 			if(
 				(straightArr[0] + 1 == straightArr[1]) &&
 				(straightArr[0] + 2 == straightArr[2]) &&
@@ -356,6 +404,7 @@ jQuery(() => {
 				}
 			}
 		}
+		console.log('highestCard is:', cardsValues[highestCard]);
 
 		let onePair = false;
 		for(let key in duplicateValues) {
