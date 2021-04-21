@@ -63,7 +63,7 @@ jQuery(() => {
 		return Boolean(updateCardImg('img-card' + String(num), cardName));
 	};
 
-	const debug = '4ofAKind'; // by default is false
+	const debug = 'straight'; // by default is false
 	if(debug) {
 		$('body').append('<div style="text-align:center; font-weight:bold; position:fixed; top:10px; right:10px; background:#FFCC00; color:#111111; width:200px;">DEBUG: ' + $('<div></div>').text(debug).html() + '</div>');
 	}
@@ -90,8 +90,11 @@ jQuery(() => {
 					selVal = 'king';
 					break;
 				case 5:
-				default:
 					selVal = 'ace';
+					break;
+				default:
+					console.error('debug: too many cards: ' + cardNum);
+					return '';
 			}
 		} else if(debug === 'straightFlush') {
 			selColor = 'diamonds';
@@ -109,26 +112,37 @@ jQuery(() => {
 					selVal = 'queen';
 					break;
 				case 5:
-				default:
 					selVal = 'king';
+					break;
+				default:
+					console.error('debug: too many cards: ' + cardNum);
+					return '';
 			}
 		} else if(debug === 'straight') {
 			switch(cardNum) {
 				case 1:
 					selVal = 2;
+					selColor = 'clubs';
 					break;
 				case 2:
 					selVal = 3;
+					selColor = 'spades';
 					break;
 				case 3:
 					selVal = 4;
+					selColor = 'diamonds';
 					break;
 				case 4:
 					selVal = 5;
+					selColor = 'hearts';
 					break;
 				case 5:
-				default:
 					selVal = 6;
+					selColor = 'clubs';
+					break;
+				default:
+					console.error('debug: too many cards: ' + cardNum);
+					return '';
 			}
 		} else if(debug === '4ofAKind') {
 			switch(cardNum) {
@@ -149,8 +163,38 @@ jQuery(() => {
 					selColor = 'hearts';
 					break;
 				case 5:
-				default:
 					selVal = 'king';
+					selColor = 'clubs';
+					break;
+				default:
+					console.error('debug: too many cards: ' + cardNum);
+					return '';
+			}
+		} else if(debug === 'fullHouse') {
+			switch(cardNum) {
+				case 1:
+					selVal = 'ace';
+					selColor = 'clubs';
+					break;
+				case 2:
+					selVal = 'ace';
+					selColor = 'spades';
+					break;
+				case 3:
+					selVal = 'ace';
+					selColor = 'diamonds';
+					break;
+				case 4:
+					selVal = 'king';
+					selColor = 'hearts';
+					break;
+				case 5:
+					selVal = 'king';
+					selColor = 'clubs';
+					break;
+				default:
+					console.error('debug: too many cards: ' + cardNum);
+					return '';
 			}
 		} else if(debug) {
 			alert('INVALID DEBUG: ' + debug);
@@ -170,13 +214,15 @@ jQuery(() => {
 		let selCard;
 		for(let i=0; i<=260; i++) { // 13 * 4 * 5 (max combinations)
 			selCard = String(playCard());
-			if(!arrSelCards.includes(selCard)) {
-				arrSelCards.push(selCard);
-			} else {
-				//console.log('DUPLICATE:', selCard); // just for development
-			}
-			if(arrSelCards.length >= 5) { // stop at 5 cards selected
-				break;
+			if(selCard) {
+				if(!arrSelCards.includes(selCard)) {
+					arrSelCards.push(selCard);
+				} else {
+					//console.log('DUPLICATE:', selCard); // just for development
+				}
+				if(arrSelCards.length >= 5) { // stop at 5 cards selected
+					break;
+				}
 			}
 		}
 		if(arrSelCards.length < 5) { // this can happen only in debug mode !!!
@@ -303,7 +349,7 @@ jQuery(() => {
 		if(pairs == 1) {
 			if(three === true && onePair === true) {
 				full = true;
-				console.log('you`ve got full');
+				console.log('you`ve got full house');
 			}
 		} else if(pairs > 1) {
 			console.log('you`ve got 2 pairs');
