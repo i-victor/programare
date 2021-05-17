@@ -1,3 +1,5 @@
+//test string in go
+
 package main
 
 import (

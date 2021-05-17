@@ -1,3 +1,5 @@
+//test time in go
+
 package main
 
 import (

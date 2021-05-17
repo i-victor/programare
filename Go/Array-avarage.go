@@ -1,3 +1,5 @@
+//test array-avarage in go
+
 package main
 
 import "fmt"

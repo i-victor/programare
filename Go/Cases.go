@@ -1,3 +1,5 @@
+//test in go
+
 package main
 
 import "fmt"

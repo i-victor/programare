@@ -1,3 +1,5 @@
+//test arrays in go
+
 package main
 
 import "fmt"
