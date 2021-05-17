@@ -60,10 +60,16 @@ jQuery(() => {
 		return Boolean(updateCardImg('img-card' + String(num), cardName));
 	};
 
-	const debug = '1pair'; // by default is false
+	const debug = false; // by default is false
 	if(debug) {
-		$('body').append('<div style="text-align:center; font-weight:bold; position:fixed; top:10px; right:10px; background:#FFCC00; color:#111111; width:200px;">DEBUG: ' + $('<div></div>').text(debug).html() + '</div>');
+		$('body').append('<div style="text-align:center; font-weight:bold; position:fixed; top:10px; left:10px; background:#FFCC00; color:#111111; width:200px;">DEBUG: ' + $('<div></div>').text(debug).html() + '</div>');
 	}
+
+let pormoneu = 500;
+let cheltuiala = 5;
+
+
+		$('#money').text(pormoneu);
 
 	const playCard = (cnum) => {
 		//--
@@ -321,6 +327,10 @@ jQuery(() => {
 		if(!playDeck()) {
 			return;
 		}
+
+		pormoneu = pormoneu - cheltuiala;
+		$('#money').text(pormoneu);
+
 		console.log('cardsValues', cardsValues.length, cardsValues);
 		console.log('Cards', arrSelCards);
 
@@ -412,14 +422,20 @@ jQuery(() => {
 				onePair = true;
 				pairs++;
 				console.log('you`ve got 1 pair of:' , key);
+				pormoneu = pormoneu + 5; // castigul e 5;
+				$('#money').empty().text(pormoneu);
 			}
 			if(duplicateValues[key] == 3) {
 				three = true;
 				console.log('you`ve got 3 kinds of:' , key);
+				pormoneu = pormoneu + 15; // castigul e 15;
+				$('#money').empty().text(pormoneu);
 			}
 			if(duplicateValues[key] == 4) {
 				four = true;
 				console.log('you`ve got 4 kinds of:' , key);
+				pormoneu = pormoneu + 50; // castigul e 50;
+				$('#money').empty().text(pormoneu);
 			}
 		}
 
@@ -428,9 +444,12 @@ jQuery(() => {
 			if(three === true && onePair === true) {
 				full = true;
 				console.log('you`ve got full house');
+
 			}
 		} else if(pairs > 1) {
 			console.log('you`ve got 2 pairs');
+			pormoneu = pormoneu + 10; // castigul e 10;
+			$('#money').empty().text(pormoneu);
 		}
 
 		//evaluate if we have duplicate colors
