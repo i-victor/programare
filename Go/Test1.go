@@ -52,7 +52,7 @@ type Obj struct {
   Favoriteweblanguage string;
 };
 
-var newObj = Obj{Name: "Victor", Age: 13, Class: "a 6-a", Pasion: "IT", Favoritedesktoplanguage: "Golang", Favoriteweblanguage:"PHP"  };
+var object1 = Obj { Name: "Victor", Age: 13, Class: "a 6-a", Pasion: "IT", Favoritedesktoplanguage: "Golang", Favoriteweblanguage:"JS"  };
 
 var a = "Name:";
 var b = "Age:";
@@ -66,10 +66,10 @@ func main() {
 	Displaynames();
 	Display();
 	Array();
-	fmt.Println(a ,newObj.Name);
-	fmt.Println(b ,newObj.Age);
-	fmt.Println(c ,newObj.Pasion);
-	fmt.Println(d, newObj.Class);
-	fmt.Println(e, newObj.Favoritedesktoplanguage);
-	fmt.Println(f, newObj.Favoriteweblanguage);
+	fmt.Println(a, object1.Name);
+	fmt.Println(b, object1.Age);
+	fmt.Println(c, object1.Pasion);
+	fmt.Println(d, object1.Class);
+	fmt.Println(e, object1.Favoritedesktoplanguage);
+	fmt.Println(f, object1.Favoriteweblanguage);
 };
