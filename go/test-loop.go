@@ -19,8 +19,8 @@ func main() {
 	}
 
 	fmt.Println("\n---------------Example 3--------------------\n")
-	for _, value := range intArray {
-		fmt.Println(value)
+	for _, val := range intArray {
+		fmt.Println(val)
 	}
 
 	j := 0
