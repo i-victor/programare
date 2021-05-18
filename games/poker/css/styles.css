@@ -1,0 +1,264 @@
+
+/* ------------------------------------------------ CSS3, Base Styles START :: r.20210418 */
+
+/* IMPORTANT: !! FOR A VERY CLEAR READABILITY OF PAGE FONTS !!
+ * except the main body and main elements sizes (sized in pixels),
+ * if relative font sizes are needed, they are recommended to be expressed using HTML5 'rem' (relative to root size)
+ * instead of the old 'em' (relative to parent size)
+ */
+
+/*
+:root {
+	color-scheme: light dark;
+}
+*/
+
+* {
+	font-smooth: always;
+	/* font-size-adjust: 0.55; */
+}
+
+html, body{
+	width: 96% auto;
+	/*height: 96% auto;*/
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: #000e3f;
+	color: #FFFFFF;
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+div, p, ol, ul, form, fieldset, blockquote, address, dl {
+	font-size: 0.9375rem; /* 15px */
+	line-height: 1.5;
+}
+
+li {
+	list-style-position: inside; /* bugfix for chrome */
+}
+
+table, pre, code, code * {
+	font-size: 0.875rem; /* 14px */
+	line-height: 1.25;
+}
+
+h1 {
+	font-size: 2rem; /* 32px */
+	margin-top: 0.625rem; /* 10px */
+	margin-bottom: 0.625rem; /* 10px */
+}
+h2 {
+	font-size: 1.75rem; /* 28px */
+	margin-top: 0.5rem; /* 8px */
+	margin-bottom: 0.5rem; /* 8px */
+}
+h3 {
+	font-size: 1.5rem; /* 24px */
+	margin-top: 0.375rem; /* 6px */
+	margin-bottom: 0.375rem; /* 6px */
+}
+h4 {
+	font-size: 1.25rem; /* 20px */
+	margin-top: 0.3125rem; /* 5px */
+	margin-bottom: 0.3125rem; /* 5px */
+}
+h5 {
+	font-size: 1.125rem; /* 18px */
+	margin-top: 0.25rem; /* 4px */
+	margin-bottom: 0.25rem; /* 4px */
+}
+h6 {
+	font-size: 1rem; /* 16px */
+	margin-top: 0.1875rem; /* 3px */
+	margin-bottom: 0.1875rem; /* 3px */
+}
+
+img {
+	border: 0;
+}
+
+hr {
+	border: none 0;
+	border-top: 1px solid #CCCCCC;
+	height: 1px;
+}
+
+/* ----- tables ----- */
+table {
+	font-weight: normal;
+	text-align:left;
+}
+th {
+	font-weight: bold;
+}
+td {
+	font-weight: normal;
+}
+
+/* ----- links ----- */
+a, a:link, a:visited, a:hover {
+	color: #000000;
+}
+
+/* ----- forms ----- */
+
+input[type="text"]:disabled {
+	background-color: #FFFFFF;
+}
+/***
+label {
+	font-size: 0.9rem;
+	font-weight: normal;
+}
+textarea {
+	font-size: 0.9rem;
+	background-color: #FEFEFE;
+	color: #000000;
+	border: 1px;
+	border-style: solid;
+	border-color: #CCCCCC;
+}
+select {
+	font-size: 0.9rem;
+	background-color: #FEFEFE;
+	color: #666666;
+	border: 1px;
+	border-style: solid;
+	border-color: #CCCCCC;
+}
+input {
+	font-size: 0.9rem;
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px;
+	border-style: solid;
+	border-color: #CCCCCC;
+}
+input[type=submit], input[type=button] {
+	font-size: 0.9rem;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	color: #778899;
+	border: 1px;
+	border-style: outset;
+	border-color: #333333;
+	cursor: pointer;
+}
+input:invalid+span:after {
+	content: '✖';
+	padding-left: 5px;
+}
+input:valid+span:after {
+	content: '✓';
+	padding-left: 5px;
+}
+***/
+
+/* ----- box sizing fixes (if necessary) ----- */
+/***
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+***/
+
+/* ----- custom elements ----- */
+
+div#app-container {
+	width: 100% !important;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px;
+	box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	-webkit-box-sizing: border-box !important;
+}
+
+div#app-container.app-box {
+	padding-left:  3px !important;
+	padding-top:   1px !important;
+	padding-right: 3px !important;
+}
+
+img#shaddow {
+	border: 0px;
+	box-shadow: 2px 2px 3px #BBBBBB; /* Opera and other CSS3 supporting browsers */
+}
+
+.inline-block {
+	display: inline-block;
+}
+.inline {
+	display: inline;
+}
+
+/* --- poker styles --- */
+
+div.deck {
+	border: 1px solid #000d2e;
+	width: 96vw;
+	min-height: 2rem;
+}
+
+div.cards {
+	border: 1px solid #000d2e;
+	min-width: 2rem;
+	min-height: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 10px;
+}
+
+img.card {
+
+}
+
+button#deal {
+	min-width: 50vw;
+	max-width: 50vw;
+	width: 50vw;
+}
+
+@media all and (max-width:767px) {
+
+	div#app-container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	div.deck {
+		width: 100vw;
+		min-height: 1rem;
+	}
+
+	div.cards {
+		padding: 5px;
+		min-width: 1rem;
+		min-height: 1rem;
+	}
+
+	button#deal {
+		min-width: 80vw !important;
+		max-width: 80vw !important;
+		width: 80vw !important;
+	}
+
+}
+
+/* ------------------------------------------------ Base Styles END */
